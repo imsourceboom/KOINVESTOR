@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>KOINVESTOR</title>
+    <!-- 초기화 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+    <!-- Fontawesome Icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <!-- Material Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body class="text-gray-deep-dark">
+    <!-- 플로팅 버튼 -->
+    <div class="floating">
+        <!-- 플로팅 메인 버튼 -->
+        <div name="floating-btn" class="floating-btn position-fixed flex-center rounded-circle shadow-box cursor-pointer">
+            <div id="line-wrapper">
+                <div id="line-top" class="line   line-top line-top-reverse init"></div>
+                <!-- <div id="line-mid" clline ass="line init mid-reverse"></div> -->
+                <div id="line-dot" class="line line-dot line-dot-reverse init"></div>
+            </div>
+        </div>
+        <!-- 플로팅 공지사항 -->
+        <div name="floating-child-wrap" class="display-toggle">
+            <div name="floating-child" class="floating-child flex-center position-fixed animated">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 pb-1">
+                            <div class="notice-design-small"></div>
+                        </div>
+                        <div class="col-12">
+                            <span class="fs-08 text-gray">2018년 6월 15일</span>
+                        </div>
+                        <div class="col-12">
+                            <span class="text-gray-deep-dark">코인베스터 홈페이지 시스템 점건 안내</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="floating-child" class="floating-child flex-center position-fixed animated">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 pb-1">
+                            <div class="notice-design-small"></div>
+                        </div>
+                        <div class="col-12">
+                            <span class="fs-08 text-gray">2018년 6월 15일</span>
+                        </div>
+                        <div class="col-12">
+                            <span class="text-gray-deep-dark">코인베스터 홈페이지 시스템 점건 안내</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="floating-child" class="floating-child flex-center position-fixed animated">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 pb-1">
+                            <div class="notice-design-small"></div>
+                        </div>
+                        <div class="col-12">
+                            <span class="fs-08 text-gray">2018년 6월 15일</span>
+                        </div>
+                        <div class="col-12">
+                            <span class="text-gray-deep-dark">코인베스터 홈페이지 시스템 점건 안내</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="floating-child" class="floating-child flex-center position-fixed animated">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 pb-1">
+                            <div class="notice-design-small"></div>
+                        </div>
+                        <div class="col-12">
+                            <span class="fs-08 text-gray">2018년 6월 15일</span>
+                        </div>
+                        <div class="col-12">
+                            <span class="text-gray-deep-dark">코인베스터 홈페이지 시스템 점건 안내</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="floating-child" class="floating-child flex-center position-fixed animated">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 pb-1">
+                            <div class="notice-design-small"></div>
+                        </div>
+                        <div class="col-12">
+                            <span class="fs-08 text-gray">2018년 6월 15일</span>
+                        </div>
+                        <div class="col-12">
+                            <span class="text-gray-deep-dark">코인베스터 홈페이지 시스템 점건 안내</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 플로팅 여백 -->
+    <div class="floating-blank"></div>
+
+    <!-- 전체 wrap -->
+    <div class="d-flex justify-content-center">
+        <!-- Search -->
+        <div class="search-wrap-desk row align-items-center no-gutters position-fixed border-bottom pl-3 d-none animated">
+            <div class="col-lg-11 pl-5">
+                <input type="text" class="w-100 border-bottom pl-5" placeholder="검색어">
+            </div>
+            <div class="col-lg-1">
+                <span class="d-flex justify-content-center">
+                    <i name="close-icon" class="material-icons md-35 cursor-pointer">
+                        close
+                    </i>
+                </span>
+            </div>
+        </div>
+        <!-- Header -->
+        <header class="header position-fixed bg-white">
+            <!-- Header의 Menu 영역 -->
+            <div class="row mx-0 menu-wrap align-items-center border-bottom">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-5">
+                    <nav>
+                        <ul class="d-flex justify-content-between m-0 p-0 main-menu text-gray">
+                            <li>블록체인 뉴스</li>
+                            <li>프로젝트 소식</li>
+                            <li>실시간 트위터</li>
+                            <li>공지사항</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <ul class="d-flex justify-content-center m-0 pl-5 sign-menu fs-08">
+                        <li class="mr-4">로그인</li>
+                        <li class="mr-4">회원가입</li>
+                        <li class="language">
+                            <select>
+                                <option value="">KOR</option>
+                                <option value="">ENG</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-1">
+                    <span class="d-flex justify-content-center">
+                        <i name="search-icon" class="material-icons md-30 cursor-pointer">
+                            search
+                        </i>
+                    </span>
+                </div>
+            </div>
+            <!-- Header의 Logo 영역 -->
+            <div class="row mx-0 logo-wrap align-items-center">
+                <div class="col-lg-3 d-flex justify-content-center logo">
+                    <div class="logo w250 cursor-pointer">
+                        KOINVESTOR
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="explain">
+                        Contents explain Area
+                    </div>
+                </div>
+                <div class="col-lg-1 tele-wrap">
+                    <div class="flex-center">
+                        <img src="./img/logo/telegram.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- 메인 컨텐츠 영역 -->
+        <main class="main">
+            <!-- Header Space Area -->
+            <div class="header-back-space"></div>
+
+            <!-- 변경되는 영역 -->
+
+            <!-- index Page -->
+            <section class="index">
+                <!-- HEADLINE -->
+                <article class="headline container-fluid text-center pb-5 bg-white">
+                    <!-- headline-a a-row -->
+                    <div class="row no-gutters">
+                        <div class="col-md-8 flex-center-column headline-a">
+                            <div class="img-cover"></div>
+                            <p class="a-title">Alpha is coming!</p>
+                            <p class="a-content">by Amanda showman</p>
+                            <img src="https://picsum.photos/1000/500?image=1" alt="">
+                        </div>
+                        <div class="col-md-4 flex-center-column headline-a">
+                            <div class="img-cover"></div>
+                            <p class="a-title">Alpha is coming!</p>
+                            <p class="a-content">by Amanda showman</p>
+                            <img src="https://picsum.photos/1000/500?image=11" alt="">
+                        </div>
+                    </div>
+                    <!-- headline-b b-row -->
+                    <div class="row no-gutters">
+                        <div class="col-md-4 headline-b">
+                            <div class="img-cover-b">
+                                <img src="https://picsum.photos/1000/500?image=21" alt="">
+                            </div>
+                            <div class="title-wrap-b flex-center-column">
+                                <b>Javascript is awesome! and Great! and Sexy!Javascript is awesome! and Great! and Sexy!</b>
+                                <small>by Joe H.J</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4 headline-b">
+                            <div class="img-cover-b">
+                                <img src="https://picsum.photos/1000/500?image=31" alt="">
+                            </div>
+                            <div class="title-wrap-b flex-center-column">
+                                <b>Javascript is awesome! and Great! and Sexy!</b>
+                                <small>by Joe H.J</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4 headline-b">
+                            <div class="img-cover-b">
+                                <img src="https://picsum.photos/1000/500?image=41" alt="">
+                            </div>
+                            <div class="title-wrap-b flex-center-column">
+                                <b>Javascript is awesome! and Great! and Sexy!</b>
+                                <small>by Joe H.J</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- headline-c c-row -->
+                    <div class="row no-gutters">
+                        <div class="col-md-3 headline-c">
+                            <img src="https://picsum.photos/1000?image=51" alt="">
+                            <div class="w-100 h-100 flex-center c-wrap">
+                                <div class="c-text-wrap flex-center-column">
+                                    <b>Vue.js ES6 Node.js Ecmascript Webpack</b>
+                                    <small>by YeaEum-KIM smith</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 headline-c">
+                            <img src="https://picsum.photos/1000?image=61" alt="">
+                            <div class="w-100 h-100 flex-center c-wrap">
+                                <div class="c-text-wrap flex-center-column">
+                                    <b>Vue.js ES6 Node.js Ecmascript Webpack ue.js ES6 Node.js Ecmascript Webpack</b>
+                                    <small>by YeaEum-KIM smith</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 headline-c">
+                            <img src="https://picsum.photos/1000?image=71" alt="">
+                            <div class="w-100 h-100 flex-center c-wrap">
+                                <div class="c-text-wrap flex-center-column">
+                                    <b>Vue.js ES6 Node.js Ecmascript Webpack</b>
+                                    <small>by YeaEum-KIM smith</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 headline-c">
+                            <img src="https://picsum.photos/1000?image=81" alt="">
+                            <div class="w-100 h-100 flex-center c-wrap">
+                                <div class="c-text-wrap flex-center-column">
+                                    <b>Vue.js ES6 Node.js Ecmascript Webpack</b>
+                                    <small>by YeaEum-KIM smith</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- TWITTER -->
+                <article class="twitter">
+                    <div class="container p-0">
+                        <!-- Twitter Logo -->
+                        <div class="flex-center twitter-logo-wrap bg-white">
+                            <div class="twitter-logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/ko/thumb/9/9e/%ED%8A%B8%EC%9C%84%ED%84%B0_%EB%A1%9C%EA%B3%A0_%282012%29.svg/1200px-%ED%8A%B8%EC%9C%84%ED%84%B0_%EB%A1%9C%EA%B3%A0_%282012%29.svg.png"
+                                    alt="">
+                            </div>
+                        </div>
+                        <!-- Twitter Content -->
+                        <div class="row m-0">
+                            <!-- Koinvestor Twitter Introduce and Link -->
+                            <div class="col-lg-3 twitter-left-wrapper" data-sticky-container>
+                                <div class="row bg-white t-koinvestor-link px-4 m-0 opacity-0 animated" data-sticky data-margin-top="155">
+                                    <div class="col-12 pt-4 pb-1 fs-11">
+                                        KOINVESTOR
+                                    </div>
+                                    <!-- t-project-item -->
+                                    <div class="t-project-items">
+                                        <div class="col-12 py-4">
+                                            <div class="row justify-content-center">
+                                                <div class="col-3 t-project-logo pr-0">
+                                                    <img src="./img/logo/paypie_m.svg" alt="">
+                                                </div>
+                                                <div class="col">
+                                                    <p class="fs-09 w900 m-0">PayPie</p>
+                                                    <p class="fs-08 text-gray-light m-0 pb-2 py-1">@paypie</p>
+                                                    <button class="t-project-btn">보기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row justify-content-center">
+                                                <div class="col t-p-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- t-project-item -->
+                                    <div class="t-project-items">
+                                        <div class="col-12 py-4">
+                                            <div class="row justify-content-center">
+                                                <div class="col-3 t-project-logo pr-0">
+                                                    <img src="./img/logo/paypie_m.svg" alt="">
+                                                </div>
+                                                <div class="col">
+                                                    <p class="fs-09 w900 m-0">PayPie</p>
+                                                    <p class="fs-08 text-gray-light m-0 pb-2 py-1">@paypie</p>
+                                                    <button class="t-project-btn">보기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row justify-content-center">
+                                                <div class="col t-p-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- t-project-item -->
+                                    <div class="t-project-items">
+                                        <div class="col-12 py-4">
+                                            <div class="row justify-content-center">
+                                                <div class="col-3 t-project-logo pr-0">
+                                                    <img src="./img/logo/playkey_m.svg" alt="">
+                                                </div>
+                                                <div class="col">
+                                                    <p class="fs-09 w900 m-0">Play Key</p>
+                                                    <p class="fs-08 text-gray-light m-0 pb-2 py-1">@playkey</p>
+                                                    <button class="t-project-btn">보기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-12">
+                                            <div class="row justify-content-center">
+                                                <div class="col t-p-line"></div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Twitter timeline -->
+                            <div class="col-lg-6 bg-white">
+                                <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
+                                    <div class="row">
+                                        <div class="col-2 t-timeline-logo text-center px-0">
+                                            <img src="./img/logo/telegram.svg" alt="">
+                                        </div>
+                                        <div class="col-10 t-timeline-content pl-0">
+                                            <p class="w900">
+                                                Telegram
+                                                <span class="text-gray-light fs-08 ml-4">@telegram</span>
+                                                <span class="text-gray-light fs-08">6월 18일</span>
+                                            </p>
+                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus
+                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis, facilis
+                                                veritatis nobis doloremque ratione veniam porro delectus asperiores dolorum,
+                                                totam recusandae.</p>
+                                            <img src="https://picsum.photos/1000?image=91" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
+                                    <div class="row">
+                                        <div class="col-2 t-timeline-logo text-center px-0">
+                                            <img src="./img/logo/telegram.svg" alt="">
+                                        </div>
+                                        <div class="col-10 t-timeline-content pl-0">
+                                            <p class="w900">
+                                                Telegram
+                                                <span class="text-gray-light fs-08 ml-4">@telegram</span>
+                                                <span class="text-gray-light fs-08">6월 18일</span>
+                                            </p>
+                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus
+                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis, facilis
+                                                veritatis nobis doloremque ratione veniam porro delectus asperiores dolorum,
+                                                totam recusandae.</p>
+                                            <img src="https://picsum.photos/300/400?image=101" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
+                                    <div class="row">
+                                        <div class="col-2 t-timeline-logo text-center px-0">
+                                            <img src="./img/logo/telegram.svg" alt="">
+                                        </div>
+                                        <div class="col-10 t-timeline-content pl-0">
+                                            <p class="w900">
+                                                Telegram
+                                                <span class="text-gray-light fs-08 ml-4">@telegram</span>
+                                                <span class="text-gray-light fs-08">6월 18일</span>
+                                            </p>
+                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus
+                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis, facilis
+                                                veritatis nobis doloremque ratione veniam porro delectus asperiores dolorum,
+                                                totam recusandae.</p>
+                                            <img src="https://picsum.photos/600/200?image=111" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
+                                    <div class="row">
+                                        <div class="col-2 t-timeline-logo text-center px-0">
+                                            <img src="./img/logo/telegram.svg" alt="">
+                                        </div>
+                                        <div class="col-10 t-timeline-content pl-0">
+                                            <p class="w900">
+                                                Telegram
+                                                <span class="text-gray-light fs-08 ml-4">@telegram</span>
+                                                <span class="text-gray-light fs-08">6월 18일</span>
+                                            </p>
+                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus
+                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis, facilis
+                                                veritatis nobis doloremque ratione veniam porro delectus asperiores dolorum,
+                                                totam recusandae.</p>
+                                            <img src="https://picsum.photos/200/400?image=131" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
+                                    <div class="row">
+                                        <div class="col-2 t-timeline-logo text-center px-0">
+                                            <img src="./img/logo/telegram.svg" alt="">
+                                        </div>
+                                        <div class="col-10 t-timeline-content pl-0">
+                                            <p class="w900">
+                                                Telegram
+                                                <span class="text-gray-light fs-08 ml-4">@telegram</span>
+                                                <span class="text-gray-light fs-08">6월 18일</span>
+                                            </p>
+                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus
+                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis, facilis
+                                                veritatis nobis doloremque ratione veniam porro delectus asperiores dolorum,
+                                                totam recusandae.</p>
+                                            <img src="https://picsum.photos/500?image=141" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 py-5 text-center">
+                                    <span class="cursor-pointer fs-11 text-success">더보기</span>
+                                </div>
+                            </div>
+                            <!-- Twitter Project Menu -->
+                            <div class="col-lg-3 twitter-right-wrapper" data-sticky-container>
+                                <div class="row bg-white t-project-menu-wrap px-4 m-0 opacity-0 animated" data-sticky data-margin-top="155">
+                                    <div class="col-12 pt-4 pb-1 fs-11">
+                                        프로젝트 보기
+                                    </div>
+                                    <!-- t-project-item -->
+                                    <div class="col-12 py-4">
+                                        <div class="row justify-content-center">
+                                            <div class="col-3 t-project-logo pr-0">
+                                                <img src="./img/logo/telegram.svg" alt="">
+                                            </div>
+                                            <div class="col">
+                                                <p class="fs-09 w900 m-0">Telegram</p>
+                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@telgram</p>
+                                                <button class="t-project-btn">보기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row justify-content-center">
+                                            <div class="col t-p-line"></div>
+                                        </div>
+                                    </div>
+                                    <!-- t-project-item -->
+                                    <div class="col-12 py-4">
+                                        <div class="row justify-content-center">
+                                            <div class="col-3 t-project-logo pr-0">
+                                                <img src="./img/logo/windingtree.svg" alt="">
+                                            </div>
+                                            <div class="col">
+                                                <p class="fs-09 w900 m-0">Winding Tree</p>
+                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@windingtree</p>
+                                                <button class="t-project-btn">보기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row justify-content-center">
+                                            <div class="col t-p-line"></div>
+                                        </div>
+                                    </div>
+                                    <!-- t-project-item -->
+                                    <div class="col-12 py-4">
+                                        <div class="row justify-content-center">
+                                            <div class="col-3 t-project-logo pr-0">
+                                                <img src="./img/logo/rsk.svg" alt="">
+                                            </div>
+                                            <div class="col">
+                                                <p class="fs-09 w900 m-0">Root Stock</p>
+                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@rootstock</p>
+                                                <button class="t-project-btn">보기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row justify-content-center">
+                                            <div class="col t-p-line"></div>
+                                        </div>
+                                    </div>
+                                    <!-- t-project-item -->
+                                    <div class="col-12 py-4">
+                                        <div class="row justify-content-center">
+                                            <div class="col-3 t-project-logo pr-0">
+                                                <img src="./img/logo/qash_m.svg" alt="">
+                                            </div>
+                                            <div class="col">
+                                                <p class="fs-09 w900 m-0">QASH</p>
+                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@qash</p>
+                                                <button class="t-project-btn">보기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row justify-content-center">
+                                            <div class="col t-p-line"></div>
+                                        </div>
+                                    </div>
+                                    <!-- t-project-item -->
+                                    <div class="col-12 py-4">
+                                        <div class="row justify-content-center">
+                                            <div class="col-3 t-project-logo pr-0">
+                                                <img src="./img/logo/paypie_m.svg" alt="">
+                                            </div>
+                                            <div class="col">
+                                                <p class="fs-09 w900 m-0">PayPie</p>
+                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@paypie</p>
+                                                <button class="t-project-btn">보기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row justify-content-center">
+                                            <div class="col t-p-line"></div>
+                                        </div>
+                                    </div>
+                                    <!-- t-project-item -->
+                                    <div class="col-12 py-4">
+                                        <div class="row justify-content-center">
+                                            <div class="col-3 t-project-logo pr-0">
+                                                <img src="./img/logo/playkey_m.svg" alt="">
+                                            </div>
+                                            <div class="col">
+                                                <p class="fs-09 w900 m-0">Play Key</p>
+                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@playkey</p>
+                                                <button class="t-project-btn">보기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-12">
+                                            <div class="row justify-content-center">
+                                                <div class="col t-p-line"></div>
+                                            </div>
+                                        </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- NOTICE -->
+            <section class="notice d-none">
+                <!-- 공지사항 심볼 영역 -->
+                <articel class="d-flex justify-content-center py-5 border-bottom border-top">
+                    <div class="floating-btn flex-center rounded-circle shadow-box">
+                        <div id="line-wrapper">
+                            <div id="line-top" class="line line-top line-top-reverse init"></div>
+                            <!-- <div id="line-mid" clline ass="line init mid-reverse"></div> -->
+                            <div id="line-dot" class="line line-dot line-dot-reverse init"></div>
+                        </div>
+                    </div>
+                </articel>
+                <!-- 공지사항 내용 영역 시작 -->
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3 notice-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3 notice-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article id="10" class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3 notice-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article id="10" class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3 notice-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article id="10" class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3 notice-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article id="10" class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-6 text-gray-dark">
+                        <div class="col-lg-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-lg-12 my-5 text-black">
+                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+        </main>
+    </div>
+    <footer>
+        <div class="main-footer d-flex justify-content-center w-100 bg-dark">
+            <div class="w-1100px">
+                <div class="row m-0 text-gray pt-4">
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-lg-4 d-flex justify-content-center">
+                                <span class="fs-18 w250">KOINVESTOR</span>
+                            </div>
+                            <div class="col-lg-8 pl-0">
+                                <p class="">
+                                    코인베스터는 각국의 프로젝트팀과의 긴밀한 co-work을 통하여
+                                    <br> 신뢰할 만한 뉴스와 정보를 가장 빠르고 정확하게 전달하고 있습니다.
+                                </p>
+                                <p class="fs-08 text-gray-deep-dark">
+                                    KOIINVESTOR deliver reliable news and information quickly and accurately
+                                    <br> through close co-work with all over the world’s project teams.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <ul class="d-inline-block pl-0">
+                            <li>개인정보처리방침</li>
+                            <li>서비스이용약관</li>
+                            <li>제휴제안</li>
+                            <li>고객센터</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12 pt-4 pl-5">
+                        <span class="pl-3">
+                            copyⓒright 2018 0316COMPANY. All rights reserved.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Sticky-JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script>
+    <!-- Waypoints -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+    <!-- ScrollReveal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script>
+    <!-- custom JS -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
