@@ -1,0 +1,426 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'NanumBarunGothic', sans-serif;
+    font-size: 14px;
+    background-color: #F7F7F7;
+}
+
+*:focus {
+    outline: none;
+}
+
+/* 중앙 정렬 */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-center-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 사이즈 */
+.w-1100px {
+    width: 1100px;
+}
+
+
+/* 
+그림자 효과
+*/
+
+.shadow-box {
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+.shadow-box-inset {
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* 
+폰트 Font
+*/
+/* 폰트 사이즈 Font-size */
+.fs-08 {
+    font-size: 0.8rem;
+}
+.fs-09 {
+    font-size: 0.9rem;
+}
+.fs-11 {
+    font-size: 1.1rem;
+}
+.fs-12 {
+    font-size: 1.2rem;
+}
+.fs-13 {
+    font-size: 1.3rem;
+}
+.fs-14 {
+    font-size: 1.4rem;
+}
+.fs-15 {
+    font-size: 1.5rem;
+}
+.fs-16 {
+    font-size: 1.6rem;
+}
+.fs-17 {
+    font-size: 1.7rem;
+}
+.fs-18 {
+    font-size: 1.8rem;
+}
+.fs-19 {
+    font-size: 1.9rem;
+}
+.fs-20 {
+    font-size: 2.0rem;
+}
+/* 폰트 두께 */
+.normal {
+    font-style: normal;
+}
+.w250 {
+    font-weight: 250;
+}
+
+.w300 {
+    font-weight: 300;
+}
+
+.w350 {
+    font-weight: 350;
+}
+
+.w400 {
+    font-weight: 400;
+}
+
+.w500 {
+    font-weight: 500;
+}
+
+.w700 {
+    font-weight: 700;
+}
+
+.w800 {
+    font-weight: 800;
+}
+
+.w900 {
+    font-weight: 900;
+}
+
+
+/* 
+색상 Color
+*/
+/* 폰트 색상 */
+.text-gray-light {
+    color: #b8b8b8;
+}
+.text-gray {
+    color: #959595;
+}
+.text-gray-dark {
+    color: #757575;
+}
+.text-gray-deep-dark {
+    color: #585858;
+}
+
+.text-black {
+    color: #000000;
+}
+
+/* 투명도 */
+.opacity-0 {
+    opacity: 0;
+}
+.opacity-5 {
+    opacity: .5;
+}
+
+
+/* 줄바꿈 */
+.word-break {
+    word-break: break-all;
+}
+
+
+/* Input PlaceHolder Color */
+::-webkit-input-placeholder {
+    /* 크롬 4–56 */
+    color: #d0d0d0;
+}
+
+:-moz-placeholder {
+    /* 파이어폭스 4–18 */
+    color: #d0d0d0;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* 파이어폭스 19–50 */
+    color: #d0d0d0;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* 인터넷 익스플로러 10+ */
+    color: #d0d0d0;
+}
+
+::placeholder {
+    /* 파이어폭스 51+, 크롬 57+ */
+    color: #d0d0d0;
+    opacity: 1;
+}
+
+/* Material ICON */
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-30 {
+    font-size: 30px;
+}
+
+.material-icons.md-35 {
+    font-size: 35px;
+}
+
+.material-icons.md-40 {
+    font-size: 40px;
+}
+
+.material-icons.md-45 {
+    font-size: 45px;
+}
+
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Floating Button */
+
+.display-toggle {
+    display: none;
+}
+
+.floating-btn {
+    width: 4rem;
+    height: 4rem;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #3C3B3B;
+}
+
+div[name='floating-btn'] {
+    z-index: 999;
+}
+
+.floating-child {
+    width: 23rem;
+    height: 7rem;
+    right: 2rem;
+    background-color: #fcfcfc;
+    z-index: 9999;
+    box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, .2),
+    0px 1px 0px 0px rgba(255, 255, 255, .8);
+    animation-duration: .45s;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.floating-child:nth-child(1) {
+    bottom: 7rem;
+}
+
+.floating-child:nth-child(2) {
+    bottom: 14.5rem;
+    animation-delay: .05s;
+}
+
+.floating-child:nth-child(3) {
+    bottom: 22rem;
+    animation-delay: .1s;
+}
+
+.floating-child:nth-child(4) {
+    bottom: 29.5rem;
+    animation-delay: .15s;
+}
+
+.floating-child:nth-child(5) {
+    bottom: 37rem;
+    animation-delay: .2s;
+}
+
+.floating-child:hover {
+    box-shadow: 3px 3px 10px 0px #575757;
+}
+
+/* 플로팅 버튼이외 여타 애벽 */
+.floating-blank {
+    right: 0;
+    position: fixed;
+    background-color:#000000;
+    opacity: 0.2;
+    z-index: 998;
+}
+
+.floating-blank-ani {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* HamBURGER Design and Animation */
+
+.init {
+    animation: none !important;
+}
+
+.line-top {
+    background: #ffffff;
+    /* margin-top: 6px; */
+    margin-bottom: 4px;
+    width: 7px;
+    height: 22px;
+    border-radius: 2px;
+    position: relative;
+}
+
+.line-dot {
+    background: #ffffff;
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    position: relative;
+}
+
+.line-top-ani {
+    animation: line-top .3s forwards ease-out;
+}
+
+.line-top-reverse {
+    animation: line-top-reverse .5s forwards ease-out;
+}
+
+.line-dot-ani {
+    animation: line-dot .3s forwards ease-out;
+}
+
+.line-dot-reverse {
+    animation: line-dot-reverse .5s forwards ease-out;
+}
+
+
+@keyframes line-top {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: translateY(12px) rotateZ(-45deg);
+        width: 2px;
+        height: 24px;
+        margin-bottom: 0;
+    }
+}
+
+@keyframes line-top-reverse {
+    0% {
+        transform: translateY(12px) rotateZ(-45deg);
+        width: 2px;
+        height: 24px;
+        margin-bottom: 0;
+    }
+    20% {
+        transform: rotateZ(-90deg);
+    }
+    40% {
+        transform: rotateZ(-180deg);
+    }
+    60% {
+        transform: rotateZ(-240deg);
+    }
+    100% {
+        transform: translateY(0px) rotateZ(0deg);
+    }
+}
+
+@keyframes line-dot {
+    0% {
+        transform: rotateZ(0deg)
+    }
+    100% {
+        transform: translateY(-12px) rotateZ(45deg);
+        width: 2px;
+        height: 24px;
+    }
+}
+
+@keyframes line-dot-reverse {
+    0% {
+        transform: translateY(-12px) rotateZ(45deg);
+        width: 2px;
+        height: 24px;
+    }
+    100% {
+        transform: translateY(0px) rotateZ(0deg);
+    }
+}
