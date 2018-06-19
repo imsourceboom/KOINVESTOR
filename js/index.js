@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     /*
     Array.from Polyfill
-    참조 - MDN(https: //developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+    참조 - MDN (https: //developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
     */
     if (!Array.from) {
         Array.from = (function () {
@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }());
     }
 
-    /*
+
+    /* 
     플로팅 버튼 + 헴버거 애니메이션 이벤트
     */
     // 플로팅 버튼
