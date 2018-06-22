@@ -34,20 +34,26 @@ body {
 *:focus {
     outline: none;
 }
-
+/* Flex */
 /* 중앙 정렬 */
 .flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.flex-center-column {
+/* 세로축 중앙 정렬 */
+.flex-c-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
+/* 세로축 between */
+.flex-c-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 /* 사이즈 */
 .w-1100px {
@@ -337,7 +343,7 @@ div[name='floating-btn'] {
 }
 
 
-/* HamBURGER Design and Animation */
+/* 느낌표 Design and Animation */
 
 .init {
     animation: none !important;
@@ -431,4 +437,46 @@ div[name='floating-btn'] {
     100% {
         transform: translateY(0px) rotateZ(0deg);
     }
+}
+
+
+/* HamBurger */
+
+.hbg-box {
+    position: relative;
+    width: 1.5rem;
+    height: 1rem;
+}
+
+.hbg-line-top,
+.hbg-line-mid,
+.hbg-line-bot {
+    width: 100%;
+    height: 2px;
+    background-color: #696969;
+    position: absolute;
+    transition: .5s;
+}
+
+.hbg-line-top {
+    top: 0;
+}
+
+.hbg-line-mid {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.hbg-line-bot {
+    bottom: 0;
+}
+
+.hbg-line-top.top-deg {
+    transform: translate(0, -50%) rotate(135deg);
+    top: 50%;
+}
+
+.hbg-line-bot.bot-deg {
+    transform: translate(0, 50%) rotate(-315deg);
+    bottom: 50%;
 }
