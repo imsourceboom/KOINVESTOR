@@ -2,10 +2,10 @@
     background-color: #ffffff;
 }
 
-.header-back-space {
+/* .header-back-space {
     width: 1100px;
     height: 10rem;
-}
+} */
 
 /* Header */
 .header {
@@ -70,13 +70,19 @@ ul li {
     height: 4rem;
     z-index: 997;
     background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
     animation-duration: .5s;
+}
+.search-wrap-desk > .s-input-wrap {
+    padding-left: 3rem;
 }
 
 .search-wrap-desk input {
     border: none;
     height: 4rem;
     font-size: 1.6rem;
+    padding-left: 3rem;
+    border-bottom: 1px solid #dee2e6;
 }
 
 /* Main */
@@ -84,6 +90,7 @@ ul li {
 .main {
     width: 1100px;
     z-index: 2;
+    padding-top: 10rem;
 }
 
 /* INDEX section */
