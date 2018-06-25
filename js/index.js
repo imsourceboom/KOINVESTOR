@@ -11,8 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
             };
             var toInteger = function (value) {
                 var number = Number(value);
-                if (isNaN(number)) { return 0; }
-                if (number === 0 || !isFinite(number)) { return number; }
+                if (isNaN(number)) {
+                    return 0;
+                }
+                if (number === 0 || !isFinite(number)) {
+                    return number;
+                }
                 return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
             };
             var maxSafeInteger = Math.pow(2, 53) - 1;
@@ -22,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // The length property of the from method is 1.
-            return function from(arrayLike/*, mapFn, thisArg */) {
+            return function from(arrayLike /*, mapFn, thisArg */ ) {
                 // 1. Let C be the this value.
                 var C = this;
 
@@ -81,6 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+
+    // Header Mobile
+    var headerMobile = document.querySelector('.m-header');
     /* 
     플로팅 버튼 + 헴버거 애니메이션 이벤트
     */
@@ -97,21 +104,19 @@ document.addEventListener('DOMContentLoaded', function () {
     var lineTop = document.getElementById('line-top');
     var lineDot = document.getElementById('line-dot');
     /* 
-    Header 의 Search 영역
+    Header 영역
     */
     // 검색 아이콘
     var searchIcon = document.querySelector('[name=search-icon]');
+    // 검색 아이콘 Mobile
+    var searchIconMobile = document.querySelector('[name=m-search-icon]');
     // 검색 닫기 아이콘
     var closeIcon = document.querySelector('[name=close-icon]');
-    var searchWrapDesk = document.querySelector('.search-wrap-desk');
-    /*
-    Main page Twitter variables
+    /* 
+    Search 영역
     */
-    // Twitter Project menu wrapper
-    var tProjectMenu = document.querySelector('.t-project-menu-wrap');
-    // Twitter Koinvestor link and intro wrapper
-    var tKoinvestorLink = document.querySelector('.t-koinvestor-link');
-
+    // 검색 영역
+    var searchWrapDesk = document.querySelector('.search-wrap-desk'); 
 
 
 
@@ -159,16 +164,53 @@ document.addEventListener('DOMContentLoaded', function () {
         lineDot.classList.toggle('line-dot-ani');
     })
 
-    // Search Icon 클릭 이벤트
+    // Search Icon Click Event ( DeskTop Ver. )
+    /*
+    Search 영역이 화면에 나타난다.
+    */
     searchIcon.addEventListener('click', function () {
-        searchWrapDesk.classList.remove('d-none');
+        searchWrapDesk.classList.toggle('d-none');
         searchWrapDesk.classList.remove('fadeOutRight');
         searchWrapDesk.classList.add('fadeInRight');
     })
+
     // Close Icon 클릭 이벤트
     closeIcon.addEventListener('click', function () {
         searchWrapDesk.classList.add('fadeOutRight');
         searchWrapDesk.classList.remove('fadeInRight');
+        setTimeout(function () {
+            searchWrapDesk.classList.toggle('d-none');
+        }, 600);
+    })
+
+    // ( Mobile Ver. ) Search Icon Click Event
+    /*
+    - Search 영역이 위 아래 애니메이션으로 화면에 추가 및 삭제 됨
+    - Header 영역이 Search 영역과 같이 위 아래로 움직임
+    - Icon이 Search 와 Close 로 Toggl
+    */
+    searchIconMobile.addEventListener('click', function () {
+        if (searchWrapDesk.classList.contains('d-none')) {
+            if (searchWrapDesk.classList.contains('fadeOutUp')) {
+                searchWrapDesk.classList.toggle('fadeOutUp');
+            }
+            searchWrapDesk.classList.toggle('d-none');
+            searchWrapDesk.classList.toggle('fadeInDown');
+        } else {
+            searchWrapDesk.classList.toggle('fadeInDown');
+            searchWrapDesk.classList.toggle('fadeOutUp');
+            setTimeout(function () {
+                searchWrapDesk.classList.toggle('d-none');
+            }, 600);
+        }
+
+        headerMobile.classList.toggle('m-header-movedown');
+
+        if (this.innerText == 'search') {
+            this.innerText = 'close';
+        } else {
+            this.innerText = 'search';
+        }
     })
 
 
@@ -184,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Twitter right wrpper의 project-menu-wrap
     var waypoint = new Waypoint({
         element: document.querySelector('.t-project-menu-wrap'),
-        handler: function(item) {
+        handler: function (item) {
             this.element.classList.add('fadeInUp');
         },
         offset: '50%'
@@ -197,15 +239,25 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         offset: 'bottom-in-view'
     })
+
     /*
     ScrollReveal
     */
-   window.sr = ScrollReveal();
-   sr.reveal('.main-footer', {
-       reset: true,
-       distance: '400px',
-       scale: 1,
-       duration: 1000
-   });
+    window.sr = ScrollReveal();
+    sr.reveal('.main-footer', {
+        reset: true,
+        distance: '400px',
+        scale: 1,
+        duration: 1000
+    });
+
+    // ( Mobile ver. ) Hamburger Menu Event
+    var hamburger = document.querySelector('.hbg-box');
+    hamburger.addEventListener('click', function () {
+        hamburger.children[0].classList.toggle('top-deg');
+        hamburger.children[1].classList.toggle('opacity-0');
+        hamburger.children[2].classList.toggle('bot-deg');
+    })
+
 
 })
