@@ -118,11 +118,11 @@
     <div class="floating-blank"></div>
 
     <!-- 전체 wrap -->
-    <div class="d-flex justify-content-center">
+    <div class="root-wrap d-flex justify-content-center">
         <!-- Search -->
-        <div class="search-wrap-desk row align-items-center no-gutters position-fixed border-bottom pl-3 d-none animated">
-            <div class="col-lg-11 pl-5">
-                <input type="text" class="w-100 border-bottom pl-5" placeholder="검색어">
+        <div class="search-wrap-desk row align-items-center no-gutters position-fixed pl-3 d-none animated">
+            <div class="col-lg-11 s-input-wrap">
+                <input type="text" class="w-100" placeholder="검색어">
             </div>
             <div class="col-lg-1">
                 <span class="d-flex justify-content-center">
@@ -132,7 +132,7 @@
                 </span>
             </div>
         </div>
-        <!-- Header -->
+        <!-- Header DeskTop -->
         <header class="header position-fixed bg-white">
             <!-- Header의 Menu 영역 -->
             <div class="row mx-0 menu-wrap align-items-center border-bottom">
@@ -194,41 +194,43 @@
                         KOINVESTOR
                     </div>
                     <div class="col">
-                        <i name="search-icon" class="material-icons md-20 float-right">
+                        <i name="m-search-icon" class="material-icons md-20 float-right">
                             search
                         </i>
                     </div>
                     <div class="col-auto pl-0 pr-4">
-                        <div class="flex-center m-hamburger">
-                            <span class="m-menu-line"></span>
+                        <div class="flex-center">
+                            <!-- Hamburger -->
+                            <div class="hbg-box">
+                                <div class="hbg-line-top"></div>
+                                <div class="hbg-line-mid"></div>
+                                <div class="hbg-line-bot"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
 
-
-
         <!-- 메인 컨텐츠 영역 -->
         <main class="main">
-            <!-- Header Space Area -->
-            <div class="header-back-space"></div>
 
-            <!-- 변경되는 영역 -->
+            <!-- 화면 변경되는 영역 -->
 
+            <!-- Desk-Top Ver. -->
             <!-- index Page -->
             <section class="index">
                 <!-- HEADLINE -->
                 <article class="headline container-fluid text-center pb-5 bg-white">
                     <!-- headline-a a-row -->
                     <div class="row no-gutters">
-                        <div class="col-md-8 flex-center-column headline-a">
+                        <div class="col-md-8 flex-c-center headline-a">
                             <div class="img-cover"></div>
                             <p class="a-title">Alpha is coming!</p>
                             <p class="a-content">by Amanda showman</p>
                             <img src="https://picsum.photos/1000/500?image=1" alt="">
                         </div>
-                        <div class="col-md-4 flex-center-column headline-a">
+                        <div class="col-md-4 flex-c-center headline-a">
                             <div class="img-cover"></div>
                             <p class="a-title">Alpha is coming!</p>
                             <p class="a-content">by Amanda showman</p>
@@ -241,7 +243,7 @@
                             <div class="img-cover-b">
                                 <img src="https://picsum.photos/1000/500?image=21" alt="">
                             </div>
-                            <div class="title-wrap-b flex-center-column">
+                            <div class="title-wrap-b flex-c-center">
                                 <b>Javascript is awesome! and Great! and Sexy!Javascript is awesome! and Great! and Sexy!</b>
                                 <small>by Joe H.J</small>
                             </div>
@@ -250,7 +252,7 @@
                             <div class="img-cover-b">
                                 <img src="https://picsum.photos/1000/500?image=31" alt="">
                             </div>
-                            <div class="title-wrap-b flex-center-column">
+                            <div class="title-wrap-b flex-c-center">
                                 <b>Javascript is awesome! and Great! and Sexy!</b>
                                 <small>by Joe H.J</small>
                             </div>
@@ -259,7 +261,7 @@
                             <div class="img-cover-b">
                                 <img src="https://picsum.photos/1000/500?image=41" alt="">
                             </div>
-                            <div class="title-wrap-b flex-center-column">
+                            <div class="title-wrap-b flex-c-center">
                                 <b>Javascript is awesome! and Great! and Sexy!</b>
                                 <small>by Joe H.J</small>
                             </div>
@@ -270,7 +272,7 @@
                         <div class="col-md-3 headline-c">
                             <img src="https://picsum.photos/1000?image=51" alt="">
                             <div class="w-100 h-100 flex-center c-wrap">
-                                <div class="c-text-wrap flex-center-column">
+                                <div class="c-text-wrap flex-c-center">
                                     <b>Vue.js ES6 Node.js Ecmascript Webpack</b>
                                     <small>by YeaEum-KIM smith</small>
                                 </div>
@@ -279,7 +281,7 @@
                         <div class="col-md-3 headline-c">
                             <img src="https://picsum.photos/1000?image=61" alt="">
                             <div class="w-100 h-100 flex-center c-wrap">
-                                <div class="c-text-wrap flex-center-column">
+                                <div class="c-text-wrap flex-c-center">
                                     <b>Vue.js ES6 Node.js Ecmascript Webpack ue.js ES6 Node.js Ecmascript Webpack</b>
                                     <small>by YeaEum-KIM smith</small>
                                 </div>
@@ -288,7 +290,7 @@
                         <div class="col-md-3 headline-c">
                             <img src="https://picsum.photos/1000?image=71" alt="">
                             <div class="w-100 h-100 flex-center c-wrap">
-                                <div class="c-text-wrap flex-center-column">
+                                <div class="c-text-wrap flex-c-center">
                                     <b>Vue.js ES6 Node.js Ecmascript Webpack</b>
                                     <small>by YeaEum-KIM smith</small>
                                 </div>
@@ -297,7 +299,7 @@
                         <div class="col-md-3 headline-c">
                             <img src="https://picsum.photos/1000?image=81" alt="">
                             <div class="w-100 h-100 flex-center c-wrap">
-                                <div class="c-text-wrap flex-center-column">
+                                <div class="c-text-wrap flex-c-center">
                                     <b>Vue.js ES6 Node.js Ecmascript Webpack</b>
                                     <small>by YeaEum-KIM smith</small>
                                 </div>
@@ -606,7 +608,6 @@
                     </div>
                 </article>
             </section>
-
             <!-- NOTICE -->
             <section class="notice d-none">
                 <!-- 공지사항 심볼 영역 -->
@@ -886,6 +887,184 @@
                 </article>
             </section>
 
+            <!-- Mobile Ver. -->
+            <!-- M-index -->
+            <section class="m-index">
+                <!-- m-headline -->
+                <article class="m-headline-wrap">
+                    <div class="row no-gutters text-center">
+                        <div class="col-12 m-headline-img-cover">
+                            <div class="m-cover-in-scroll">
+                                <div class="icon-scroll"></div>
+                            </div>
+                            <img class="m-headline-img" src="https://picsum.photos/1000/500?image=22" alt="">
+                        </div>
+                        <div class="col-12 m-headline-text-cover">
+                            <div class="row">
+                                <div class="col-12 px-5">
+                                    <div class="flex-center">
+                                        <p class="w900 fs-12">
+                                        페이파이 '알파 서비스 출시 예정'
+                                         <!-- 상당히도 많이 기대가 됩니다. -->
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12 px-5">
+                                    <div class="m-headline-context text-gray">
+                                        우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만
+                                        집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의
+                                        신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파
+                                        버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는
+                                        것이다.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- News -->
+                <article class="m-news-wrap">
+                    <div class="container pt-4">
+                        <!-- 블록체인 뉴스 wrapper -->
+                        <div class="row pb-5">
+                            <div class="col-12 border-bottom">
+                                <div class="row">
+                                    <div class="col w700">
+                                        블록체인 뉴스
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="material-icons md-22 text-gray-light">
+                                            add
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 py-3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-auto m-index-news-title">
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러부은 궁금하지 않나요?
+                                            </div>
+                                            <div class="col-auto px-0">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-gray m-headline-context fs-09">
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-auto m-index-news-title">
+                                                광고없는 텔레그램 사용자 2억명 돌파
+                                            </div>
+                                            <div class="col-auto px-0">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-gray m-headline-context">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nam quasi autem rerum numquam, minima voluptas cum nulla
+                                        quam similique consequuntur voluptatibus ex, ratione soluta nostrum magni. Nesciunt,
+                                        incidunt? Labore.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 프로젝트 소식 wrapper -->
+                        <div class="row pb-5">
+                            <div class="col-12 border-bottom">
+                                <div class="row">
+                                    <div class="col w700">
+                                        프로젝트 소식
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="material-icons md-22 text-gray-light">
+                                            add
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 py-3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-1 index-project-img-cover">
+                                                <img src="./img/logo/ambrosus_m.svg" alt="">
+                                            </div>
+                                            <div class="col-auto m-index-project-title">
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러부은 궁금하지 않나요?
+                                            </div>
+                                            <div class="col-auto px-0">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-gray m-headline-context">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nam quasi autem rerum numquam, minima voluptas cum nulla
+                                        quam similique consequuntur voluptatibus ex, ratione soluta nostrum magni. Nesciunt,
+                                        incidunt? Labore.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-1 index-project-img-cover">
+                                                <img src="./img/logo/rsk.svg" alt="">
+                                            </div>
+                                            <div class="col-auto m-index-project-title">
+                                                광고없는 텔레그램 사용자 2억명 돌파
+                                            </div>
+                                            <div class="col-auto px-0">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-gray m-headline-context">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nam quasi autem rerum numquam, minima voluptas cum nulla
+                                        quam similique consequuntur voluptatibus ex, ratione soluta nostrum magni. Nesciunt,
+                                        incidunt? Labore.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Twitter and Telegram Icon -->
+                        <div class="container pt-3 pb-5">
+                            <div class="row justify-content-center">
+                                <div class="col-auto">
+                                    <div class="link-icons border flex-center p-2">
+                                        <img src="https://upload.wikimedia.org/wikipedia/ko/thumb/9/9e/%ED%8A%B8%EC%9C%84%ED%84%B0_%EB%A1%9C%EA%B3%A0_%282012%29.svg/1200px-%ED%8A%B8%EC%9C%84%ED%84%B0_%EB%A1%9C%EA%B3%A0_%282012%29.svg.png"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="link-icons">
+                                        <img src="./img/logo/telegram.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+
         </main>
     </div>
 
@@ -931,6 +1110,10 @@
 
     <!-- Prefixfree -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <!-- Web Animations API Polyfill -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+    <!-- Hammer.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <!-- Sticky-JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script>
     <!-- Waypoints -->
@@ -939,6 +1122,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script>
     <!-- custom JS -->
     <script src="./js/index.js"></script>
+
 </body>
 
 </html>
