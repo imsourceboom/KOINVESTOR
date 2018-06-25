@@ -1,10 +1,19 @@
 /* Mobile */
 
+/* Desktop ver. display none */
 .header,
+.index,
+.floating,
 footer {
     display: none;
 }
 
+.main {
+    width: 100%;
+    padding-top: 3.7rem;
+}
+
+/* Header */
 .m-header {
     width: 100%;
     height: 3.7rem;
@@ -20,16 +29,7 @@ footer {
     height: 7.4rem;
 }
 
-.main,
-.header-back-space {
-    width: 100%;
-    padding-top:3.7rem;
-}
-
-/* .header-back-space {
-    height: 3.7rem;
-} */
-
+/* Search */
 .search-wrap-desk {
     width: 100%;
     height: 3.7rem;
@@ -51,4 +51,133 @@ footer {
     font-size: 1rem;
     padding-left: 0;
     border-bottom: 0;
+}
+
+/* 
+Index Section
+*/
+.m-headline-wrap {
+    height: 80vh;
+}
+.m-headline-img-cover {
+    height: 60vh;
+}
+.m-headline-img-cover img {
+    position: relative;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+.m-headline-text-cover {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+}
+.m-headline-context {
+    height: 4.1rem;
+    display: block;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.4rem;
+}
+/* 마우스 스크롤 Wrapper */
+.m-cover-in-scroll {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+/* 마우스 스크롤 애니메이션 */
+.icon-scroll,
+.icon-scroll:before {
+    position: absolute;
+    left: 50%;
+}
+
+.icon-scroll {
+    width: 20px;
+    height: 35px;
+    margin-left: -20px;
+    bottom: 10px;
+    margin-top: -35px;
+    box-shadow: inset 0 0 0 1px white;
+    border-radius: 25px;
+}
+
+@media (max-width: 767px) {
+    .icon-scroll {
+        position: relative;
+    }
+}
+
+.icon-scroll:before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: white;
+    margin-left: -2px;
+    top: 8px;
+    border-radius: 4px;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: scroll;
+    animation-name: scroll;
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+
+/* index page의 블록체인, 프로젝트 소식 뉴스 타이틀 */
+.m-index-news-title {
+    max-width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.m-index-project-title {
+    max-width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 프로젝트 소식 title의 project icon */
+.index-project-img-cover img{
+    height: 100%;
+}
+
+/* Twitter and Telegram Icon Wrapper*/
+.link-icons {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.link-icons img {
+    width: 100%;
 }
