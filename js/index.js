@@ -85,7 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-
+    // Main Tag
+    var mainTag = document.querySelector('.main');
     // Header Mobile
     var headerMobile = document.querySelector('.m-header');
     /* 
@@ -116,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Search 영역
     */
     // 검색 영역
-    var searchWrapDesk = document.querySelector('.search-wrap-desk'); 
+    var searchWrapDesk = document.querySelector('.search-wrap-desk');
 
 
 
@@ -251,13 +252,73 @@ document.addEventListener('DOMContentLoaded', function () {
         duration: 1000
     });
 
-    // ( Mobile ver. ) Hamburger Menu Event
+    // ( Mobile ver. ) Hamburger Menu
+    // m-header에 있는 햄버거
     var hamburger = document.querySelector('.hbg-box');
+    // nav에 있는 햄버거
+    var navHamburger = document.querySelector('[name=nav-hbg]');
+    // nav Tag 페이지
+    var navPage = document.querySelector('.nav');
+
+    // Mobile Header Hamburger Click Event
+    // Header의 Hamburger와 Nav의 Hamburger class 동기화
     hamburger.addEventListener('click', function () {
         hamburger.children[0].classList.toggle('top-deg');
         hamburger.children[1].classList.toggle('opacity-0');
         hamburger.children[2].classList.toggle('bot-deg');
+        // navigation page 화면 In
+        if (navPage.classList.contains('d-none')) {
+            if (navPage.classList.contains('fadeOutRight')) {
+                navPage.classList.toggle('fadeOutRight');
+            }
+            navPage.classList.toggle('d-none');
+            navPage.classList.toggle('fadeInRight');
+        }
+
+        setTimeout(function () {
+            navHamburger.children[0].classList.toggle('top-deg');
+            navHamburger.children[1].classList.toggle('opacity-0');
+            navHamburger.children[2].classList.toggle('bot-deg');
+        }, 600);
+
+        mainTag.classList.toggle('d-none');
+    })
+    // Nav Page의 Hamburger Click Event
+    navHamburger.addEventListener('click', function () {
+        navHamburger.children[0].classList.toggle('top-deg');
+        navHamburger.children[1].classList.toggle('opacity-0');
+        navHamburger.children[2].classList.toggle('bot-deg');
+        // navigation page 화면 Out
+        navPage.classList.toggle('fadeInRight');
+        navPage.classList.toggle('fadeOutRight');
+        setTimeout(function () {
+            navPage.classList.toggle('d-none');
+        }, 600);
+
+        hamburger.children[0].classList.toggle('top-deg');
+        hamburger.children[1].classList.toggle('opacity-0');
+        hamburger.children[2].classList.toggle('bot-deg');
+
+        mainTag.classList.toggle('d-none');
     })
 
+
+
+    /*
+    Swiper
+    */
+    // Mobile HeadLine Swiper    
+    var mySwiper = new Swiper('.swiper-container', {
+        effect: 'fade',
+        speed: 1000,
+        loop: true,
+        // scrollbar: {
+        //     el: '.swiper-scrollbar',
+        //     hide: true
+        // },
+        autoplay: {
+            delay: 3000,
+        }
+    })
 
 })
