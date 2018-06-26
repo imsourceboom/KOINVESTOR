@@ -279,9 +279,12 @@ document.addEventListener('DOMContentLoaded', function () {
             navHamburger.children[0].classList.toggle('top-deg');
             navHamburger.children[1].classList.toggle('opacity-0');
             navHamburger.children[2].classList.toggle('bot-deg');
-        }, 600);
+        }, 150);
 
-        mainTag.classList.toggle('d-none');
+        setTimeout(function () {
+            headerMobile.classList.toggle('d-none');
+            mainTag.classList.toggle('d-none');
+        }, 500)
     })
     // Nav Page의 Hamburger Click Event
     navHamburger.addEventListener('click', function () {
@@ -293,13 +296,16 @@ document.addEventListener('DOMContentLoaded', function () {
         navPage.classList.toggle('fadeOutRight');
         setTimeout(function () {
             navPage.classList.toggle('d-none');
-        }, 600);
+        }, 500);
 
-        hamburger.children[0].classList.toggle('top-deg');
-        hamburger.children[1].classList.toggle('opacity-0');
-        hamburger.children[2].classList.toggle('bot-deg');
+        setTimeout(function () {
+            hamburger.children[0].classList.toggle('top-deg');
+            hamburger.children[1].classList.toggle('opacity-0');
+            hamburger.children[2].classList.toggle('bot-deg');
+        }, 100)
 
         mainTag.classList.toggle('d-none');
+        headerMobile.classList.toggle('d-none');
     })
 
 
