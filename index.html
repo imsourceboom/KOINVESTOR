@@ -18,6 +18,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
     <!-- custom CSS -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
@@ -211,6 +213,45 @@
                 </div>
             </div>
         </header>
+        <!-- Mobile Navigation -->
+        <nav class="nav d-none animated">
+            <div class="container">
+                <div class="navi-close-wrap">
+                    <div class="row h-100 align-items-center">
+                    <div class="col"></div>
+                    <div class="col-auto float-right pl-0 pr-4">
+                        <div class="flex-center">
+                            <!-- Hamburger -->
+                            <div name="nav-hbg" class="hbg-box">
+                                <div class="hbg-line-top"></div>
+                                <div class="hbg-line-mid"></div>
+                                <div class="hbg-line-bot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 py-3 pl-5 border-bottom">HOME</div>
+                    <div class="col-12 py-3 pl-5 border-bottom">ABOUT</div>
+                    <div class="col-12 py-3 pl-5 border-bottom">블록체인 뉴스</div>
+                    <div class="col-12 py-3 pl-5 border-bottom">프로젝트 소식</div>
+                    <div class="col-12 py-3 pl-5 border-bottom">실시간 트위터</div>
+                    <div class="col-12 py-3 pl-5 border-bottom">공지사항</div>
+                    <div class="col-12 py-3 pl-5 border-bottom">문의사항</div>
+                </div>
+                <div class="row m-nav-footer my-5">
+                    <div class="col-12 pl-5">
+                        <small>KOREA</small>
+                        <small class="px-3">|</small>
+                        <small>ENGLISH</small>
+                    </div>
+                    <div class="col-12 pl-5">
+                        <small>copyright ⓒ 2018 0316COMPANY. All rights reserved.</small>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
         <!-- 메인 컨텐츠 영역 -->
         <main class="main">
@@ -892,34 +933,98 @@
             <section class="m-index">
                 <!-- m-headline -->
                 <article class="m-headline-wrap">
-                    <div class="row no-gutters text-center">
-                        <div class="col-12 m-headline-img-cover">
-                            <div class="m-cover-in-scroll">
-                                <div class="icon-scroll"></div>
-                            </div>
-                            <img class="m-headline-img" src="https://picsum.photos/1000/500?image=22" alt="">
-                        </div>
-                        <div class="col-12 m-headline-text-cover">
-                            <div class="row">
-                                <div class="col-12 px-5">
-                                    <div class="flex-center">
-                                        <p class="w900 fs-12">
-                                        페이파이 '알파 서비스 출시 예정'
-                                         <!-- 상당히도 많이 기대가 됩니다. -->
-                                        </p>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="row no-gutters text-center">
+                                    <div class="col-12 m-headline-img-cover">
+                                        <div class="m-cover-in-scroll">
+                                            <div class="icon-scroll"></div>
+                                        </div>
+                                        <img class="m-headline-img" src="https://picsum.photos/1000/500?image=22" alt="">
+                                    </div>
+                                    <div class="col-12 m-headline-text-cover">
+                                        <div class="row">
+                                            <div class="col-12 px-5">
+                                                <div class="flex-center">
+                                                    <p class="w900 fs-12">
+                                                        페이파이 '알파 서비스 출시 예정'
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 px-5">
+                                                <div class="m-headline-context text-gray">
+                                                    우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만
+                                                    집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의
+                                                    알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는
+                                                    것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을
+                                                    내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다.
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-12 px-5">
-                                    <div class="m-headline-context text-gray">
-                                        우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만
-                                        집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의
-                                        신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파
-                                        버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는
-                                        것이다.
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="row no-gutters text-center">
+                                    <div class="col-12 m-headline-img-cover">
+                                        <div class="m-cover-in-scroll">
+                                            <div class="icon-scroll"></div>
+                                        </div>
+                                        <img class="m-headline-img" src="https://picsum.photos/1000/500?image=42" alt="">
+                                    </div>
+                                    <div class="col-12 m-headline-text-cover">
+                                        <div class="row">
+                                            <div class="col-12 px-5">
+                                                <div class="flex-center">
+                                                    <p class="w900 fs-12">
+                                                        텔레그램 사용자 2억명 돌파
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 px-5">
+                                                <div class="m-headline-context text-gray">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt temporibus odio, sint laboriosam cum at aut magnam repellat
+                                                    doloribus porro nisi cupiditate. Recusandae delectus accusamus quasi
+                                                    doloribus molestias a quisquam.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="row no-gutters text-center">
+                                    <div class="col-12 m-headline-img-cover">
+                                        <div class="m-cover-in-scroll">
+                                            <div class="icon-scroll"></div>
+                                        </div>
+                                        <img class="m-headline-img" src="https://picsum.photos/1000/500?image=32" alt="">
+                                    </div>
+                                    <div class="col-12 m-headline-text-cover">
+                                        <div class="row">
+                                            <div class="col-12 px-5">
+                                                <div class="flex-center">
+                                                    <p class="w900 fs-12">
+                                                        RSK 말 바꾸기 달인인가
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 px-5">
+                                                <div class="m-headline-context text-gray">
+                                                    우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만
+                                                    집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의
+                                                    알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는
+                                                    것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을
+                                                    내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다.
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- <div class="swiper-scrollbar"></div> -->
                     </div>
                 </article>
                 <!-- News -->
@@ -1114,6 +1219,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
     <!-- Hammer.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
     <!-- Sticky-JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script>
     <!-- Waypoints -->
