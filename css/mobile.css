@@ -203,6 +203,7 @@ Index Section
     width: 100%;
     height: 100%;
     background-color: #f7f7f7;
+    animation-duration: .5s;
 }
 
 .navi-close-wrap {
