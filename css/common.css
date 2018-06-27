@@ -187,6 +187,7 @@ body {
 /* 줄바꿈 */
 .word-break {
     word-break: break-all;
+    word-wrap: break-word;
 }
 
 
