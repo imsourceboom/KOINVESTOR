@@ -327,4 +327,43 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
+
+
+    // Mobile ver. Project select and Project Menu click Event
+    // accordion animation class toggle
+
+    // 프로젝트 선택
+    var projectSelect_M = document.querySelector('.project-select');
+    // 프로젝트 메뉴들 감싸고 있는 Wrapper
+    var projectList_M = document.querySelector('.m-project-list');
+    // 프로젝트 메뉴들
+    var projectMenu_M = Array.from(document.querySelectorAll('.m-project-menu'));
+
+    
+    projectSelect_M.addEventListener('click', function() {
+        if (projectList_M.classList.contains('d-none')) {
+            if (projectList_M.classList.contains('accordionOut')) {
+                projectList_M.classList.toggle('accordionOut');
+            }
+            projectList_M.classList.toggle('d-none');
+            projectList_M.classList.toggle('accordionIn');
+            setTimeout(function () {
+                projectList_M.classList.remove('accordionIn');
+            }, 700);
+        } else {    
+            projectListOut();
+        }
+    })
+    
+    projectMenu_M.forEach(function(menu) {
+        menu.addEventListener('click', projectListOut );
+    })
+
+    function projectListOut(event) {
+        projectList_M.classList.toggle('accordionOut');
+        setTimeout(function () {
+            projectList_M.classList.remove('accordionOut');
+            projectList_M.classList.toggle('d-none');
+        }, 700);
+    }
 })
