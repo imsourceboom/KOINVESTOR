@@ -119,6 +119,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // 검색 영역
     var searchWrapDesk = document.querySelector('.search-wrap-desk');
 
+    // Section
+    var mainChildren = Array.from(mainTag.children);
+    // index Section 이외 나머지 섹션 배경색 화이트
+    mainChildren.forEach(function(el){
+        if (el.classList.contains('index')) {
+            mainTag.style.backgroundColor = 'none';
+        } else {
+            el.style.backgroundColor = 'white';
+        }
+    })
+    
 
 
 
@@ -354,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
             projectListOut();
         }
     })
-    
+
     projectMenu_M.forEach(function(menu) {
         menu.addEventListener('click', projectListOut );
     })
