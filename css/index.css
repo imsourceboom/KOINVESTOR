@@ -1,8 +1,22 @@
-.koinvestor-wrap {
-    background-color: #ffffff;
+/* Mobile Header */
+
+.m-header {
+    width: 100%;
+    height: 3.7rem;
+    position: fixed;
+    z-index: 996;
+    background-color: #fff;
+    box-shadow: 0 1px 0 0 rgba( 0, 0, 0, .1);
+    transition: .5s;
 }
 
-/* Header */
+.m-header-movedown {
+    padding-top: 3.7rem;
+    height: 7.4rem;
+}
+
+/* DeskTop Header */
+
 .header {
     width: 1100px;
     height: 10rem;
@@ -56,36 +70,239 @@ ul li {
 }
 
 /* Search */
-
 .search-wrap-desk {
-    width: 1100px;
-    height: 4rem;
-    z-index: 997;
+    width: 100%;
+    height: 3.7rem;
+    border: 0;
     background-color: #ffffff;
-    border-bottom: 1px solid #dee2e6;
-    animation-duration: .5s;
+    z-index: 997;
+    animation-duration: 1s;
 }
-.search-wrap-desk > .s-input-wrap {
-    padding-left: 3rem;
+
+.search-wrap-desk>.s-input-wrap {
+    padding-left: 0;
 }
 
 .search-wrap-desk input {
     border: none;
-    height: 4rem;
-    font-size: 1.6rem;
-    padding-left: 3rem;
-    border-bottom: 1px solid #dee2e6;
+    height: 3.7rem;
+    font-size: 1rem;
+    padding-left: 0;
+    border-bottom: 0;
+}
+/* search - DeskTop */
+@media (min-width: 992px) {
+    .search-wrap-desk {
+        width: 1100px;
+        height: 4rem;
+        border-bottom: 1px solid #dee2e6;
+        animation-duration: .5s;
+    }
+    .search-wrap-desk>.s-input-wrap {
+        padding-left: 3rem;
+    }
+    .search-wrap-desk input {
+        /* border: none; */
+        height: 4rem;
+        font-size: 1.6rem;
+        padding-left: 3rem;
+        border-bottom: 1px solid #dee2e6;
+    }
+}
+
+/* Navigation */
+
+/* Mobil ver. */
+
+.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+    animation-duration: .5s;
+}
+
+.navi-close-wrap {
+    height: 3.7rem;
 }
 
 /* Main */
 
 .main {
-    width: 1100px;
-    z-index: 2;
-    padding-top: 10rem;
+    width: 100%;
+    padding-top: 3.7rem;
+}
+/* main - DeskTop */
+@media (min-width: 992px) {
+    .main {
+        width: 1100px;
+        z-index: 2;
+        padding-top: 10rem;
+    }
 }
 
-/* INDEX section */
+
+/* 
+Mobile Index Section
+*/
+
+/* HeadLine */
+
+.m-headline-wrap {
+    height: 80vh;
+}
+
+.m-headline-img-cover {
+    height: 60vh;
+}
+
+.m-headline-img-cover img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.m-headline-text-cover {
+    height: 20vh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.m-headline-context {
+    height: 4.1rem;
+    display: block;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.4rem;
+}
+
+/* 마우스 스크롤 Wrapper */
+
+.m-cover-in-scroll {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+/* 마우스 스크롤 애니메이션 */
+
+.icon-scroll,
+.icon-scroll:before {
+    position: absolute;
+    left: 50%;
+}
+
+.icon-scroll {
+    width: 35px;
+    height: 20px;
+    margin-left: -20px;
+    bottom: 0px;
+    margin-top: -35px;
+    box-shadow: inset 0 0 0 1px white;
+    border-radius: 25px;
+}
+
+@media (max-width: 767px) {
+    .icon-scroll {
+        position: relative;
+    }
+}
+
+.icon-scroll:before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: white;
+    margin-left: -2px;
+    top: 8px;
+    border-radius: 4px;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: scroll;
+    animation-name: scroll;
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(-13px);
+        transform: translateX(-13px);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(-13px);
+        transform: translateX(-13px);
+    }
+}
+
+/* HeadLine Swiper */
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* index page의 블록체인, 프로젝트 소식 뉴스 타이틀 */
+
+.m-index-news-title {
+    max-width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.m-index-project-title {
+    max-width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 프로젝트 소식 title의 project icon */
+
+.index-project-img-cover img {
+    height: 100%;
+}
+
+/* Twitter and Telegram Icon Wrapper*/
+
+.link-icons {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.link-icons img {
+    width: 100%;
+}
+
+/* DeskTop INDEX section */
 
 .headline-a,
 .headline-b,
@@ -313,9 +530,11 @@ ul li {
 }
 
 /* twitter project menu */
+
 .twitter-left-wrapper {
     padding-left: 0;
 }
+
 .twitter-right-wrapper {
     padding-right: 0;
 }
@@ -349,10 +568,9 @@ ul li {
 /* NOTICE section*/
 
 /* notice-design */
-
 .notice-design-big {
-    width: 3rem;
-    height: .6rem;
+    width: 2.5rem;
+    height: .3rem;
     background-color: #000000;
 }
 
@@ -362,11 +580,128 @@ ul li {
     background-color: #000000;
 }
 
+.notice-title {
+    font-size: 1.4rem;
+}
+
 .notice-content img {
     max-width: 100%;
 }
 
+@media (min-width: 992px) {
+    .notice-design-big {
+        width: 3rem;
+        height: .6rem;
+        background-color: #000000;
+    }
+    .notice-title {
+        font-size: 1.75rem;
+    }
+}
+
+
+
+/* BlockChain Section */
+.blockchain-news-items img,
+.project-news-items img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 360px) {
+    .blockchain-news-items p,
+    .project-news-items p {
+        font-size: .85rem;
+    }
+}
+
+@media (min-width: 360px) {
+    .blockchain-news-items,
+    .project-news-items {
+        height: 8rem;
+    }
+    .blockchain-news-items p,
+    .project-news-items p {
+        font-size: .9rem;
+    }
+}
+
+@media (min-width: 400px) {
+    .blockchain-news-items,
+    .project-news-items {
+        height: 9.5rem;
+    }
+    .blockchain-news-items p,
+    .project-news-items p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .blockchain-news-items,
+    .project-news-items {
+        height: 18rem;
+        overflow: hidden;
+    }
+    .blockchain-news-items p,
+    .project-news-items p {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+/*
+Project Section
+*/
+
+.m-project-list {
+    border-bottom: 1px solid #dee2e6;
+    overflow: hidden;
+}
+
+.m-project-list.accordionIn {
+    animation: projectListIn .7s both;
+}
+
+.m-project-list.accordionOut {
+    animation: projectListOut .7s both;
+}
+
+.m-project-list img {
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes projectListIn {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 155px;
+    }
+}
+
+@keyframes projectListOut {
+    from {
+        height: 155px;
+    }
+    to {
+        height: 0px;
+    }
+}
+
+
+
+
+
+
+
+
+
 /* Footer */
+
 footer {
     z-index: 1;
 }
@@ -374,17 +709,5 @@ footer {
 .main-footer {
     height: 400px;
     margin-top: -200px;
-    padding-top:200px;
-}
-
-
-
-
-
-
-@media (min-width: 992px) {
-    .m-header,
-    .m-index {
-        display: none;
-    }
+    padding-top: 200px;
 }
