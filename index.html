@@ -23,12 +23,12 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 991px)">
+    <!-- <link rel="stylesheet" href="css/mobile.css" media="(max-width: 991px)"> -->
 </head>
 
 <body class="text-gray-deep-dark">
     <!-- 플로팅 버튼 -->
-    <div class="floating">
+    <div class="floating d-none d-md-block">
         <!-- 플로팅 메인 버튼 -->
         <div name="floating-btn" class="floating-btn position-fixed flex-center rounded-circle shadow-box cursor-pointer">
             <div id="line-wrapper">
@@ -123,23 +123,23 @@
     <div class="root-wrap d-flex justify-content-center">
         <!-- Search -->
         <div class="search-wrap-desk row align-items-center no-gutters position-fixed pl-3 d-none animated">
-            <div class="col-lg-11 s-input-wrap">
+            <div class="col-md-11 s-input-wrap">
                 <input type="text" class="w-100" placeholder="검색어">
             </div>
-            <div class="col-lg-1">
+            <div class="col-md-1">
                 <span class="d-flex justify-content-center">
-                    <i name="close-icon" class="material-icons md-35 cursor-pointer">
+                    <i name="close-icon" class="material-icons md-35 cursor-pointer d-none d-md-block">
                         close
                     </i>
                 </span>
             </div>
         </div>
         <!-- Header DeskTop -->
-        <header class="header position-fixed bg-white">
+        <header class="header d-none d-md-block position-fixed bg-white">
             <!-- Header의 Menu 영역 -->
             <div class="row mx-0 menu-wrap align-items-center border-bottom">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-5">
+                <div class="col-md-3"></div>
+                <div class="col-md-5">
                     <nav>
                         <ul class="d-flex justify-content-between m-0 p-0 main-menu text-gray">
                             <li>블록체인 뉴스</li>
@@ -149,7 +149,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-md-3">
                     <ul class="d-flex justify-content-center m-0 pl-5 sign-menu fs-08">
                         <li class="mr-4">로그인</li>
                         <li class="mr-4">회원가입</li>
@@ -161,7 +161,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-1">
+                <div class="col-md-1">
                     <span class="d-flex justify-content-center">
                         <i name="search-icon" class="material-icons md-30 cursor-pointer">
                             search
@@ -171,17 +171,17 @@
             </div>
             <!-- Header의 Logo 영역 -->
             <div class="row mx-0 logo-wrap align-items-center">
-                <div class="col-lg-3 d-flex justify-content-center logo">
+                <div class="col-md-3 d-flex justify-content-center logo">
                     <div class="logo w250 cursor-pointer">
                         KOINVESTOR
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-md-8">
                     <div class="explain">
                         Contents explain Area
                     </div>
                 </div>
-                <div class="col-lg-1 tele-wrap">
+                <div class="col-md-1 tele-wrap">
                     <div class="flex-center">
                         <img src="./img/logo/telegram.svg" alt="">
                     </div>
@@ -189,7 +189,7 @@
             </div>
         </header>
         <!-- Header Mobile -->
-        <header class="m-header">
+        <header class="m-header d-md-none">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-auto">
@@ -260,7 +260,7 @@
 
             <!-- Desk-Top Ver. -->
             <!-- index Page -->
-            <section class="index">
+            <section class="index d-none">
                 <!-- HEADLINE -->
                 <article class="headline container-fluid text-center pb-5 bg-white">
                     <!-- headline-a a-row -->
@@ -361,7 +361,7 @@
                         <!-- Twitter Content -->
                         <div class="row m-0">
                             <!-- Koinvestor Twitter Introduce and Link -->
-                            <div class="col-lg-3 twitter-left-wrapper" data-sticky-container>
+                            <div class="col-md-3 twitter-left-wrapper" data-sticky-container>
                                 <div class="row bg-white t-koinvestor-link px-4 m-0 opacity-0 animated" data-sticky data-margin-top="155">
                                     <div class="col-12 pt-4 pb-1 fs-11">
                                         KOINVESTOR
@@ -429,7 +429,7 @@
                                 </div>
                             </div>
                             <!-- Twitter timeline -->
-                            <div class="col-lg-6 bg-white">
+                            <div class="col-md-6 bg-white">
                                 <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
                                     <div class="row">
                                         <div class="col-2 t-timeline-logo text-center px-0">
@@ -530,7 +530,7 @@
                                 </div>
                             </div>
                             <!-- Twitter Project Menu -->
-                            <div class="col-lg-3 twitter-right-wrapper" data-sticky-container>
+                            <div class="col-md-3 twitter-right-wrapper" data-sticky-container>
                                 <div class="row bg-white t-project-menu-wrap px-4 m-0 opacity-0 animated" data-sticky data-margin-top="155">
                                     <div class="col-12 pt-4 pb-1 fs-11">
                                         프로젝트 보기
@@ -649,288 +649,9 @@
                     </div>
                 </article>
             </section>
-            <!-- NOTICE -->
-            <section class="notice d-none">
-                <!-- 공지사항 심볼 영역 -->
-                <articel class="d-flex justify-content-center py-5 border-bottom border-top">
-                    <div class="floating-btn flex-center rounded-circle shadow-box">
-                        <div id="line-wrapper">
-                            <div id="line-top" class="line line-top line-top-reverse init"></div>
-                            <!-- <div id="line-mid" clline ass="line init mid-reverse"></div> -->
-                            <div id="line-dot" class="line line-dot line-dot-reverse init"></div>
-                        </div>
-                    </div>
-                </articel>
-                <!-- 공지사항 내용 영역 시작 -->
-                <article class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3 notice-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-                <article class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-                <article class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-                <article class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3 notice-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-                <article id="10" class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-                <article class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3 notice-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-                <article id="10" class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-                <article class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3 notice-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-                <article id="10" class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-                <article class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3 notice-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-                <article id="10" class="row no-gutters py-5 justify-content-center border-bottom">
-                    <div class="col-lg-6 text-gray-dark">
-                        <div class="col-lg-12 my-1">
-                            <div class="notice-design-big"></div>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            2018년 6월 14일
-                        </div>
-                        <div class="col-lg-12 my-5 text-black">
-                            <h3>질리카 상장 안내 [Zilliqa Listing Announcement]</h3>
-                        </div>
-                        <div class="col-lg-12 my-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
-                            voluptatem voluptatibus, totam ipsum!
-                            <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
-                            voluptatibus, totam ipsum!
-                        </div>
-                    </div>
-                </article>
-            </section>
-
             <!-- Mobile Ver. -->
-            <!-- M-index -->
-            <section class="m-index d-none">
+            <!-- index Page -->
+            <section class="m-index d-none d-md-none">
                 <!-- m-headline -->
                 <article class="m-headline-wrap">
                     <div class="swiper-container">
@@ -1168,70 +889,171 @@
                     </div>
                 </article>
             </section>
-            <!-- M-BlockChain -->
-            <section class="m-blockchain d-none">
-                <article class="m-blockchain-wrapper px-3 pb-3">
+            <!-- NOTICE -->
+            <section class="notice d-none">
+                <!-- 공지사항 심볼 영역 -->
+                <articel class="desk-top-notice-start d-none d-md-block py-5 border-bottom border-top">
+                    <div class="flex-center">
+                        <div class="floating-btn flex-center rounded-circle shadow-box">
+                            <div id="line-wrapper">
+                                <div id="line-top" class="line line-top line-top-reverse init"></div>
+                                <!-- <div id="line-mid" clline ass="line init mid-reverse"></div> -->
+                                <div id="line-dot" class="line line-dot line-dot-reverse init"></div>
+                            </div>
+                        </div>
+                    </div>
+                </articel>
+                <article class="m-notice-start d-md-none px-3">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 text-center py-3 border-bottom">
                                 <span>블록체인 뉴스</span>
                             </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- 공지사항 내용 영역 시작 -->
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-md-6 text-gray-dark">
+                        <div class="col-md-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-md-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-md-12 my-3 my-md-5 text-black">
+                            <span class="notice-title w500">질리카 상장 안내 [Zilliqa Listing Announcement]</span>
+                        </div>
+                        <div class="col-md-12 my-3 notice-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-md-6 text-gray-dark">
+                        <div class="col-md-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-md-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-md-12 my-3 my-md-5 text-black">
+                            <span class="notice-title w500">질리카 상장 안내 [Zilliqa Listing Announcement]</span>
+                        </div>
+                        <div class="col-md-12 my-3 notice-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-md-6 text-gray-dark">
+                        <div class="col-md-12 my-1">
+                            <div class="notice-design-big"></div>
+                        </div>
+                        <div class="col-md-12 my-3">
+                            2018년 6월 14일
+                        </div>
+                        <div class="col-md-12 my-3 my-md-5 text-black">
+                            <span class="notice-title w500">질리카 상장 안내 [Zilliqa Listing Announcement]</span>
+                        </div>
+                        <div class="col-md-12 my-3 notice-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem voluptatibus, totam ipsum!
+                            <br>
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            voluptatibus, totam ipsum!
+                        </div>
+                    </div>
+                </article>
+                
+            </section>
+            <!-- M-BlockChain -->
+            <section class="m-blockchain">
+                <article class="m-blockchain-wrapper px-3 pb-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 d-md-none text-center py-3 border-bottom">
+                                <span>블록체인 뉴스</span>
+                            </div>
                             <!-- BlockChain items -->
-                            <div class="col-12 blockchain-news-items border-bottom py-2">
+                            <!-- first Line News -->
+                            <div class="col-md-6 blockchain-news-items border-bottom py-2 px-md-0">
                                 <div class="row h-100">
-                                    <div class="col-6">
+                                    <div class="col-6 col-md-12">
                                         <img src="https://picsum.photos/500/300?image=17" alt="">
                                     </div>
-                                    <div class="col-6 d-flex flex-column justify-content-center work-break">
+                                    <div class="col-6 col-md-12 d-flex flex-column justify-content-center work-break">
                                         <p>비트코인 우려하던 일이 벌어졌다. 700만 마지노선 무너졌다</p>
                                         <small class="text-gray">2018.06.27</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items border-bottom py-2">
+                            <div class="col-md-3 blockchain-news-items border-bottom py-2 px-md-0">
                                 <div class="row h-100">
-                                    <div class="col-6">
+                                    <div class="col-6 col-md-12">
                                         <img src="https://picsum.photos/500/300?image=27" alt="">
                                     </div>
-                                    <div class="col-6 d-flex flex-column justify-content-center work-break">
+                                    <div class="col-6 col-md-12 d-flex flex-column justify-content-center work-break">
                                         <p>빗썸 해킹!</p>
                                         <small class="text-gray">2018.06.27</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items border-bottom py-2">
+                            <div class="col-md-3 blockchain-news-items border-bottom py-2 px-md-0">
                                 <div class="row h-100">
-                                    <div class="col-6">
+                                    <div class="col-6 col-md-12">
                                         <img src="https://picsum.photos/500/300?image=37" alt="">
                                     </div>
-                                    <div class="col-6 d-flex flex-column justify-content-center work-break">
+                                    <div class="col-6 col-md-12 d-flex flex-column justify-content-center work-break">
                                         <p>코인베스터, 텔레그램 아시아 단독파트너쉽 체결</p>
                                         <small class="text-gray">2018.06.27</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items border-bottom py-2">
+                            <!-- second Line News -->
+                            <div class="col-md-6 blockchain-news-items border-bottom py-2 px-md-0">
                                 <div class="row h-100">
-                                    <div class="col-6">
+                                    <div class="col-6 col-md-12">
                                         <img src="https://picsum.photos/500/300?image=47" alt="">
                                     </div>
-                                    <div class="col-6 d-flex flex-column justify-content-center work-break">
+                                    <div class="col-6 col-md-12 d-flex flex-column justify-content-center work-break">
                                         <p>블록체인 규제안 오락가락, 준구가 시키드나</p>
                                         <small class="text-gray">2018.06.27</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items border-bottom py-2">
+                            <div class="col-md-6 blockchain-news-items border-bottom py-2 px-md-0">
                                 <div class="row h-100">
-                                    <div class="col-6">
+                                    <div class="col-6 col-md-12">
                                         <img src="https://picsum.photos/500/300?image=57" alt="">
                                     </div>
-                                    <div class="col-6 d-flex flex-column justify-content-center work-break">
+                                    <div class="col-6 col-md-12 d-flex flex-column justify-content-center work-break">
                                         <p>Mother father Gentleman</p>
                                         <small class="text-gray">2018.06.27</small>
                                     </div>
                                 </div>
                             </div>
+                            <!-- other Line News -->
                             <div class="col-12 blockchain-news-items border-bottom py-2">
                                 <div class="row h-100">
                                     <div class="col-6">
@@ -1297,7 +1119,7 @@
                 </article>
             </section>
             <!-- M-Project -->
-            <section class="m-project">
+            <section class="m-project d-none">
                 <article class="m-project-wrapper px-3 pb-3">
                     <div class="container">
                         <div class="row">
@@ -1508,16 +1330,16 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class="d-none d-md-block">
         <div class="main-footer d-flex justify-content-center w-100 bg-dark">
             <div class="w-1100px">
                 <div class="row m-0 text-gray pt-4">
-                    <div class="col-lg-9">
+                    <div class="col-md-9">
                         <div class="row">
-                            <div class="col-lg-4 d-flex justify-content-center">
+                            <div class="col-md-4 d-flex justify-content-center">
                                 <span class="fs-18 w250">KOINVESTOR</span>
                             </div>
-                            <div class="col-lg-8 pl-0">
+                            <div class="col-md-8 pl-0">
                                 <p class="">
                                     코인베스터는 각국의 프로젝트팀과의 긴밀한 co-work을 통하여
                                     <br> 신뢰할 만한 뉴스와 정보를 가장 빠르고 정확하게 전달하고 있습니다.
@@ -1529,7 +1351,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-md-3">
                         <ul class="d-inline-block pl-0">
                             <li>개인정보처리방침</li>
                             <li>서비스이용약관</li>
@@ -1537,7 +1359,7 @@
                             <li>고객센터</li>
                         </ul>
                     </div>
-                    <div class="col-lg-12 pt-4 pl-5">
+                    <div class="col-md-12 pt-4 pl-5">
                         <span class="pl-3">
                             copyⓒright 2018 0316COMPANY. All rights reserved.
                         </span>
