@@ -134,12 +134,13 @@ ul li {
 .main {
     width: 100%;
     padding-top: 3.7rem;
+    position: relative;
+    z-index: 2;
 }
 /* main - DeskTop */
 @media (min-width: 992px) {
     .main {
         width: 1100px;
-        z-index: 2;
         padding-top: 10rem;
     }
 }
@@ -601,12 +602,30 @@ Mobile Index Section
 
 
 
-/* BlockChain Section */
+/* BlockChain AND Project Section */
+.blockchain-news-items {
+    border-bottom: 1px solid #dee2e6;
+}
+
 .blockchain-news-items img,
 .project-news-items img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.blockchain-news-items .blockchain-context {
+    display: none;
+}
+
+.more-plus {
+    transition: .7s;
+}
+.more-plus:hover {
+    cursor: pointer;
+    color: #fff;
+    border-radius: .1rem;
+    transform: translateY(-.1rem);
 }
 
 @media (max-width: 360px) {
@@ -637,18 +656,44 @@ Mobile Index Section
         font-size: 1rem;
     }
 }
-
+/* block chain DeskTop ver. */
 @media (min-width: 992px) {
     .blockchain-news-items,
     .project-news-items {
-        height: 18rem;
+        height: 22rem;
+        border: 0;
+        opacity: .85;
+        transition: .7s;
+    }
+    .blockchain-news-items:hover {
+        opacity: 1;
+        cursor: pointer;
+        transform: translateY(-.1rem);
+    }
+    .blockchain-news-items.other {
+        height: 15rem;
+    }
+    .blockchain-news-items .blockchain-context {
+        height: 4.1rem;
+        display: block;
         overflow: hidden;
+        word-break: break-all;
+        word-wrap: break-word;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-height: 1.4rem;
     }
     .blockchain-news-items p,
     .project-news-items p {
         font-size: 1.1rem;
     }
+    .blockchain-news-items .b-img-cover {
+        height: 70%;
+    }
 }
+
 
 
 
@@ -703,6 +748,7 @@ Project Section
 /* Footer */
 
 footer {
+    position: relative;
     z-index: 1;
 }
 
