@@ -603,7 +603,8 @@ Mobile Index Section
 
 
 /* BlockChain AND Project Section */
-.blockchain-news-items {
+.blockchain-news-items,
+.project-news-items {
     border-bottom: 1px solid #dee2e6;
 }
 
@@ -624,7 +625,7 @@ Mobile Index Section
 .more-plus:hover {
     cursor: pointer;
     color: #fff;
-    border-radius: .1rem;
+    border-radius: .2rem;
     transform: translateY(-.1rem);
 }
 
@@ -665,7 +666,8 @@ Mobile Index Section
         opacity: .85;
         transition: .7s;
     }
-    .blockchain-news-items:hover {
+    .blockchain-news-items:hover,
+    .project-news-items:hover {
         opacity: 1;
         cursor: pointer;
         transform: translateY(-.1rem);
@@ -689,8 +691,42 @@ Mobile Index Section
     .project-news-items p {
         font-size: 1.1rem;
     }
-    .blockchain-news-items .b-img-cover {
+    .blockchain-news-items .b-img-cover,
+    .project-news-items .b-img-cover {
         height: 70%;
+    }
+
+    /* project list And Menu */
+    .pc-project-all,
+    .pc-project-list-menu-wrap,
+    .pc-project-list-menu-item {
+        background-color: #ffffff;
+        cursor: pointer;
+        transition: .7s;
+    }
+
+    .pc-project-all:hover {
+        color: rgba(147, 214, 191, 1);
+    }
+    
+    .pc-project-list-menu-wrap:hover .pc-project-list-menu-item {
+        animation: pc-menu-item 1s infinite alternate;
+    }
+    
+    @keyframes pc-menu-item {
+        from {
+            opacity: 1;
+            background-color: #fff;
+        }
+        to {
+            opacity: .8;
+            background-color: #eeeeee;
+        }
+    }
+
+
+    .project-list-img-cover img {
+        width: 80%;
     }
 }
 
