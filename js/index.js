@@ -235,15 +235,18 @@ document.addEventListener('DOMContentLoaded', function () {
     /*
     Waypoints
     */
+    /* 
+    Index Section
+    */
     // Twitter right wrpper의 project-menu-wrap
     var waypoint = new Waypoint({
         element: document.querySelector('.t-project-menu-wrap'),
         handler: function (item) {
             this.element.classList.add('fadeInUp');
         },
-        offset: '50%'
+        offset: '10%'
     })
-    // Twitter right wrpper의 project-menu-wrap
+    // Twitter left wrpper의 koinvestor twit
     var waypoint = new Waypoint({
         element: document.querySelector('.t-koinvestor-link'),
         handler: function (item) {
@@ -251,6 +254,27 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         offset: 'bottom-in-view'
     })
+
+    /* 
+    Twitter Section
+    */
+    // Twitter right wrpper의 project-menu-wrap
+    var waypoint = new Waypoint({
+        element: document.querySelector('.twi-section-right'),
+        handler: function (item) {
+            this.element.classList.add('fadeInUp');
+        },
+        offset: '10%'
+    })
+    // Twitter left wrpper의 koinvestor twit
+    var waypoint = new Waypoint({
+        element: document.querySelector('.twi-section-left'),
+        handler: function (item) {
+            this.element.classList.add('fadeInUp');
+        },
+        offset: '10%'
+    })
+
 
     /*
     ScrollReveal
@@ -339,10 +363,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-
+    /*
+    Project Section
+    */
     // Mobile ver. Project select and Project Menu click Event
-    // accordion animation class toggle
-
     // 프로젝트 선택
     var projectSelect_M = document.querySelector('.project-select');
     // 프로젝트 메뉴들 감싸고 있는 Wrapper
@@ -350,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 프로젝트 메뉴들
     var projectMenu_M = Array.from(document.querySelectorAll('.m-project-menu'));
 
-    
+    // accordion animation class toggle
     projectSelect_M.addEventListener('click', function() {
         if (projectList_M.classList.contains('d-none')) {
             if (projectList_M.classList.contains('accordionOut')) {
@@ -377,4 +401,40 @@ document.addEventListener('DOMContentLoaded', function () {
             projectList_M.classList.toggle('d-none');
         }, 700);
     }
+
+
+    // DeskTop ver. Project Menu Click Event
+    // 전체보기
+    var projectAll_Pc = document.querySelector('.pc-project-all');
+    // Menu들을 감싸고 있는 부모 Element
+    var projectList_Pc = document.querySelector('.pc-project-list');
+    // Menu iTems
+    var projectListChildren_Pc = Array.from(projectList_Pc.children);
+
+    // menu item을 click 했을 때 target의 단독 Event
+    projectListChildren_Pc.forEach(function(item) {
+        // var itemChild = Array.from(item.children);
+        // console.log(itemChild);
+        item.addEventListener('click', function() {
+            var thisChild = Array.from(this.children);
+            if (this.style.backgroundColor == 'rgb(214, 240, 228)') {
+                thisChild[0].style.transform = 'none';
+                this.style.backgroundColor = '#ffffff';
+            } else {
+                thisChild[0].style.transform = 'translate( 20%, 0)';
+                thisChild[0].style.backgroundColor = '#ffffff';
+                this.style.backgroundColor = 'rgb(214, 240, 228)';
+                
+            }
+        })
+    })
+    // project menu 전체보기 click Event
+    projectAll_Pc.addEventListener('click', function() {
+        projectListChildren_Pc.forEach(function(item) {
+            var itemChild = Array.from(item.children);
+            item.style.backgroundColor = '#ffffff';
+            itemChild[0].style.transform = 'none';
+            itemChild[0].style.backgroundColor = '#ffffff';
+        })
+    })
 })
