@@ -208,6 +208,36 @@ body {
 }
 
 
+/* Padding */
+.p-2_5 {
+    padding: .75rem !important;
+}
+
+.px-2_5 {
+    padding: 0 .75rem !important;
+}
+
+.py-2_5 {
+    padding: .75rem 0 !important;
+}
+
+.pt-2_5 {
+    padding-top: .75rem !important;
+}
+
+.pb-2_5 {
+    padding-bottom: .75rem !important;
+}
+
+.pr-2_5 {
+    padding-right: .75rem !important;
+}
+
+.pl-2_5 {
+    padding-left: .75rem !important;
+}
+
+
 /* 줄바꿈 */
 .word-break {
     word-break: break-all;
