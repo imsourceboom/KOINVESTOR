@@ -737,20 +737,20 @@ Mobile Index Section
 Project Section
 */
 
-.m-project-list {
+.project-list {
     border-bottom: 1px solid #dee2e6;
     overflow: hidden;
 }
 
-.m-project-list.accordionIn {
+.project-list.accordionIn {
     animation: projectListIn .7s both;
 }
 
-.m-project-list.accordionOut {
+.project-list.accordionOut {
     animation: projectListOut .7s both;
 }
 
-.m-project-list img {
+.project-list img {
     height: 100%;
     object-fit: cover;
 }
