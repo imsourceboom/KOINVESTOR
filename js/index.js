@@ -119,17 +119,146 @@ document.addEventListener('DOMContentLoaded', function () {
     // 검색 영역
     var searchWrapDesk = document.querySelector('.search-wrap-desk');
 
-    // Section
+    // Section tag들
     var mainChildren = Array.from(mainTag.children);
     // index Section 이외 나머지 섹션 배경색 화이트
-    mainChildren.forEach(function(el){
+    mainChildren.forEach(function (el) {
         if (el.classList.contains('index')) {
+            mainTag.style.backgroundColor = 'none';
+        } else if (el.classList.contains('twitter')) {
             mainTag.style.backgroundColor = 'none';
         } else {
             el.style.backgroundColor = 'white';
         }
     })
+
+    // DeskTop Navigation
+    var navList_Pc = document.querySelector('.pc-nav-list');
+    // console.log(navList_Pc.children);
+    var navChildren_Pc = Array.from(navList_Pc.children);
+    // console.log(navChildren_Pc);
+    var logo = document.querySelector('.logo');
+
     
+    function fadeInSetTime(sec) {
+            sec.classList.toggle('animated');
+            sec.classList.toggle('fadeIn');
+            setTimeout(function () {
+                sec.classList.toggle('animated');
+                sec.classList.toggle('fadeIn');
+            }, 1000)
+    }
+    function menuLogo_Pc() {
+        mainChildren.forEach(function (sec) {
+            if (sec.classList.contains('index') && sec.classList.contains('d-none') && !sec.classList.contains('d-lg-block')) {
+                sec.classList.toggle('d-lg-block');
+                fadeInSetTime(sec);
+            } else {
+                if (sec.classList.contains('blockchain') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('project') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('twitter') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('notice') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                }
+            }
+        })
+    }
+    function menuBlockChain_Pc() {
+        mainChildren.forEach(function (sec) {
+            if (sec.classList.contains('blockchain') && sec.classList.contains('d-none')) {
+                sec.classList.toggle('d-none');
+                fadeInSetTime(sec);
+            } else {
+                if (sec.classList.contains('index') && sec.classList.contains('d-lg-block')) {
+                    sec.classList.toggle('d-lg-block');
+                } else if (sec.classList.contains('project') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('twitter') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('notice') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                }
+            }
+        })
+    }
+    function menuProject_Pc() {
+        mainChildren.forEach(function (sec) {
+            if (sec.classList.contains('project') && sec.classList.contains('d-none')) {
+                sec.classList.toggle('d-none');
+                fadeInSetTime(sec);
+            } else {
+                if (sec.classList.contains('index') && sec.classList.contains('d-lg-block')) {
+                    sec.classList.toggle('d-lg-block');
+                } else if (sec.classList.contains('blockchain') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('twitter') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('notice') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                }
+            }
+        })
+    }
+    function menuTwitter_Pc() {
+        mainChildren.forEach(function (sec) {
+            if (sec.classList.contains('twitter') && sec.classList.contains('d-none')) {
+                sec.classList.toggle('d-none');
+                fadeInSetTime(sec);
+            } else {
+                if (sec.classList.contains('index') && sec.classList.contains('d-lg-block')) {
+                    sec.classList.toggle('d-lg-block');
+                } else if (sec.classList.contains('blockchain') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('project') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('notice') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                }
+            }
+        })
+    }
+    function menuNotice_Pc() {
+        mainChildren.forEach(function (sec) {
+            if (sec.classList.contains('notice') && sec.classList.contains('d-none')) {
+                sec.classList.toggle('d-none');
+                fadeInSetTime(sec);
+            } else {
+                if (sec.classList.contains('index') && sec.classList.contains('d-lg-block')) {
+                    sec.classList.toggle('d-lg-block');
+                } else if (sec.classList.contains('blockchain') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('project') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                } else if (sec.classList.contains('twitter') && !sec.classList.contains('d-none')) {
+                    sec.classList.toggle('d-none');
+                }
+            }
+        })
+    }
+
+    // index 화면으로 이동하는 Logo click Event
+    logo.addEventListener('click', menuLogo_Pc);
+    // Nav의 menu를 click시 각 해당 section display none, block 조작하는 Click event
+    navChildren_Pc.forEach(function (nav) {
+        nav.addEventListener('click', function () {
+            if (nav.innerText == '블록체인 뉴스') {
+                menuBlockChain_Pc();
+            } else if (nav.innerText == '프로젝트 소식') {
+                menuProject_Pc();
+            } else if (nav.innerText == '실시간 트위터') {
+                menuTwitter_Pc();
+            } else if (nav.innerText == '공지사항') {
+                menuNotice_Pc();
+            }
+        })
+    })
+
+
+
+
 
 
 
@@ -232,13 +361,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Twitter left, right의 content들 화면 상단에 걸리게하기
     var sticky = new Sticky('[data-sticky]');
 
-    /*
-    Waypoints
-    */
+
     /* 
     Index Section
     */
-    // Twitter right wrpper의 project-menu-wrap
+    /* twitter article */
+    // Twitter right wrpper의 project-menu-wrap waypoint
     var waypoint = new Waypoint({
         element: document.querySelector('.t-project-menu-wrap'),
         handler: function (item) {
@@ -246,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         offset: '10%'
     })
-    // Twitter left wrpper의 koinvestor twit
+    // Twitter left wrpper의 koinvestor twit waypoint
     var waypoint = new Waypoint({
         element: document.querySelector('.t-koinvestor-link'),
         handler: function (item) {
@@ -255,10 +383,12 @@ document.addEventListener('DOMContentLoaded', function () {
         offset: 'bottom-in-view'
     })
 
+
+
     /* 
     Twitter Section
     */
-    // Twitter right wrpper의 project-menu-wrap
+    // Twitter right wrpper의 project-menu-wrap waypoint
     var waypoint = new Waypoint({
         element: document.querySelector('.twi-section-right'),
         handler: function (item) {
@@ -266,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         offset: '10%'
     })
-    // Twitter left wrpper의 koinvestor twit
+    // Twitter left wrpper의 koinvestor twit waypoint
     var waypoint = new Waypoint({
         element: document.querySelector('.twi-section-left'),
         handler: function (item) {
@@ -370,12 +500,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // 프로젝트 선택
     var projectSelect_M = document.querySelector('.project-select');
     // 프로젝트 메뉴들 감싸고 있는 Wrapper
-    var projectList_M = document.querySelector('.m-project-list');
+    var projectList_M = document.querySelector('.project-list');
     // 프로젝트 메뉴들
-    var projectMenu_M = Array.from(document.querySelectorAll('.m-project-menu'));
+    var projectMenu_M = Array.from(document.querySelectorAll('.project-menu'));
 
     // accordion animation class toggle
-    projectSelect_M.addEventListener('click', function() {
+    projectSelect_M.addEventListener('click', function () {
         if (projectList_M.classList.contains('d-none')) {
             if (projectList_M.classList.contains('accordionOut')) {
                 projectList_M.classList.toggle('accordionOut');
@@ -385,13 +515,13 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function () {
                 projectList_M.classList.remove('accordionIn');
             }, 700);
-        } else {    
+        } else {
             projectListOut();
         }
     })
 
-    projectMenu_M.forEach(function(menu) {
-        menu.addEventListener('click', projectListOut );
+    projectMenu_M.forEach(function (menu) {
+        menu.addEventListener('click', projectListOut);
     })
 
     function projectListOut(event) {
@@ -412,10 +542,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var projectListChildren_Pc = Array.from(projectList_Pc.children);
 
     // menu item을 click 했을 때 target의 단독 Event
-    projectListChildren_Pc.forEach(function(item) {
+    projectListChildren_Pc.forEach(function (item) {
         // var itemChild = Array.from(item.children);
         // console.log(itemChild);
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             var thisChild = Array.from(this.children);
             if (this.style.backgroundColor == 'rgb(214, 240, 228)') {
                 thisChild[0].style.transform = 'none';
@@ -424,13 +554,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 thisChild[0].style.transform = 'translate( 20%, 0)';
                 thisChild[0].style.backgroundColor = '#ffffff';
                 this.style.backgroundColor = 'rgb(214, 240, 228)';
-                
+
             }
         })
     })
     // project menu 전체보기 click Event
-    projectAll_Pc.addEventListener('click', function() {
-        projectListChildren_Pc.forEach(function(item) {
+    projectAll_Pc.addEventListener('click', function () {
+        projectListChildren_Pc.forEach(function (item) {
             var itemChild = Array.from(item.children);
             item.style.backgroundColor = '#ffffff';
             itemChild[0].style.transform = 'none';
