@@ -509,8 +509,40 @@ Mobile Index Section
 
 .twitter-logo-wrap img {
     width: 2rem;
+    transition: .3s;
+}
+.twitter-logo:hover img {
+    transform: scale(1.1);
 }
 
+/* twitter-koinvestor */
+.twitter-koinvestor-bgcover {
+    height: 6rem;
+}
+.twitter-koinvestor-bgcover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.twitter-koinvestor-logo-wrap {
+    transform: translateY(-50%);
+    padding: 3px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+.twitter-koinvestor-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: .5s;
+    cursor: pointer;
+}
+.twitter-koinvestor-logo:hover {
+    transform: scale(2.5) translate(50%, 0);
+}
 /* t-koinvestor */
 
 .t-koinvestor-link {
