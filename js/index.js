@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // console.log(navChildren_Pc);
     var logo = document.querySelector('.logo');
 
-    
+
     function fadeInSetTime(sec) {
             sec.classList.toggle('animated');
             sec.classList.toggle('fadeIn');
@@ -366,6 +366,17 @@ document.addEventListener('DOMContentLoaded', function () {
     Index Section
     */
     /* twitter article */
+    // twitter Logo의 mouseover Event
+    var twitterLogo = document.querySelector('.twitter-logo');
+    twitterLogo.addEventListener('mouseover', twitTyped)
+    function twitTyped() {
+        var typed = new Typed("#typed", {
+            strings: ['실시간 트위터 <strong>페이지</strong>', '실시간 트위터 <strong>바로가기</strong>'],
+            typeSpeed: 30,
+            backSpeed: 50,
+        });
+        twitterLogo.removeEventListener('mouseover', twitTyped);
+    }
     // Twitter right wrpper의 project-menu-wrap waypoint
     var waypoint = new Waypoint({
         element: document.querySelector('.t-project-menu-wrap'),
