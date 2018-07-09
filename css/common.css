@@ -117,6 +117,56 @@ body {
 .fs-20 {
     font-size: 2.0rem;
 }
+
+@media (min-width:992px) {
+    .fs-lg-08 {
+        font-size: 0.8rem;
+    }
+
+    .fs-lg-09 {
+        font-size: 0.9rem;
+    }
+
+    .fs-lg-11 {
+        font-size: 1.1rem;
+    }
+
+    .fs-lg-12 {
+        font-size: 1.2rem;
+    }
+
+    .fs-lg-13 {
+        font-size: 1.3rem;
+    }
+
+    .fs-lg-14 {
+        font-size: 1.4rem;
+    }
+
+    .fs-lg-15 {
+        font-size: 1.5rem;
+    }
+
+    .fs-lg-16 {
+        font-size: 1.6rem;
+    }
+
+    .fs-lg-17 {
+        font-size: 1.7rem;
+    }
+
+    .fs-lg-18 {
+        font-size: 1.8rem;
+    }
+
+    .fs-lg-19 {
+        font-size: 1.9rem;
+    }
+
+    .fs-lg-20 {
+        font-size: 2.0rem;
+    }
+}
 /* 폰트 두께 */
 .normal {
     font-style: normal;
