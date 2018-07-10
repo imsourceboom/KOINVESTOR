@@ -503,6 +503,11 @@ Mobile Index Section
 
 /* TWITTER */
 
+.twitter-color {
+    color: #00aadd;
+    transition: .7s;
+}
+
 .twitter-logo-wrap {
     margin: 1.071rem 0;
     height: 4rem;
@@ -512,8 +517,48 @@ Mobile Index Section
     width: 2rem;
     transition: .3s;
 }
+
 .twitter-logo:hover img {
     transform: scale(1.1);
+}
+
+/* twitter menu */
+.twitter-menu-wrap {
+    overflow: hidden;
+    background-color: #fff;
+    height: 0;
+}
+
+.twit-menu-in {
+    animation: twit-menu-in .7s ease-in-out both;
+}
+
+.twit-menu-out {
+    animation: twit-menu-out .7s ease-in-out;
+}
+
+@keyframes twit-menu-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        height: 154px;
+        margin: 0 0 1rem 0;
+    }
+}
+
+@keyframes twit-menu-out {
+    from {
+        height: 154px;
+        margin: 0 0 1rem 0;
+    }
+    to {
+        height: 0;
+    }
+}
+
+.twitter-menu img {
+    width: 80%;
 }
 
 /* twitter-koinvestor */
