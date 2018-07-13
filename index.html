@@ -256,7 +256,7 @@
         <main class="main d-none">
             <!-- Desk-Top Ver. -->
             <!-- index Page -->
-            <section class="index d-none d-lg-block">
+            <section class="index d-none">
                 <!-- HEADLINE -->
                 <article class="headline container-fluid text-center pb-5 bg-white">
                     <!-- headline-a a-row -->
@@ -610,7 +610,7 @@
             </section>
             <!-- Mobile Ver. -->
             <!-- index Page -->
-            <section class="m-index d-lg-none">
+            <section class="m-index d-none d-lg-none">
                 <!-- m-headline -->
                 <article class="m-headline-wrap">
                     <div class="swiper-container">
@@ -1987,11 +1987,9 @@
                             <div class="row justify-content-center">
                                 <nav class="position-fixed pt-lg-5">
                                     <ul class="col-auto py-lg-5">
-                                        <li class="py-lg-4">공지사항</li>
-                                        <li class="py-lg-4">블록체인</li>
-                                        <li class="py-lg-4">프로젝트</li>
-                                        <li class="py-lg-4">트위터</li>
-                                        <li class="py-lg-4">통계</li>
+                                        <li v-for="(nav, index) in navs" class="py-lg-4">
+                                            {{nav}}
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -2493,7 +2491,7 @@
                                             </div>
                                         </article>
                                         <!-- blockchain write -->
-                                        <article class="container py-5">
+                                        <article class="container py-5 d-none">
                                             <!-- 제목 -->
                                             <div class="row pt-5">
                                                 <div class="col-12">
@@ -2551,9 +2549,597 @@
                                         </article>
                                     </section>
                                     <!-- Project -->
-                                    <section class="project-admin"></section>
+                                    <section class="project-admin">
+                                        <!-- project list -->
+                                        <article class="container pb-5 d-none">
+                                            <!-- New Write -->
+                                            <div class="row align-items-center py-3 py-lg-5">
+                                                <div class="col py-3 border rounded text-center cursor-pointer">
+                                                    <b>NEW</b>
+                                                </div>
+                                            </div>
+                                            <!-- upload and storage -->
+                                            <div class="row justify-content-center align-items-center pb-lg-5">
+                                                <div class="col-lg-12">
+                                                    <div class="row justify-content-between">
+                                                        <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: isBorder, 'text-gray-light': !textGray }"
+                                                            v-on:click="upAndtempo" v-bind:style="trans">
+                                                            Upload Complete
+                                                        </div>
+                                                        <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: !isBorder, 'text-gray-light': textGray }"
+                                                            v-on:click="upAndtempo" v-bind:style="trans">
+                                                            Temporary Storage
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- project Select AND Delete -->
+                                            <div class="row align-items-center py-3 pt-lg-0">
+                                                <div class="col"></div>
+                                                <div class="col-3 pr-0">
+                                                    <select class="form-control">
+                                                        <option value="" selected disabled>프로젝트 선택</option>
+                                                        <option value="" v-for="project in projects">
+                                                            {{ project.name.en }}
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span class="border rounded px-3 py-2 cursor-pointer">
+                                                        <input type="checkbox" class="mr-1"> Delete
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!-- Table -->
+                                            <div class="row pb-lg-5">
+                                                <div class="col-lg-12 px-0">
+                                                    <table class="table table-hover">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th style="width: 5%;">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <th style="width: 7%">#</th>
+                                                                <th class="text-center">제목</th>
+                                                                <th style="width: 20%">작성일</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="cursor-pointer">
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>1</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>2</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>3</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>1</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>2</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>3</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>1</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>2</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>3</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>1</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>2</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>3</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>1</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>2</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>3</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <nav aria-label="Page navigation">
+                                                        <ul class="pagination justify-content-center">
+                                                            <li class="page-item disabled">
+                                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                            </li>
+                                                            <li class="page-item active">
+                                                                <a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">2</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">3</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">Next</a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- project write -->
+                                        <article class="container py-5 d-none">
+                                            <div class="row pt-5">
+                                                <!-- 프로젝트 이미지 -->
+                                                <div class="col-1">
+                                                    <div class="border rounded-circle" style="width: 2.5rem; height: 2.5rem;">
+                                                        <img :src="selected">
+                                                    </div>
+                                                </div>
+                                                <!-- 프로젝트 선택 -->
+                                                <div class="col-3 pl-0">
+                                                    <select name="" id="" class="form-control" v-model="selected">
+                                                        <option value="" selected>프로젝트 선택</option>
+                                                        <option :value="project.src" v-for="(project, key) in projects" :key="project.id">{{project.name.ko}}</option>
+                                                    </select>
+                                                </div>
+                                                <!-- 작성자 -->
+                                                <div class="col-4">
+                                                    <input type="text" class="form-control" placeholder="작성자">
+                                                </div>
+                                                <!-- 직함 -->
+                                                <div class="col-4">
+                                                    <input type="text" class="form-control" placeholder="직함">
+                                                </div>
+                                            </div>
+                                            <!-- 제목 -->
+                                            <div class="row pt-3">
+                                                <div class="col-12">
+                                                    <input type="text" class="form-control" placeholder="제목을 입력하세요.">
+                                                </div>
+                                            </div>
+                                            <!-- 대표이미지, 출처 -->
+                                            <div class="row py-3">
+                                                <!-- img -->
+                                                <div class="col-auto">
+                                                    <div class="filebox">
+                                                        <input class="upload-name" value="대표이미지" disabled="disabled">
+                                        
+                                                        <label for="ex_filename">업로드</label>
+                                                        <input type="file" id="ex_filename" class="upload-hidden">
+                                                    </div>
+                                                </div>
+                                                <!-- url -->
+                                                <div class="col pl-0">
+                                                    <input type="text" class="form-control" placeholder="출처">
+                                                </div>
+                                            </div>
+                                            <!-- 날짜 -->
+                                            <div class="row justify-content-center pt-3 pb-4">
+                                                <div class="col-8">
+                                                    <div class="row text-center">
+                                                        <div class="col-4">
+                                                            <span class="text-gray">원문날짜</span>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="row h-100 align-items-center">
+                                                                <div class="w-100 border"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 본문 -->
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <textarea id="" class="form-control" rows="30"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row up-tempo-btn-wrap justify-content-center text-center py-5">
+                                                <div class="col-4">
+                                                    <input type="submit" value="Upload" class="">
+                                                </div>
+                                                <div class="col-4">
+                                                    <input type="submit" value="Temporary Storage" class="">
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </section>
                                     <!-- Twitter -->
-                                    <section class="twitter-admin"></section>
+                                    <section class="twitter-admin">
+                                        <!-- Twitter list -->
+                                        <article class="container pb-5 d-none">
+                                            <!-- New Write -->
+                                            <div class="row align-items-center py-3 py-lg-5">
+                                                <div class="col py-3 border rounded text-center cursor-pointer">
+                                                    <b>NEW</b>
+                                                </div>
+                                            </div>
+                                            <!-- upload and storage -->
+                                            <div class="row justify-content-center align-items-center pb-lg-5">
+                                                <div class="col-lg-12">
+                                                    <div class="row justify-content-between">
+                                                        <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: isBorder, 'text-gray-light': !textGray }"
+                                                            v-on:click="upAndtempo" v-bind:style="trans">
+                                                            Upload Complete
+                                                        </div>
+                                                        <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: !isBorder, 'text-gray-light': textGray }"
+                                                            v-on:click="upAndtempo" v-bind:style="trans">
+                                                            Temporary Storage
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- project Select AND Delete -->
+                                            <div class="row align-items-center py-3 pt-lg-0">
+                                                <div class="col"></div>
+                                                <div class="col-3 pr-0">
+                                                    <select class="form-control">
+                                                        <option value="" selected disabled>프로젝트 선택</option>
+                                                        <option value="" v-for="project in projects">
+                                                            {{ project.name.en }}
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span class="border rounded px-3 py-2 cursor-pointer">
+                                                        <input type="checkbox" class="mr-1"> Delete
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!-- Table -->
+                                            <div class="row pb-lg-5">
+                                                <div class="col-lg-12 px-0">
+                                                    <table class="table table-hover">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th style="width: 5%;">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <th style="width: 7%">#</th>
+                                                                <th class="text-center">제목</th>
+                                                                <th style="width: 20%">작성일</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="cursor-pointer">
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>1</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>2</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>3</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>1</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>2</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>3</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>1</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>2</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>3</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>1</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>2</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>3</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>1</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>2</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <td>3</td>
+                                                                <td class="text-center">
+                                                                    제목이 들어가는 부분, 누구인가 누가 소리를 내었는가, 마구니가 꼈어
+                                                                </td>
+                                                                <td>2018.07.11 15:50</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <nav aria-label="Page navigation">
+                                                        <ul class="pagination justify-content-center">
+                                                            <li class="page-item disabled">
+                                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                            </li>
+                                                            <li class="page-item active">
+                                                                <a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">2</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">3</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">Next</a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- Twitter write -->
+                                        <article class="container py-5 d-none">
+                                            <div class="row align-items-center py-4">
+                                                <!-- 프로젝트 이미지 -->
+                                                <div class="col-1">
+                                                    <div class="border rounded-circle" style="width: 2.5rem; height: 2.5rem;">
+                                                        <img :src="selected">
+                                                    </div>
+                                                </div>
+                                                <!-- 프로젝트 선택 -->
+                                                <div class="col-3 pl-0">
+                                                    <select name="" id="" class="form-control" v-model="selected">
+                                                        <option value="" selected>프로젝트 선택</option>
+                                                        <option :value="project.src" v-for="(project, key) in projects" :key="project.id">{{project.name.ko}}</option>
+                                                    </select>
+                                                </div>
+                                                <!-- 날짜 선택 -->
+                                                <div class="col-8">
+                                                    <div class="row text-center">
+                                                        <div class="col-4">
+                                                            <span class="text-gray">원문날짜</span>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="row h-100 align-items-center">
+                                                                <div class="w-100 border"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 본문 -->
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <textarea id="" class="form-control" rows="30"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row up-tempo-btn-wrap justify-content-center text-center py-5">
+                                                <div class="col-4">
+                                                    <input type="submit" value="Upload" class="">
+                                                </div>
+                                                <div class="col-4">
+                                                    <input type="submit" value="Temporary Storage" class="">
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </section>
                                     <!-- Statistic -->
                                     <section class="statistic"></section>
                                 </div>
