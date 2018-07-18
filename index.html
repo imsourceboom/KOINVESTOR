@@ -254,10 +254,10 @@
 
 
         <!-- 메인 컨텐츠 영역 -->
-        <main id="main" class="main" v-if="main">
+        <main id="main" class="main" v-if="!main">
             <!-- Desk-Top Ver. -->
             <!-- index Page -->
-            <section class="index d-none">
+            <section class="index d-none d-lg-block" v-if="section">
                 <!-- HEADLINE -->
                 <article class="headline container-fluid text-center pb-5 bg-white">
                     <!-- headline-a a-row -->
@@ -611,7 +611,7 @@
             </section>
             <!-- Mobile Ver. -->
             <!-- index Page -->
-            <section class="m-index d-none d-lg-none">
+            <section class="m-index d-lg-none" v-if="section">
                 <!-- m-headline -->
                 <article class="m-headline-wrap">
                     <div class="swiper-container">
@@ -850,9 +850,9 @@
                 </article>
             </section>
             <!-- NOTICE -->
-            <section class="notice d-none">
+            <section class="notice" v-if="section">
                 <!-- 공지사항 심볼 영역 -->
-                <articel class="desk-top-notice-start d-none d-lg-block py-5 border-bottom border-top">
+                <article class="desk-top-notice-start d-none d-lg-block py-5 border-bottom border-top">
                     <div class="flex-center">
                         <div class="floating-btn flex-center rounded-circle shadow-box">
                             <div id="line-wrapper">
@@ -862,7 +862,7 @@
                             </div>
                         </div>
                     </div>
-                </articel>
+                </article>
                 <article class="m-notice-start d-lg-none px-3">
                     <div class="container">
                         <div class="row">
@@ -948,7 +948,7 @@
 
             </section>
             <!-- BlockChain -->
-            <section class="blockchain d-none">
+            <section class="blockchain" v-if="section">
                 <article class="blockchain-wrapper px-3 px-lg-0 pb-3">
                     <div class="container">
                         <div class="row">
@@ -1118,7 +1118,7 @@
                 </article>
             </section>
             <!-- Project -->
-            <section class="project d-none">
+            <section class="project" v-if="section">
                 <article class="project-wrapper px-3 px-lg-0 pb-3">
                     <div class="container">
                         <div class="row">
@@ -1431,7 +1431,7 @@
                 </article>
             </section>
             <!-- Twitter -->
-            <section class="twitter d-none">
+            <section class="twitter" v-if="section">
                 <div class="container p-0">
                     <!-- Twitter Logo -->
                     <div class="flex-center twitter-logo-wrap bg-white">
@@ -1770,130 +1770,8 @@
                     </div>
                 </div>
             </section>
-            <!-- Contact -->
-            <section class="contact d-none">
-                <form action="">
-                    <article class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-8 text-center py-4 py-lg-5">
-                                <b class="fs-12">
-                                    <i>
-                                        Contact Us
-                                    </i>
-                                </b>
-                            </div>
-                            <div class="col-11 col-lg-8">
-                                <div class="row contact-input-wrap align-items-center border-bottom">
-                                    <div class="col-4 col-lg-2">
-                                        받는사람
-                                    </div>
-                                    <div class="col">
-                                        코인베스터
-                                    </div>
-                                </div>
-                                <div class="row contact-input-wrap align-items-center border-bottom">
-                                    <div class="col-4 col-lg-2">
-                                        이메일
-                                    </div>
-                                    <div class="col">
-                                        <input type="email" class="" placeholder="답변 받을 이메일 주소 입력">
-                                    </div>
-                                </div>
-                                <div class="row contact-input-wrap align-items-center border-bottom">
-                                    <div class="col-4 col-lg-2">
-                                        제목
-                                    </div>
-                                    <div class="col">
-                                        <input type="제목" class="" placeholder="제목 입력">
-                                    </div>
-                                </div>
-                                <div class="row pt-4">
-                                    <div class="col-12 p-0">
-                                        <textarea class="form-control" rows="15"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-8 text-center">
-                                <input type="submit" value="문의하기">
-                            </div>
-                        </div>
-                    </article>
-                </form>
-            </section>
-            <!-- Cooperate -->
-            <section class="cooperate d-none">
-                <form action="">
-                    <article class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-8 text-center py-4 py-lg-5">
-                                <b class="fs-12">
-                                    <i>
-                                        Ask for Cooperation
-                                    </i>
-                                </b>
-                            </div>
-                            <div class="col-11 col-lg-8">
-                                <div class="row cooperate-input-wrap align-items-center border-bottom">
-                                    <div class="col-4 col-lg-2">
-                                        받는사람
-                                    </div>
-                                    <div class="col">
-                                        코인베스터
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 col-lg-6">
-                                        <div class="row align-items-center cooperate-input-wrap border-bottom">
-                                            <div class="col-4">
-                                                회사명
-                                            </div>
-                                            <div class="col">
-                                                <input type="email" class="" placeholder="회사명 입력">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <div class="row align-items-center cooperate-input-wrap border-bottom">
-                                            <div class="col-4">
-                                                담당자
-                                            </div>
-                                            <div class="col">
-                                                <input type="email" class="" placeholder="담당자 입력">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row cooperate-input-wrap align-items-center border-bottom">
-                                    <div class="col-4 col-lg-2">
-                                        이메일
-                                    </div>
-                                    <div class="col">
-                                        <input type="email" class="" placeholder="답변 받을 이메일 주소 입력">
-                                    </div>
-                                </div>
-                                <div class="row cooperate-input-wrap align-items-center border-bottom">
-                                    <div class="col-4 col-lg-2">
-                                        제목
-                                    </div>
-                                    <div class="col">
-                                        <input type="제목" class="" placeholder="제목 입력">
-                                    </div>
-                                </div>
-                                <div class="row pt-4">
-                                    <div class="col-12 p-0">
-                                        <textarea class="form-control" rows="15"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-8 text-center">
-                                <input type="submit" value="문의하기">
-                            </div>
-                        </div>
-                    </article>
-                </form>
-            </section>
             <!-- Detail -->
-            <section class="detail d-none">
+            <section class="detail" v-if="section">
                 <article class="container pb-4 pb-lg-5">
                     <!-- title -->
                     <div class="row justify-content-center pt-4 pt-lg-5">
@@ -1978,23 +1856,439 @@
                     </div>
                 </article>
             </section>
+            <!-- Login -->
+            <section class="login" v-if="!section">
+                <article class="sign-in">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center align-items-center vh-100">
+                            <div class="col-10 col-lg-4 sign-in-wrap">
+                                <div class="row align-items-end py-3">
+                                    <div class="col-3 col-lg-3 pr-0">
+                                        <label for="login-id" class="m-0">
+                                            아 이 디
+                                        </label>
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="text" class="" id="login-id">
+                                    </div>
+                                </div>
+                                <div class="row align-items-end py-3">
+                                    <div class="col-3 col-lg-3 pr-0">
+                                        <label for="login-pw" class="m-0">
+                                            비밀번호
+                                        </label>
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="password" class="" id="login-pw">
+                                    </div>
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="로그인(LOGIN)">
+                                    </div>
+                                </div>
+                                <div class="login-search row py-3 fs-08 fs-lg-09">
+                                    <div class="col cursor-pointer">아이디 찾기</div>
+                                    <div class="col cursor-pointer text-center border-left border-right">비밀번호 찾기</div>
+                                    <div class="col text-right">
+                                        <label class="m-0 cursor-pointer">
+                                            아이디 저장
+                                            <input type="checkbox" class="d-inline-block ml-lg-1">
+                                        </label>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row text-center fs-09">
+                                    <div class="col-12 py-3 cursor-pointer">
+                                        <span class="login-tele">Telegram 로그인</span>
+                                    </div>
+                                    <div class="col-12 py-3 cursor-pointer">
+                                        회원가입
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>                
+            </section>
+            <!-- Result -->
+            <section class="result" v-if="section">
+                <div class="container-fluid pb-lg-5">
+                    <!-- result title -->
+                    <div class="row justify-content-center text-center py-5 fs-lg-13">
+                        <div class="col-auto p-0">
+                            검색어
+                            <strong>
+                                <big>앰브로서스</big>
+                            </strong>에 대한
+                        </div>
+                        <div class="col-12 col-lg-auto p-0">
+                            &nbsp;전체
+                            <strong>
+                                <big>999</big>
+                            </strong>개의 결과를 찾았습니다.
+                        </div>
+                    </div>
+                    <!-- result count -->
+                    <div class="py-lg-5">
+                        <div class="row justify-content-center text-center pb-5 fs-09 fs-lg-10">
+                            <div class="col col-lg-3 border-top border-bottom py-2">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-lg-auto px-0">블록체인 뉴스</div>
+                                    <div class="col-12 col-lg-auto px-0">
+                                        [<span> 999 </span>]
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 border-top border-bottom py-2">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-lg-auto px-0">프로젝트 소식</div>
+                                    <div class="col-12 col-lg-auto px-0">
+                                        [<span> 999 </span>]
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-lg-3 border-top border-bottom py-2">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-lg-auto px-0">공지사항</div>
+                                    <div class="col-12 col-lg-auto px-0">
+                                        [<span> 999 </span>]
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- result blockchain -->
+                    <article class="result-blockchian">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9 border-bottom">
+                                <div class="row">
+                                    <div class="col">
+                                        <b>블록체인 뉴스</b>
+                                        <small class="text-gray">[총 <span>999</span>건]</small>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="material-icons md-22 text-gray-light">
+                                            add
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 py-3">
+                                <div class="row pb-4">
+                                    <div class="col-12 pb-2">
+                                        <div class="row">
+                                            <div class="col-auto m-index-news-title">
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                            </div>
+                                            <div class="col-auto px-0">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-gray m-headline-context fs-09">
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 pb-2">
+                                        <div class="row">
+                                            <div class="col-auto m-index-news-title">
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                            </div>
+                                            <div class="col-auto px-0">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-gray m-headline-context fs-09">
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- result project -->
+                    <article class="result-project py-lg-4">
+                        <div class="row justify-content-center py-5">
+                            <div class="col-lg-9 border-bottom">
+                                <div class="row">
+                                    <div class="col">
+                                        <b>프로젝트 뉴스</b>
+                                        <small class="text-gray">[총 <span>999</span>건]</small>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="material-icons md-22 text-gray-light">
+                                            add
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 py-3">
+                                <div class="row pb-4">
+                                    <div class="col-12 pb-2">
+                                        <div class="row">
+                                            <div class="col-auto index-project-img-cover pr-0">
+                                                <img src="./img/logo/ambrosus_m.svg" alt="">
+                                            </div>
+                                            <div class="col-auto m-index-project-title pl-1 pl-lg-3">
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                            </div>
+                                            <div class="col-auto px-0">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-gray m-headline-context fs-09">
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 pb-2">
+                                        <div class="row">
+                                            <div class="col-auto index-project-img-cover pr-0">
+                                                <img src="./img/logo/ambrosus_m.svg" alt="">
+                                            </div>
+                                            <div class="col-auto m-index-project-title pl-1 pl-lg-3">
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                            </div>
+                                            <div class="col-auto px-0">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-gray m-headline-context fs-09">
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- result notice -->
+                    <article class="result-notice">
+                        <div class="row justify-content-center pb-5">
+                            <div class="col-lg-9 border-bottom">
+                                <div class="row">
+                                    <div class="col">
+                                        <b>공지사항</b>
+                                        <small class="text-gray">[총 <span>999</span>건]</small>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="material-icons md-22 text-gray-light">
+                                            add
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 py-3">
+                                <div class="row pb-4">
+                                    <div class="col-12 pb-2">
+                                        <div class="row">
+                                            <div class="col-auto m-index-news-title">
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                            </div>
+                                            <div class="col-auto px-0">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-gray m-headline-context fs-09">
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 pb-2">
+                                        <div class="row">
+                                            <div class="col-auto m-index-news-title">
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                            </div>
+                                            <div class="col-auto px-0">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-gray m-headline-context fs-09">
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!-- Contact -->
+            <section class="contact" v-if="section">
+                <form action="">
+                    <article class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center py-4 py-lg-5">
+                                <b class="fs-12">
+                                    <i>
+                                        Contact Us
+                                    </i>
+                                </b>
+                            </div>
+                            <div class="col-11 col-lg-8">
+                                <div class="row contact-input-wrap align-items-center border-bottom">
+                                    <div class="col-4 col-lg-2">
+                                        받는사람
+                                    </div>
+                                    <div class="col">
+                                        코인베스터
+                                    </div>
+                                </div>
+                                <div class="row contact-input-wrap align-items-center border-bottom">
+                                    <div class="col-4 col-lg-2">
+                                        이메일
+                                    </div>
+                                    <div class="col">
+                                        <input type="email" class="" placeholder="답변 받을 이메일 주소 입력">
+                                    </div>
+                                </div>
+                                <div class="row contact-input-wrap align-items-center border-bottom">
+                                    <div class="col-4 col-lg-2">
+                                        제목
+                                    </div>
+                                    <div class="col">
+                                        <input type="제목" class="" placeholder="제목 입력">
+                                    </div>
+                                </div>
+                                <div class="row pt-4">
+                                    <div class="col-12 p-0">
+                                        <textarea class="form-control" rows="15"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-8 text-center">
+                                <input type="submit" value="문의하기">
+                            </div>
+                        </div>
+                    </article>
+                </form>
+            </section>
+            <!-- Cooperate -->
+            <section class="cooperate" v-if="section">
+                <form action="">
+                    <article class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center py-4 py-lg-5">
+                                <b class="fs-12">
+                                    <i>
+                                        Ask for Cooperation
+                                    </i>
+                                </b>
+                            </div>
+                            <div class="col-11 col-lg-8">
+                                <div class="row cooperate-input-wrap align-items-center border-bottom">
+                                    <div class="col-4 col-lg-2">
+                                        받는사람
+                                    </div>
+                                    <div class="col">
+                                        코인베스터
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-lg-6">
+                                        <div class="row align-items-center cooperate-input-wrap border-bottom">
+                                            <div class="col-4">
+                                                회사명
+                                            </div>
+                                            <div class="col">
+                                                <input type="email" class="" placeholder="회사명 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="row align-items-center cooperate-input-wrap border-bottom">
+                                            <div class="col-4">
+                                                담당자
+                                            </div>
+                                            <div class="col">
+                                                <input type="email" class="" placeholder="담당자 입력">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row cooperate-input-wrap align-items-center border-bottom">
+                                    <div class="col-4 col-lg-2">
+                                        이메일
+                                    </div>
+                                    <div class="col">
+                                        <input type="email" class="" placeholder="답변 받을 이메일 주소 입력">
+                                    </div>
+                                </div>
+                                <div class="row cooperate-input-wrap align-items-center border-bottom">
+                                    <div class="col-4 col-lg-2">
+                                        제목
+                                    </div>
+                                    <div class="col">
+                                        <input type="제목" class="" placeholder="제목 입력">
+                                    </div>
+                                </div>
+                                <div class="row pt-4">
+                                    <div class="col-12 p-0">
+                                        <textarea class="form-control" rows="15"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-8 text-center">
+                                <input type="submit" value="문의하기">
+                            </div>
+                        </div>
+                    </article>
+                </form>
+            </section>
         </main>
 
 
         <!-- 관리자 -->
-        <main id="admin" class="admin bg-white">
-            <div class="container border-top">
+        <main id="admin" class="admin bg-white" v-if="admin">
+            <div class="container-fluid border-top">
                 <div class="row">
                     <!-- admin Navigation -->
                     <aside class="col-lg-3 border-right" style="min-height: 50vh;">
                         <div class="row justify-content-center">
                             <nav class="position-fixed pt-lg-5">
                                 <ul class="col-auto py-lg-5">
-                                    <li v-for="(nav, index, key) in navs" class="py-lg-4"
-                                        v-bind:class="navActiveClass"
-                                        v-bind:key="nav.id"
-                                        v-on:click.self="navActive($event)">
-                                        {{nav}}
+                                    <li v-for="(nav, index) in navs" class="py-lg-4" v-bind:class="{'admin-nav-active' : nav.active}" v-bind:key="nav.id" v-bind:style="trans"
+                                        v-on:click="navActive(index)">
+                                        {{nav.name.ko}}
                                     </li>
                                 </ul>
                             </nav>
