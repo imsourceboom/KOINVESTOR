@@ -579,7 +579,7 @@ Mobile Index Section
 }
 
 .twit-menu-in {
-    animation: twit-menu-in .7s;
+    animation: twit-menu-in .7s ease-in-out both;
 }
 
 .twit-menu-out {
@@ -941,6 +941,31 @@ Project Section
 
 
 /* Detail Section */
+.modi-del {
+    border: none;
+    background-color: #FAD267;
+    border-radius: .5rem;
+    color: #fff;
+    padding: .35rem .7rem;
+    margin-top: .5rem;
+    cursor: pointer;
+    transition: .7s;
+}
+.modi-del-twit {
+    border: none;
+    background-color: #FAD267;
+    border-radius: .5rem;
+    color: #fff;
+    padding: 0 .4rem;
+    margin-top: .5rem;
+    cursor: pointer;
+    transition: .7s;
+}
+.modi-del:hover,
+.modi-del-twit:hover {
+    color: rgba(76, 103, 161, 1);
+}
+
 .detail-content-wrap img {
     width: 100%;
     object-fit: cover;
@@ -999,10 +1024,10 @@ Project Section
     color: #fff;
 }
 
-.like-active {
+.like-icon.active {
     animation: like-active .5s ease-in-out both;
 }
-.like-destroy {
+.like-icon.destroy {
     animation: like-destroy .5s;
 }
 
@@ -1077,7 +1102,7 @@ footer {
 
 
 /* Admin CSS */
-.admin-nav-active {
+.admin-nav.active {
     border-top: 1px solid rgba(238, 238, 238, 1);
     border-bottom: 1px solid rgba(238, 238, 238, 1);
     font-weight: bold;
