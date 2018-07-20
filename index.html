@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+    <!-- FlatPickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Flatpickr Theme -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css"> -->
+
     <!-- custom CSS -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
@@ -895,6 +900,10 @@
                             deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
                             voluptatibus, totam ipsum!
                         </div>
+                        <div class="col">
+                            <input type="submit" class="modi-del mr-2" value="수정">
+                            <input type="submit" class="modi-del" value="삭제">
+                        </div>
                     </div>
                 </article>
                 <article class="row no-gutters py-5 justify-content-center border-bottom">
@@ -1567,6 +1576,8 @@
                                             Telegram
                                             <span class="text-gray-light fs-08 ml-4">@telegram</span>
                                             <span class="text-gray-light fs-08">6월 18일</span>
+                                            <input type="submit" class="modi-del-twit fs-09 ml-2 mr-1" value="수정">
+                                            <input type="submit" class="modi-del-twit fs-09" value="삭제">
                                         </p>
                                         <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus ipsa,
                                             eligendi cum molestias expedita corrupti magnam reiciendis, facilis veritatis
@@ -1780,12 +1791,14 @@
                         </div>
                         <div class="col-12 col-lg-8 text-gray py-4 py-lg-5">
                             <small class="d-block">2018년 7월 17일</small>
-                            <small>
+                            <small class="d-block">
                                 원문보기
                                 <a href="" class="text-gray">
                                     https://koinvestor.com/andlkfjealskdjfoiehkajsdjfhlka
                                 </a>
                             </small>
+                            <input type="submit" class="modi-del mr-2" value="수정">
+                            <input type="submit" class="modi-del" value="삭제">
                         </div>
                     </div>
                     <!-- content -->
@@ -1857,8 +1870,9 @@
                 </article>
             </section>
             <!-- Login -->
-            <section class="login" v-if="!section">
-                <article class="sign-in">
+            <section class="login" v-if="section">
+                <!-- 로그인 기본 양식 -->
+                <article class="sign-in" v-if="login">
                     <div class="container-fluid">
                         <div class="row justify-content-center align-items-center vh-100">
                             <div class="col-10 col-lg-4 sign-in-wrap">
@@ -1909,7 +1923,371 @@
                             </div>
                         </div>
                     </div>
-                </article>                
+                </article>
+                <!-- 아이디 찾기 -->
+                <article class="id-search" v-if="login">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center align-items-center vh-100">
+                            <div class="col-10 col-lg-4 sign-in-wrap">
+                                <div class="row pb-5">
+                                    <div class="col">
+                                        <p><b>아이디 찾기</b></p>
+                                        <small class="text-gray">등록된 이름과 이메일 주소를 입력해주세요.</small>
+                                        <div class="border-bottom"></div>
+                                    </div>
+                                </div>
+                                <div class="row align-items-end py-3">
+                                    <div class="col-3 col-lg-3 pr-0">
+                                        <label for="login-id" class="m-0">
+                                            이름
+                                        </label>
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="text" class="" id="login-id">
+                                    </div>
+                                </div>
+                                <div class="row align-items-end py-3">
+                                    <div class="col-3 col-lg-3 pr-0">
+                                        <label for="login-pw" class="m-0">
+                                            이메일
+                                        </label>
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="password" class="" id="login-pw">
+                                    </div>
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="확인">
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row text-center fs-09">
+                                    <div class="col-12 py-3 cursor-pointer">
+                                        <span class="login-tele">Telegram 로그인</span>
+                                    </div>
+                                    <div class="col-12 py-3 cursor-pointer">
+                                        회원가입
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- 아이디 확인 -->
+                <article class="id-confirm" v-if="login">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center align-items-center vh-100">
+                            <div class="col-10 col-lg-4 sign-in-wrap">
+                                <div class="row text-center pb-4">
+                                    <div class="col">
+                                        <div class="border-top pb-5"></div>
+                                        <span class="fs-09">
+                                            찾으시는 아이디는
+                                            [ <strong class="fs-11">koinkoin0316</strong> ]
+                                            입니다.
+                                        </span>
+                                        <div class="border-bottom pt-5"></div>
+                                    </div>
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="로그인 페이지로 이동하기">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- 아이디, 비밀번호 Null -->
+                <article class="id-null pw-null" v-if="login">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center align-items-center vh-100">
+                            <div class="col-10 col-lg-4 sign-in-wrap">
+                                <div class="row text-center pb-4">
+                                    <div class="col fs-09">
+                                        <div class="border-top pb-5"></div>
+                                        <span>
+                                            일치하는 정보가 없습니다.
+                                        </span>
+                                        <span class="d-block">다시 입력하세요.</span>
+                                        <div class="border-bottom pt-5"></div>
+                                    </div>
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="이전으로 돌아가기">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row text-center fs-09">
+                                    <div class="col-12 py-3 cursor-pointer">
+                                        <span class="login-tele">Telegram 로그인</span>
+                                    </div>
+                                    <div class="col-12 py-3 cursor-pointer">
+                                        회원가입
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- 비밀번호 찾기 -->
+                <article class="pw-search" v-if="login">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center align-items-center vh-100">
+                            <div class="col-10 col-lg-4 sign-in-wrap">
+                                <div class="row pb-5">
+                                    <div class="col">
+                                        <p><b>비밀번호 찾기</b></p>
+                                        <small class="text-gray">등록된 이름과 아이디, 이메일 주소를 입력해주세요.</small>
+                                        <div class="border-bottom"></div>
+                                    </div>
+                                </div>
+                                <div class="row align-items-end py-3">
+                                    <div class="col-3 col-lg-3 pr-0">
+                                        <label for="login-id" class="m-0">
+                                            이름
+                                        </label>
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="text" class="" id="login-id">
+                                    </div>
+                                </div>
+                                <div class="row align-items-end py-3">
+                                    <div class="col-3 col-lg-3 pr-0">
+                                        <label for="login-id" class="m-0">
+                                            아이디
+                                        </label>
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="text" class="" id="login-id">
+                                    </div>
+                                </div>
+                                <div class="row align-items-end py-3">
+                                    <div class="col-3 col-lg-3 pr-0">
+                                        <label for="login-pw" class="m-0">
+                                            이메일
+                                        </label>
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="password" class="" id="login-pw">
+                                    </div>
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="확인">
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row text-center fs-09">
+                                    <div class="col-12 py-3 cursor-pointer">
+                                        <span class="login-tele">Telegram 로그인</span>
+                                    </div>
+                                    <div class="col-12 py-3 cursor-pointer">
+                                        회원가입
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- 비밀번호 인증 -->
+                <article class="pw-auth" v-if="login">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center align-items-center vh-100">
+                            <div class="col-10 col-lg-4 sign-in-wrap">
+                                <div class="row pb-3">
+                                    <div class="col">
+                                        <p><b>인증번호 입력</b></p>
+                                        <small class="text-gray">입력하신 이메일 주소로 인증번호가 발송되었습니다.</small>
+                                        <small class="d-block text-gray">인증번호를 입력해주세요.</small>
+                                        <div class="border-bottom"></div>
+                                    </div>
+                                </div>
+                                <div class="row align-items-end py-3">
+                                    <div class="col-3 col-lg-3 pr-0">
+                                        <label for="login-pw-auth" class="m-0">
+                                            인증번호
+                                        </label>
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="text" class="" id="login-pw-auth">
+                                    </div>
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="확인">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- 비밀번호 New -->
+                <article class="pw-new" v-if="login">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center align-items-center vh-100">
+                            <div class="col-10 col-lg-4 sign-in-wrap">
+                                <div class="row pb-3">
+                                    <div class="col">
+                                        <p><b>새로운 비밀번호 입력</b></p>
+                                        <small class="text-gray">인증에 성공하였습니다. 새로운 비밀번호를 입력하세요.</small>
+                                        <small class="d-block text-gray"></small>
+                                        <div class="border-bottom"></div>
+                                    </div>
+                                </div>
+                                <div class="row align-items-end py-3">
+                                    <div class="col-5 col-lg-4 pr-0">
+                                        <label for="login-pw-new" class="m-0">
+                                            새 비밀번호
+                                        </label>
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="text" class="" id="login-pw-new">
+                                    </div>
+                                </div>
+                                <div class="row align-items-end py-3">
+                                    <div class="col-5 col-lg-4 pr-0">
+                                        <label for="login-pw-new-confirm" class="m-0">
+                                            새 비밀번호 확인
+                                        </label>
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="text" class="" id="login-pw-new-confirm">
+                                    </div>
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="확인">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- 비밀번호 확인 -->
+                <article class="pw-confirm" v-if="login">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center align-items-center vh-100">
+                            <div class="col-10 col-lg-4 sign-in-wrap">
+                                <div class="row text-center pb-4">
+                                    <div class="col">
+                                        <div class="border-top pb-5"></div>
+                                        <span class="fs-09">
+                                            정상적으로 처리되었습니다.
+                                        </span>
+                                        <div class="border-bottom pt-5"></div>
+                                    </div>
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="로그인 페이지로 이동하기">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- Join Us -->
+            <section class="join" v-if="!section">
+                <div class="container">
+                    <div class="row justify-content-center pb-5">
+                        <div class="col col-lg-9">
+                            <div class="row">
+                                <div class="col fs-12 text-center py-5">
+                                    <i>
+                                        <b>Join us</b>
+                                    </i>
+                                </div>
+                            </div>
+                            <article class="basis-info">
+                                <div class="row">
+                                    <!-- basic input -->
+                                    <div class="col-12 col-lg-9">
+                                        <div class="row">
+                                            <div class="col-12 py-3 border-bottom">
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                         기본정보
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-3">
+                                                        아이디
+                                                    </div>
+                                                    <div class="col-5 col-lg-5 pl-0">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="submit" class="py-2 px-3 px-lg-4 rounded bg-dark text-white w250 fs-08" value="중복확인">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-3">
+                                                        비밀번호
+                                                    </div>
+                                                    <div class="col-8 col-lg-5 pl-0">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-3">
+                                                        비밀번호 확인
+                                                    </div>
+                                                    <div class="col-8 col-lg-5 pl-0">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-3">
+                                                        이름
+                                                    </div>
+                                                    <div class="col-8 col-lg-5 pl-0">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-3">
+                                                        이메일
+                                                    </div>
+                                                    <div class="col-4 col-lg-5 pl-0">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="col-auto px-0">@</div>
+                                                    <div class="col">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- profile image -->
+                                    <div class="col-12 col-lg-3 bg-danger">
+                                        <div class="row">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- Result -->
             <section class="result" v-if="section">
@@ -2276,6 +2654,7 @@
             </section>
         </main>
 
+        
 
         <!-- 관리자 -->
         <main id="admin" class="admin bg-white" v-if="admin">
@@ -2285,11 +2664,16 @@
                     <aside class="col-lg-3 border-right" style="min-height: 50vh;">
                         <div class="row justify-content-center">
                             <nav class="position-fixed pt-lg-5">
-                                <ul class="col-auto py-lg-5">
-                                    <li v-for="(nav, index) in navs" class="py-lg-4" v-bind:class="{'admin-nav-active' : nav.active}" v-bind:key="nav.id" v-bind:style="trans"
+                                <ul class="admin-nav-wrap col-auto py-lg-5 px-0">
+                                    <!-- <li v-for="(nav, index) in navs" class="admin-nav py-lg-4" v-bind:class="{'active' : nav.active}" v-bind:key="nav.id" v-bind:style="trans"
                                         v-on:click="navActive(index)">
                                         {{nav.name.ko}}
-                                    </li>
+                                    </li> -->
+                                    <li class="admin-nav active py-lg-4">공지사항</li>
+                                    <li class="admin-nav py-lg-4">블록체인</li>
+                                    <li class="admin-nav py-lg-4">프로젝트</li>
+                                    <li class="admin-nav py-lg-4">트위터</li>
+                                    <li class="admin-nav py-lg-4">통계</li>
                                 </ul>
                             </nav>
                         </div>
@@ -2522,7 +2906,7 @@
                                         </div>
                                     </article>
                                     <!-- notice write -->
-                                    <article class="container py-5 d-none">
+                                    <article class="container py-5">
                                         <!-- 제목 -->
                                         <div class="row pt-5">
                                             <div class="col-12">
@@ -2534,7 +2918,8 @@
                                             <div class="col-8">
                                                 <div class="row text-center">
                                                     <div class="col-4">
-                                                        <span class="text-gray">{{state.today}}</span>
+                                                        <span class="text-gray moment"></span>
+                                                        <!-- <span class="text-gray">{{state.today}}</span> -->
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="row h-100 align-items-center">
@@ -2542,7 +2927,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker>
+                                                        <!-- <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker> -->
+                                                        <input class="flatdate text-center" type="text">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2787,7 +3173,7 @@
                                         </div>
                                     </article>
                                     <!-- blockchain write -->
-                                    <article class="container py-5">
+                                    <article class="container py-5 d-none">
                                         <!-- 제목 -->
                                         <div class="row pt-5">
                                             <div class="col-12">
@@ -2823,7 +3209,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker>
+                                                        <!-- <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker> -->
+                                                        <input class="flatdate text-center" type="text">
                                                     </div>
                                                 </div>
                                             </div>
@@ -3135,7 +3522,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker>
+                                                        <!-- <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker> -->
+                                                        <input class="flatdate text-center" type="text">
                                                     </div>
                                                 </div>
                                             </div>
@@ -3415,7 +3803,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker>
+                                                        <!-- <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker> -->
+                                                        <input class="flatdate text-center" type="text">
                                                     </div>
                                                 </div>
                                             </div>
@@ -3493,6 +3882,8 @@
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/ko.js"></script> -->
+    <!-- FlatPicker -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- Prefixfree -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <!-- Web Animations API Polyfill -->
