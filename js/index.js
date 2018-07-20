@@ -85,8 +85,283 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+
+    var doc = document;
+
+    /*
+    Main Vue.js
+    */
+
+    new Vue({
+        el: "#main",
+        data: {
+            main: false,
+            section: false,
+            login: false
+        }
+    })
+    
+
+
     // Main Tag
-    var mainTag = document.querySelector('.main');
+    var main = doc.querySelector('#main');
+
+    if (main != null) {
+        var mainClass = main.getAttribute('class');
+        if (mainClass.indexOf('main') != -1) {
+
+
+
+
+            // Main Tag의 자식들(Section tag)을 담는 변수
+            var mainChildren = Array.from(main.children);
+            // index Section 이외 나머지 섹션 배경색 화이트 적용
+            mainChildren.forEach(function (el) {
+                if (el.classList.contains('index')) {
+                    main.style.backgroundColor = 'none';
+                } else if (el.classList.contains('twitter')) {
+                    main.style.backgroundColor = 'none';
+                } else {
+                    el.style.backgroundColor = 'white';
+                }
+            })
+
+
+
+
+
+
+
+            /*
+            Project Section
+            */
+            var projectSection = doc.querySelector('.project');
+
+            if (projectSection != null) {
+                if (projectSection.classList.contains('project')) {
+                    // Element object
+                    var projectEl = {
+                        // PC ver
+                        deskTop: {
+                            // 전체보기
+                            allView: doc.querySelector('.pc-project-all'),
+                            // 메뉴 아이템들
+                            listItem: Array.from(doc.querySelector('.pc-project-list').children)
+                        },
+                        // Mobile ver
+                        mobile: {
+                            // 프로젝트 선택
+                            select: doc.querySelector('.project-select'),
+                            // 메뉴 Wrap
+                            listWrap: doc.querySelector('.project-list'),
+                            // 메뉴 아이템들
+                            listItem: Array.from(doc.querySelector('.project-list').children)
+                        }
+                    }
+                    // Method object
+                    var projectMethod = {
+                        deskTop: {
+                            // project menu 전체보기 Method
+                            allView: function () {
+                                // projectEl.deskTop.allView.addEventListener('click', function () {
+                                projectEl.deskTop.listItem.forEach(function (item) {
+                                    var itemChild = Array.from(item.children);
+                                    item.style.backgroundColor = '#ffffff';
+                                    itemChild[0].style.transform = 'none';
+                                    itemChild[0].style.backgroundColor = '#ffffff';
+                                })
+                                // })
+                            },
+                            menuActiveToggle: function () {
+                                projectEl.deskTop.listItem.forEach(function (item) {
+                                    // console.log(item)
+                                    item.addEventListener('click', function () {
+                                        console.log(this)
+                                        var thisChild = Array.from(this.children);
+                                        if (this.style.backgroundColor == 'rgb(214, 240, 228)') {
+                                            thisChild[0].style.transform = 'none';
+                                            this.style.backgroundColor = '#ffffff';
+                                        } else {
+                                            thisChild[0].style.transform = 'translate( 20%, 0)';
+                                            thisChild[0].style.backgroundColor = '#ffffff';
+                                            this.style.backgroundColor = 'rgb(214, 240, 228)';
+
+                                        }
+                                    })
+                                })
+                            }
+                        },
+                        mobile: {
+                            selectAccordion: function() {
+                                var el = projectEl.mobile.listWrap;
+                                if (el.classList.contains('d-none')) {
+                                    if (el.classList.contains('accordionOut')) {
+                                        el.classList.toggle('accordionOut');
+                                    }
+                                    el.classList.toggle('d-none');
+                                    el.classList.toggle('accordionIn');
+                                    setTimeout(function () {
+                                        el.classList.remove('accordionIn');
+                                    }, 700);
+                                } else {
+                                    projectMethod.mobile.projectListOut();
+                                }
+                            },
+                            itemAccordionOut: function() {
+                                projectEl.mobile.listItem.map(function(el) {
+                                    el.addEventListener('click', projectMethod.mobile.projectListOut);
+                                })
+                            },
+                            projectListOut: function() {
+                                var el = projectEl.mobile.listWrap;
+                                el.classList.toggle('accordionOut');
+                                setTimeout(function () {
+                                    el.classList.remove('accordionOut');
+                                    el.classList.toggle('d-none');
+                                }, 700);
+                            }
+                        }
+                    }
+
+                    projectEl.deskTop.allView.addEventListener('click', projectMethod.deskTop.allView);
+                    // projectEvent.deskTop.allView();
+                    projectMethod.deskTop.menuActiveToggle();
+
+                    projectEl.mobile.select.addEventListener('click', projectMethod.mobile.selectAccordion)
+                    projectMethod.mobile.itemAccordionOut();
+                }
+            }
+
+            var projectNativeCode = {
+                // Mobile ver. Project select and Project Menu click Event
+                // 프로젝트 선택
+                // var projectSelect_M = document.querySelector('.project-select');
+                // 프로젝트 메뉴들 감싸고 있는 Wrapper
+                // var projectList_M = document.querySelector('.project-list');
+                // 프로젝트 메뉴들
+                // var projectMenu_M = Array.from(document.querySelectorAll('.project-menu'));
+
+                // accordion animation class toggle
+                // projectSelect_M.addEventListener('click', function () {
+                //     if (projectList_M.classList.contains('d-none')) {
+                //         if (projectList_M.classList.contains('accordionOut')) {
+                //             projectList_M.classList.toggle('accordionOut');
+                //         }
+                //         projectList_M.classList.toggle('d-none');
+                //         projectList_M.classList.toggle('accordionIn');
+                //         setTimeout(function () {
+                //             projectList_M.classList.remove('accordionIn');
+                //         }, 700);
+                //     } else {
+                //         projectListOut();
+                //     }
+                // })
+
+                // projectMenu_M.forEach(function (menu) {
+                //     menu.addEventListener('click', projectListOut);
+                // })
+
+                // function projectListOut(event) {
+                //     projectList_M.classList.toggle('accordionOut');
+                //     setTimeout(function () {
+                //         projectList_M.classList.remove('accordionOut');
+                //         projectList_M.classList.toggle('d-none');
+                //     }, 700);
+                // }
+
+                // DeskTop ver. Project Menu Click Event
+                // 전체보기
+                // var projectAll_Pc = document.querySelector('.pc-project-all');
+                // Menu들을 감싸고 있는 부모 Element
+                // var projectList_Pc = document.querySelector('.pc-project-list');
+                // Menu iTems
+                // var projectListChildren_Pc = Array.from(projectList_Pc.children);
+
+                // menu item을 click 했을 때 target의 단독 Event
+                // projectListChildren_Pc.forEach(function (item) {
+                //     item.addEventListener('click', function () {
+                //         console.log(this)
+                //         var thisChild = Array.from(this.children);
+                //         if (this.style.backgroundColor == 'rgb(214, 240, 228)') {
+                //             thisChild[0].style.transform = 'none';
+                //             this.style.backgroundColor = '#ffffff';
+                //         } else {
+                //             thisChild[0].style.transform = 'translate( 20%, 0)';
+                //             thisChild[0].style.backgroundColor = '#ffffff';
+                //             this.style.backgroundColor = 'rgb(214, 240, 228)';
+
+                //         }
+                //     })
+                // })
+                // project menu 전체보기 click Event
+                // projectAll_Pc.addEventListener('click', function () {
+                //     projectListChildren_Pc.forEach(function (item) {
+                //         var itemChild = Array.from(item.children);
+                //         item.style.backgroundColor = '#ffffff';
+                //         itemChild[0].style.transform = 'none';
+                //         itemChild[0].style.backgroundColor = '#ffffff';
+                //     })
+                // })
+            }
+            
+
+
+
+
+            /*
+            Detail Page Section
+            */
+
+            var detailSection = document.querySelector('.detail');
+
+            if (detailSection != null) {
+                if (detailSection.classList.contains('detail')) {
+                    // Element object
+                    var detailEl = {
+                        // 공유하기 버튼관련 엘리멘트들
+                        share: {
+                            btn: doc.querySelector('.share-btn'),
+                            copy: doc.querySelector('.address-copy-alert')
+                        },
+                        // 좋아요 관련 엘리멘트들
+                        like: {
+                            wrap: doc.querySelector('.like-wrap'),
+                            icon: doc.querySelector('.like-icon')
+                        }
+                    }
+                    // Method object
+                    var detailMethod = {
+                        // 공유하기 버튼 클릭시 '주소가 복사되었습니다'라는 엘리먼트 나타났다 사라지는 애니메이션 클릭 이벤트
+                        copyAlert: function () {
+                            detailEl.share.copy.classList.add('copy-alert-toggle');
+                            setTimeout(function () {
+                                detailEl.share.copy.classList.remove('copy-alert-toggle');
+                            }, 3000);
+                        },
+                        // 하트 아이콘 클릭시 하트 애니메이션 트리거 토글 이벤트
+                        likeActive: function () {
+                            var el = detailEl.like.icon;
+                            detailEl.like.wrap.classList.toggle('bg-white');
+                            if (!el.classList.contains('active')) {
+                                el.classList.toggle('active');
+                            } else if (el.classList.contains('active')) {
+                                el.classList.toggle('destroy');
+                            }
+                        }
+                    }
+
+                    detailEl.share.btn.addEventListener('click', detailMethod.copyAlert);
+                    detailEl.like.wrap.addEventListener('click', detailMethod.likeActive);
+                }
+            }
+
+
+
+
+        }
+    }
+
+
     // Header Mobile
     var headerMobile = document.querySelector('.m-header');
     /* 
@@ -119,18 +394,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // 검색 영역
     var searchWrapDesk = document.querySelector('.search-wrap-desk');
 
-    // Section tag들
-    var mainChildren = Array.from(mainTag.children);
-    // index Section 이외 나머지 섹션 배경색 화이트
-    mainChildren.forEach(function (el) {
-        if (el.classList.contains('index')) {
-            mainTag.style.backgroundColor = 'none';
-        } else if (el.classList.contains('twitter')) {
-            mainTag.style.backgroundColor = 'none';
-        } else {
-            el.style.backgroundColor = 'white';
-        }
-    })
+    
+
+
 
     // DeskTop Navigation
     var navList_Pc = document.querySelector('.pc-nav-list');
@@ -141,13 +407,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function fadeInSetTime(sec) {
+        sec.classList.toggle('animated');
+        sec.classList.toggle('fadeIn');
+        setTimeout(function () {
             sec.classList.toggle('animated');
             sec.classList.toggle('fadeIn');
-            setTimeout(function () {
-                sec.classList.toggle('animated');
-                sec.classList.toggle('fadeIn');
-            }, 1000)
+        }, 1000);
     }
+
     function menuLogo_Pc() {
         mainChildren.forEach(function (sec) {
             if (sec.classList.contains('index') && sec.classList.contains('d-none') && !sec.classList.contains('d-lg-block')) {
@@ -166,11 +433,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
     }
+
     function menuBlockChain_Pc() {
         mainChildren.forEach(function (sec) {
             if (sec.classList.contains('blockchain') && sec.classList.contains('d-none')) {
                 sec.classList.toggle('d-none');
                 fadeInSetTime(sec);
+                console.log('blockchain')
+
             } else {
                 if (sec.classList.contains('index') && sec.classList.contains('d-lg-block')) {
                     sec.classList.toggle('d-lg-block');
@@ -184,6 +454,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
     }
+
     function menuProject_Pc() {
         mainChildren.forEach(function (sec) {
             if (sec.classList.contains('project') && sec.classList.contains('d-none')) {
@@ -202,6 +473,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
     }
+
     function menuTwitter_Pc() {
         mainChildren.forEach(function (sec) {
             if (sec.classList.contains('twitter') && sec.classList.contains('d-none')) {
@@ -220,6 +492,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
     }
+
     function menuNotice_Pc() {
         mainChildren.forEach(function (sec) {
             if (sec.classList.contains('notice') && sec.classList.contains('d-none')) {
@@ -365,56 +638,100 @@ document.addEventListener('DOMContentLoaded', function () {
     /* 
     Index Section
     */
-    /* twitter article */
-    // twitter Logo의 mouseover Event
-    var twitterLogo = document.querySelector('.twitter-logo');
-    twitterLogo.addEventListener('mouseover', twitTyped)
-    function twitTyped() {
-        var typed = new Typed("#typed", {
-            strings: ['실시간 트위터 <strong>페이지</strong>', '실시간 트위터 <strong>바로가기</strong>'],
-            typeSpeed: 30,
-            backSpeed: 50,
-        });
-        twitterLogo.removeEventListener('mouseover', twitTyped);
+
+    var indexSection = doc.querySelector('.index');
+
+    if (indexSection != null) {
+        if (indexSection.classList.contains('index')) {
+            /* twitter article */
+            // twitter Logo의 mouseover Event
+            var twitterLogo = document.querySelector('.twitter-logo');
+            twitterLogo.addEventListener('mouseover', twitTyped)
+
+            function twitTyped() {
+                var typed = new Typed("#typed", {
+                    strings: ['실시간 트위터 <strong>페이지</strong>', '실시간 트위터 <strong>바로가기</strong>'],
+                    typeSpeed: 30,
+                    backSpeed: 50,
+                });
+                twitterLogo.removeEventListener('mouseover', twitTyped);
+            }
+            // Twitter right wrpper의 project-menu-wrap waypoint
+            var waypoint = new Waypoint({
+                element: document.querySelector('.t-project-menu-wrap'),
+                handler: function (item) {
+                    this.element.classList.add('fadeInUp');
+                },
+                offset: '10%'
+            })
+            // Twitter left wrpper의 koinvestor twit waypoint
+            var waypoint = new Waypoint({
+                element: document.querySelector('.t-koinvestor-link'),
+                handler: function (item) {
+                    this.element.classList.add('fadeInUp');
+                },
+                offset: 'bottom-in-view'
+            })        
+        }
     }
-    // Twitter right wrpper의 project-menu-wrap waypoint
-    var waypoint = new Waypoint({
-        element: document.querySelector('.t-project-menu-wrap'),
-        handler: function (item) {
-            this.element.classList.add('fadeInUp');
-        },
-        offset: '10%'
-    })
-    // Twitter left wrpper의 koinvestor twit waypoint
-    var waypoint = new Waypoint({
-        element: document.querySelector('.t-koinvestor-link'),
-        handler: function (item) {
-            this.element.classList.add('fadeInUp');
-        },
-        offset: 'bottom-in-view'
-    })
+
+    
 
 
 
     /* 
     Twitter Section
     */
-    // Twitter right wrpper의 project-menu-wrap waypoint
-    var waypoint = new Waypoint({
-        element: document.querySelector('.twi-section-right'),
-        handler: function (item) {
-            this.element.classList.add('fadeInUp');
-        },
-        offset: '10%'
-    })
-    // Twitter left wrpper의 koinvestor twit waypoint
-    var waypoint = new Waypoint({
-        element: document.querySelector('.twi-section-left'),
-        handler: function (item) {
-            this.element.classList.add('fadeInUp');
-        },
-        offset: '10%'
-    })
+
+    var twitterSection = doc.querySelector('.twitter');
+
+    if (twitterSection != null) {
+        if (twitterSection.classList.contains('twitter')) {
+            // Twitter right wrpper의 project-menu-wrap waypoint
+            var waypoint = new Waypoint({
+                element: document.querySelector('.twi-section-right'),
+                handler: function (item) {
+                    this.element.classList.add('fadeInUp');
+                },
+                offset: '10%'
+            })
+            // Twitter left wrpper의 koinvestor twit waypoint
+            var waypoint = new Waypoint({
+                element: document.querySelector('.twi-section-left'),
+                handler: function (item) {
+                    this.element.classList.add('fadeInUp');
+                },
+                offset: '10%'
+            })
+
+            // twitter Element object
+            var twitterEl = {
+                mobile: {
+                    twitterSymbol: doc.querySelector('.twitter-symbol'),
+                    menuWrap: doc.querySelector('.twitter-menu-wrap')
+                }
+            }
+            // twitter Method object
+            var twitterMethod = {
+                // click 시 메뉴들 아코디언 IN OUT 애니메이션 class toggle 함수
+                menuIn: function () {
+                    this.classList.toggle('pulse');
+                    this.children[0].classList.toggle('text-info');
+                    var el = twitterEl.mobile.menuWrap;
+                    if (!el.classList.contains('twit-menu-in')) {
+                        el.classList.toggle('twit-menu-in');
+                    } else if (el.classList.contains('twit-menu-in')) {
+                        el.classList.toggle('twit-menu-out');
+                    }
+                }
+            }
+
+            twitterEl.mobile.twitterSymbol.addEventListener('click', twitterMethod.menuIn)
+        }
+    }
+    
+
+
 
 
     /*
@@ -504,78 +821,217 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    /*
-    Project Section
-    */
-    // Mobile ver. Project select and Project Menu click Event
-    // 프로젝트 선택
-    var projectSelect_M = document.querySelector('.project-select');
-    // 프로젝트 메뉴들 감싸고 있는 Wrapper
-    var projectList_M = document.querySelector('.project-list');
-    // 프로젝트 메뉴들
-    var projectMenu_M = Array.from(document.querySelectorAll('.project-menu'));
 
-    // accordion animation class toggle
-    projectSelect_M.addEventListener('click', function () {
-        if (projectList_M.classList.contains('d-none')) {
-            if (projectList_M.classList.contains('accordionOut')) {
-                projectList_M.classList.toggle('accordionOut');
+    
+
+
+
+
+
+
+
+
+    /*
+    Admin Vue.js
+    */
+
+    new Vue({
+        el: "#admin",
+        data: {
+            admin: false,
+            isBorder: true,
+            textGray: true,
+            trans: {
+                transition: '.3s'
+            },
+            navActiveClass: true,
+            state: {
+                // today: moment().format('YYYY.MM.D'),
+                date: new Date()
+            },
+            navs: [{
+                    name: {
+                        ko: '공지사항',
+                        en: 'notice'
+                    },
+                    active: true
+                },
+                {
+                    name: {
+                        ko: '블록체인',
+                        en: 'blockchain'
+                    },
+                    active: false
+                },
+                {
+                    name: {
+                        ko: '프로젝트',
+                        en: 'project'
+                    },
+                    active: false
+                },
+                {
+                    name: {
+                        ko: '트위터',
+                        en: 'twitter'
+                    },
+                    active: false
+                },
+                {
+                    name: {
+                        ko: '통계',
+                        en: 'chart'
+                    },
+                    active: false
+                }
+            ],
+            projects: {
+                ambrosus: {
+                    symbol: 'AMB',
+                    name: {
+                        ko: '앰브로서스',
+                        en: 'Ambrosus'
+                    },
+                    src: './img/logo/ambrosus_m.svg'
+                },
+                paypie: {
+                    symbol: 'PPP',
+                    name: {
+                        ko: '페이파이',
+                        en: 'Paypie'
+                    },
+                    src: './img/logo/paypie_m.svg'
+                },
+                playkey: {
+                    symbol: 'PKT',
+                    name: {
+                        ko: '플레이키',
+                        en: 'PlayKey'
+                    },
+                    src: './img/logo/playkey_m.svg'
+                },
+                qash: {
+                    symbol: 'QASH',
+                    name: {
+                        ko: '캐시',
+                        en: 'Qash'
+                    },
+                    src: './img/logo/qash_m.svg'
+                },
+                rsk: {
+                    symbol: 'RSK',
+                    name: {
+                        ko: '루트스톡',
+                        en: 'RSK'
+                    },
+                    src: './img/logo/rsk.svg'
+                },
+                telegram: {
+                    symbol: 'TON',
+                    name: {
+                        ko: '텔레그램',
+                        en: 'Telegram'
+                    },
+                    src: './img/logo/telegram.svg'
+                },
+                Windingtree: {
+                    symbol: 'LIF',
+                    name: {
+                        ko: '와인딩트리',
+                        en: 'Windingtree'
+                    },
+                    src: './img/logo/windingtree.svg'
+                }
+            },
+            selected: ''
+        },
+        methods: {
+            upAndtempo: function () {
+                this.isBorder = !this.isBorder;
+                this.textGray = !this.textGray;
+            },
+            navActive: function (selectedIndex) {
+                this.navs.map(function (item, index) {
+                    if (selectedIndex === index) {
+                        item.active = true
+                    } else {
+                        item.active = false
+                    }
+                })
             }
-            projectList_M.classList.toggle('d-none');
-            projectList_M.classList.toggle('accordionIn');
-            setTimeout(function () {
-                projectList_M.classList.remove('accordionIn');
-            }, 700);
-        } else {
-            projectListOut();
+        },
+        components: {
+            vuejsDatepicker: vuejsDatepicker
         }
     })
 
-    projectMenu_M.forEach(function (menu) {
-        menu.addEventListener('click', projectListOut);
-    })
 
-    function projectListOut(event) {
-        projectList_M.classList.toggle('accordionOut');
-        setTimeout(function () {
-            projectList_M.classList.remove('accordionOut');
-            projectList_M.classList.toggle('d-none');
-        }, 700);
+    /*
+    Admin Section
+    */
+
+
+    var admin = document.querySelector('#admin');
+    if (admin != null) {
+        var adminClass = admin.getAttribute('class');
+        if(adminClass.indexOf('admin') != -1) {
+            
+
+            // Admin Navigation Active script
+            var adminNavWrap = document.querySelector('.admin-nav-wrap');
+            var adminNav = Array.from(document.querySelectorAll('.admin-nav'));
+
+            adminNavWrap.addEventListener('click', adminNavActive)
+
+            function adminNavActive() {
+                adminNav.map(function (el, index) {
+                    if (el === event.target) {
+                        el.classList.add('active');
+                    } else {
+                        el.classList.remove('active');
+                    }
+                })
+            }
+
+
+
+            // input File upload 시 fileName 적용하는 code
+            var fileTarget = doc.querySelector('.upload-hidden');
+            var fileNameBox = doc.querySelector('.upload-name');
+
+            fileTarget.addEventListener('change', function () {
+                console.log(this.files);
+                if (window.FileReader) {
+                    var filename = this.files[0].name;
+                    console.log(filename);
+                } else {
+                    var filename = this.val().split('/').pop().split('\\').pop();
+                }
+                fileNameBox.value = filename;
+            });
+
+
+
+            // Moment.js
+            var momentNow = document.querySelector('.moment');
+
+            var nowTime = moment().format('YYYY.MM.D');
+            momentNow.innerText = nowTime;
+
+            flatpickr('.flatdate', {
+              dateFormat: "Y.m.d",
+            //   defaultDate: "today"
+            })
+        }
     }
 
 
-    // DeskTop ver. Project Menu Click Event
-    // 전체보기
-    var projectAll_Pc = document.querySelector('.pc-project-all');
-    // Menu들을 감싸고 있는 부모 Element
-    var projectList_Pc = document.querySelector('.pc-project-list');
-    // Menu iTems
-    var projectListChildren_Pc = Array.from(projectList_Pc.children);
+    
 
-    // menu item을 click 했을 때 target의 단독 Event
-    projectListChildren_Pc.forEach(function (item) {
-        // var itemChild = Array.from(item.children);
-        // console.log(itemChild);
-        item.addEventListener('click', function () {
-            var thisChild = Array.from(this.children);
-            if (this.style.backgroundColor == 'rgb(214, 240, 228)') {
-                thisChild[0].style.transform = 'none';
-                this.style.backgroundColor = '#ffffff';
-            } else {
-                thisChild[0].style.transform = 'translate( 20%, 0)';
-                thisChild[0].style.backgroundColor = '#ffffff';
-                this.style.backgroundColor = 'rgb(214, 240, 228)';
 
-            }
-        })
-    })
-    // project menu 전체보기 click Event
-    projectAll_Pc.addEventListener('click', function () {
-        projectListChildren_Pc.forEach(function (item) {
-            var itemChild = Array.from(item.children);
-            item.style.backgroundColor = '#ffffff';
-            itemChild[0].style.transform = 'none';
-            itemChild[0].style.backgroundColor = '#ffffff';
-        })
-    })
+
+
+
+
+
 })
