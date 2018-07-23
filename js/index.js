@@ -776,7 +776,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         setTimeout(function () {
             headerMobile.classList.toggle('d-none');
-            mainTag.classList.toggle('d-none');
+            main.classList.toggle('d-none');
         }, 500)
     })
     // Nav Page의 Hamburger Click Event
@@ -797,7 +797,7 @@ document.addEventListener('DOMContentLoaded', function () {
             hamburger.children[2].classList.toggle('bot-deg');
         }, 100)
 
-        mainTag.classList.toggle('d-none');
+        main.classList.toggle('d-none');
         headerMobile.classList.toggle('d-none');
     })
 
