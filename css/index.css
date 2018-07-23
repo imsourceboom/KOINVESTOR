@@ -1065,6 +1065,46 @@ Project Section
 
 
 
+
+/* JOIN US Section */
+.profile-img-wrap {
+    width: 8rem;
+    height: 8rem;
+    border: 1px solid #dee2e6;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .profile-img-wrap {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+.profile-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.agree-contentbox {
+    height: 13rem;
+    border: 1px solid #959595;
+    padding: .5rem 1rem;
+    overflow: scroll;
+}
+
+
+
+
+
+
+
+
+
 /* Footer */
 
 footer {
@@ -1163,6 +1203,27 @@ footer {
     border: 1px solid rgba(199, 202, 201, 1);
     border-bottom-color: #e2e2e2;
     border-radius: .25em;
+    margin-bottom: 0;
+}
+
+.profilebox input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+.profilebox label {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+    border: 1px solid rgba(199, 202, 201, 1);
+    border-bottom-color: #e2e2e2;
     margin-bottom: 0;
 }
 
