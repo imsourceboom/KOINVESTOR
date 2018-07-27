@@ -30,6 +30,18 @@ body {
     font-size: 14px;
     background-color: #F7F7F7;
 }
+@media (max-width: 320px) {
+    html,
+    body {
+        font-size: 12px;
+    }
+}
+@media (min-width:321px) and (max-width: 359px) {
+    html,
+    body {
+        font-size: 13px;
+    }
+}
 
 *:focus {
     outline: none;
@@ -84,6 +96,9 @@ body {
 폰트 Font
 */
 /* 폰트 사이즈 Font-size */
+.fs-07 {
+    font-size: 0.7rem;
+}
 .fs-08 {
     font-size: 0.8rem;
 }
@@ -125,6 +140,10 @@ body {
 }
 
 @media (min-width:992px) {
+    .fs-lg-07 {
+        font-size: 0.7rem;
+    }
+
     .fs-lg-08 {
         font-size: 0.8rem;
     }
