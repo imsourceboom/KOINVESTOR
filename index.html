@@ -257,7 +257,41 @@
             </div>
         </nav>
 
-
+        <!-- Modal -->
+        <section class="tele-modal flex-center animated fadeIn d-none">
+            <div class="row w-100 justify-content-center">
+                <div class="col-10 col-lg-3 bg-white">
+                    <div class="row px-lg-5">
+                        <div class="col-12 p-4 p-lg-5">
+                            <i class="fas fa-times fa-2x modal-cancel float-right cursor-pointer"></i>
+                        </div>
+                        <div class="col-12">
+                            <div class="row px-lg-5">
+                                <div class="col-12">
+                                    <b class="fs-lg-11">Telegram계정 연결 해제</b>
+                                </div>
+                                <div class="col-12 py-4 py-lg-5 word-break fs-09">
+                                    Telegram계정 연결을 해제하면, 'Telegram계정으로 로그인' 서비스를 이용할 수 없습니다.
+                                </div>
+                                <div class="col-12">
+                                    <b>Telegram계정 연결을 해제하겠습니까?</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 py-5">
+                            <div class="row justify-content-center py-lg-3">
+                                <div class="col-8">
+                                    <button class="btn bg-dark text-white w-100 py-lg-3">
+                                        해제하기
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
         <!-- 메인 컨텐츠 영역 -->
         <main id="main" class="main" v-if="!main">
             <!-- Desk-Top Ver. -->
@@ -269,7 +303,7 @@
                     <div class="row no-gutters">
                         <div class="col-lg-8 flex-c-center headline-a">
                             <div class="img-cover"></div>
-                            <p class="a-title">Alpha is coming!</p>
+                            <p class="a-title">제목이 길 떄 화면에 어떻게 표시가 되는지 확인하기 위해서 제목을 길게 쓰고있다.</p>
                             <p class="a-content">by Amanda showman</p>
                             <img src="https://picsum.photos/1000/500?image=1" alt="">
                         </div>
@@ -1931,7 +1965,9 @@
                             <div class="col-10 col-lg-4 sign-in-wrap">
                                 <div class="row pb-5">
                                     <div class="col">
-                                        <p><b>아이디 찾기</b></p>
+                                        <p>
+                                            <b>아이디 찾기</b>
+                                        </p>
                                         <small class="text-gray">등록된 이름과 이메일 주소를 입력해주세요.</small>
                                         <div class="border-bottom"></div>
                                     </div>
@@ -1985,9 +2021,8 @@
                                     <div class="col">
                                         <div class="border-top pb-5"></div>
                                         <span class="fs-09">
-                                            찾으시는 아이디는
-                                            [ <strong class="fs-11">koinkoin0316</strong> ]
-                                            입니다.
+                                            찾으시는 아이디는 [
+                                            <strong class="fs-11">koinkoin0316</strong> ] 입니다.
                                         </span>
                                         <div class="border-bottom pt-5"></div>
                                     </div>
@@ -2041,7 +2076,9 @@
                             <div class="col-10 col-lg-4 sign-in-wrap">
                                 <div class="row pb-5">
                                     <div class="col">
-                                        <p><b>비밀번호 찾기</b></p>
+                                        <p>
+                                            <b>비밀번호 찾기</b>
+                                        </p>
                                         <small class="text-gray">등록된 이름과 아이디, 이메일 주소를 입력해주세요.</small>
                                         <div class="border-bottom"></div>
                                     </div>
@@ -2103,7 +2140,9 @@
                             <div class="col-10 col-lg-4 sign-in-wrap">
                                 <div class="row pb-3">
                                     <div class="col">
-                                        <p><b>인증번호 입력</b></p>
+                                        <p>
+                                            <b>인증번호 입력</b>
+                                        </p>
                                         <small class="text-gray">입력하신 이메일 주소로 인증번호가 발송되었습니다.</small>
                                         <small class="d-block text-gray">인증번호를 입력해주세요.</small>
                                         <div class="border-bottom"></div>
@@ -2135,7 +2174,9 @@
                             <div class="col-10 col-lg-4 sign-in-wrap">
                                 <div class="row pb-3">
                                     <div class="col">
-                                        <p><b>새로운 비밀번호 입력</b></p>
+                                        <p>
+                                            <b>새로운 비밀번호 입력</b>
+                                        </p>
                                         <small class="text-gray">인증에 성공하였습니다. 새로운 비밀번호를 입력하세요.</small>
                                         <small class="d-block text-gray"></small>
                                         <div class="border-bottom"></div>
@@ -2195,7 +2236,7 @@
                 </article>
             </section>
             <!-- Join Us -->
-            <section class="join" v-if="!section">
+            <section class="join" v-if="section">
                 <div class="container">
                     <div class="row justify-content-center pb-5">
                         <div class="col col-lg-9">
@@ -2214,7 +2255,7 @@
                                             <div class="col-12 py-3 border-bottom">
                                                 <div class="row">
                                                     <div class="col-5">
-                                                         기본정보
+                                                        기본정보
                                                     </div>
                                                 </div>
                                             </div>
@@ -2283,7 +2324,8 @@
                                             <div class="col-7 col-lg-12 d-lg-flex justify-content-center">
                                                 <figure class="profile-img-wrap flex-center float-right">
                                                     <img src="https://picsum.photos/200/300?image=990" alt="">
-                                                    <figcaption class="position-absolute text-gray-light fs-09">프로필 이미지를<br>지정해 주세요.</figcaption>
+                                                    <figcaption class="position-absolute text-gray-light fs-09">프로필 이미지를
+                                                        <br>지정해 주세요.</figcaption>
                                                 </figure>
                                             </div>
                                             <div class="col col-lg-12 d-flex justify-content-lg-center align-items-center">
@@ -2304,18 +2346,36 @@
                                     </div>
                                     <div class="col-12 py-2">
                                         <div class="agree-contentbox">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum
+                                            placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio?
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -2323,8 +2383,7 @@
                                     </div>
                                     <div class="col">
                                         <label for="use-agree" class="cursor-pointer">
-                                            <input type="checkbox" id="use-agree">
-                                            동의함
+                                            <input type="checkbox" id="use-agree"> 동의함
                                         </label>
                                     </div>
                                 </div>
@@ -2335,18 +2394,36 @@
                                     </div>
                                     <div class="col-12 py-2">
                                         <div class="agree-contentbox">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum
+                                            placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            totam neque. Ratione in iusto odio sed optio?
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -2354,8 +2431,7 @@
                                     </div>
                                     <div class="col">
                                         <label for="info-agree" class="cursor-pointer">
-                                            <input type="checkbox" id="info-agree">
-                                            동의함
+                                            <input type="checkbox" id="info-agree"> 동의함
                                         </label>
                                     </div>
                                 </div>
@@ -2368,6 +2444,230 @@
                                     <input type="submit" class="form-control py-2 py-lg-3 cursor-pointer" value="회원가입 취소">
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- My Page -->
+            <section class="my-page" v-if="!section">
+                <div class="container">
+                    <div class="row justify-content-center pb-5">
+                        <div class="col col-lg-9">
+                            <div class="row">
+                                <div class="col fs-12 text-center py-5">
+                                    <i>
+                                        <b>My page</b>
+                                    </i>
+                                </div>
+                            </div>
+                            <article class="my-tele">
+                                <div class="row pb-5 py-lg-5">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12 py-3 border-bottom">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        Telegram 계정 연결
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-2 py-2">
+                                                        Telegram 계정
+                                                    </div>
+                                                    <div class="col-8 col-lg-5 pl-0 pl-lg-3">
+                                                        <span>mytelegramemail77@gmail.com</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-2 py-2">
+                                                        연결정보
+                                                    </div>
+                                                    <div class="col-6 col-lg-4 pl-0 pl-lg-3 pr-0">
+                                                        <span>2016-11-16 22:37:55 </span>
+                                                        <span>연결</span>
+                                                    </div>
+                                                    <div class="col-2 pl-0">
+                                                        <input type="submit" value="해 제" class="tele-cancel border-0 cursor-pointer py-2 px-3 px-lg-4 rounded bg-dark text-white w250 fs-08">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="basis-info">
+                                <div class="row py-lg-5">
+                                    <!-- basic input -->
+                                    <div class="col-12 col-lg-9">
+                                        <div class="row">
+                                            <div class="col-12 py-3 border-bottom">
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        기본정보
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-3">
+                                                        아이디
+                                                    </div>
+                                                    <div class="col-8 col-lg-9 pl-0 py-2">
+                                                        <span>myidis0316</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-3">
+                                                        새 비밀번호
+                                                    </div>
+                                                    <div class="col-8 col-lg-5 pl-0">
+                                                        <input type="password" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-3 pr-0">
+                                                        새 비밀번호 확인
+                                                    </div>
+                                                    <div class="col-8 col-lg-5 pl-0">
+                                                        <input type="password" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-3">
+                                                        이름
+                                                    </div>
+                                                    <div class="col-8 col-lg-5 pl-0">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 py-2 border-bottom">
+                                                <div class="row align-items-center">
+                                                    <div class="col-4 col-lg-3">
+                                                        이메일
+                                                    </div>
+                                                    <div class="col-4 col-lg-5 pl-0">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="col-auto px-0">@</div>
+                                                    <div class="col">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- profile image -->
+                                    <div class="col-12 col-lg-3 pt-3 pt-lg-5">
+                                        <div class="row">
+                                            <div class="col-7 col-lg-12 d-lg-flex justify-content-center">
+                                                <figure class="profile-img-wrap flex-center float-right">
+                                                    <img src="https://picsum.photos/200/300?image=990" alt="">
+                                                    <figcaption class="position-absolute text-gray-light fs-09">프로필 이미지를
+                                                        <br>지정해 주세요.</figcaption>
+                                                </figure>
+                                            </div>
+                                            <div class="col col-lg-12 d-flex justify-content-lg-center align-items-center">
+                                                <div class="profilebox">
+                                                    <label for="profile-file" class="py-2 px-3 px-lg-4 rounded w250 fs-08 text-white bg-dark cursor-pointer">찾아보기</label>
+                                                    <input type="file" id="profile-file" class="upload-hidden">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 py-5">
+                                        <div class="row justify-content-center">
+                                            <div class="col-7 col-lg-5">
+                                                <input type="submit" value="수정하기" class="border-0 bg-dark text-white rounded py-2 py-lg-3 w-100 cursor-pointer">
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="sign-out pb-lg-5">
+                                <div class="row py-5">
+                                    <div class="col-12 py-2 border-bottom">
+                                        회원탈퇴 안내
+                                    </div>
+                                    <div class="col-12 fs-08 text-gray py-1">
+                                        회원탈퇴를 신청하기 전에 안내 사항을 꼭 확인해주세요.
+                                    </div>
+                                    <div class="col-12 pt-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto pr-2 pr-lg-3">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="col fs-08 fs-lg-10 p-0 text-black">
+                                                사용하고 계신 아이디는 탈퇴할 경우 재사용 및 복구가 불가능합니다.
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-auto pr-2 pr-lg-3 invisible">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="col fs-07 p-0 text-gray">
+                                                <span class="text-warning">탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가</span>
+                                                하오니 신중하게 선택하시기 바랍니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 pt-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto pr-2 pr-lg-3">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="col fs-08 fs-lg-10 p-0 text-black">
+                                                탈퇴 후 회원정보 및 개인형 서비스 이용기록은 모두 삭제됩니다.
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-auto pr-2 pr-lg-3 invisible">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="col fs-07 p-0 text-gray">
+                                                회원정보 및 서비스 이용기록은 모두 삭제되며, 삭제된 데이터는 복구되지 않습니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 py-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto pr-2 pr-lg-3">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="col fs-08 fs-lg-10 p-0 text-black">
+                                                코인베스터 아이디를 사용해 다른 서비스에 로그인 할 수 없게 됩니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 pt-4 pb-3 border-bottom">
+                                        <div class="form-check">
+                                            <label class="forom-check-label">
+                                                <input type="checkbox" class="form-check-input">
+                                                안내 사항을 모두 확인하였으며, 이에 동의합니다.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 pt-4 pt-lg-5">
+                                        <div class="row justify-content-center">
+                                            <div class="col-7 col-lg-5">
+                                                <button type="submit" class="btn bg-dark text-white py-2 py-lg-3 w-100">
+                                                    탈퇴하기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </div>
@@ -2397,7 +2697,8 @@
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-lg-auto px-0">블록체인 뉴스</div>
                                     <div class="col-12 col-lg-auto px-0">
-                                        [<span> 999 </span>]
+                                        [
+                                        <span> 999 </span>]
                                     </div>
                                 </div>
                             </div>
@@ -2405,7 +2706,8 @@
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-lg-auto px-0">프로젝트 소식</div>
                                     <div class="col-12 col-lg-auto px-0">
-                                        [<span> 999 </span>]
+                                        [
+                                        <span> 999 </span>]
                                     </div>
                                 </div>
                             </div>
@@ -2413,7 +2715,8 @@
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-lg-auto px-0">공지사항</div>
                                     <div class="col-12 col-lg-auto px-0">
-                                        [<span> 999 </span>]
+                                        [
+                                        <span> 999 </span>]
                                     </div>
                                 </div>
                             </div>
@@ -2426,7 +2729,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <b>블록체인 뉴스</b>
-                                        <small class="text-gray">[총 <span>999</span>건]</small>
+                                        <small class="text-gray">[총
+                                            <span>999</span>건]</small>
                                     </div>
                                     <div class="col-auto">
                                         <i class="material-icons md-22 text-gray-light">
@@ -2440,8 +2744,7 @@
                                     <div class="col-12 pb-2">
                                         <div class="row">
                                             <div class="col-auto m-index-news-title">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2452,17 +2755,15 @@
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
                                         동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 pb-2">
                                         <div class="row">
                                             <div class="col-auto m-index-news-title">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2473,9 +2774,8 @@
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
                                         동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
                             </div>
@@ -2488,7 +2788,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <b>프로젝트 뉴스</b>
-                                        <small class="text-gray">[총 <span>999</span>건]</small>
+                                        <small class="text-gray">[총
+                                            <span>999</span>건]</small>
                                     </div>
                                     <div class="col-auto">
                                         <i class="material-icons md-22 text-gray-light">
@@ -2505,8 +2806,7 @@
                                                 <img src="./img/logo/ambrosus_m.svg" alt="">
                                             </div>
                                             <div class="col-auto m-index-project-title pl-1 pl-lg-3">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2517,9 +2817,8 @@
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
                                         동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
                                 <div class="row">
@@ -2529,8 +2828,7 @@
                                                 <img src="./img/logo/ambrosus_m.svg" alt="">
                                             </div>
                                             <div class="col-auto m-index-project-title pl-1 pl-lg-3">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2541,9 +2839,8 @@
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
                                         동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
                             </div>
@@ -2556,7 +2853,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <b>공지사항</b>
-                                        <small class="text-gray">[총 <span>999</span>건]</small>
+                                        <small class="text-gray">[총
+                                            <span>999</span>건]</small>
                                     </div>
                                     <div class="col-auto">
                                         <i class="material-icons md-22 text-gray-light">
@@ -2570,8 +2868,7 @@
                                     <div class="col-12 pb-2">
                                         <div class="row">
                                             <div class="col-auto m-index-news-title">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2582,17 +2879,15 @@
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
                                         동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 pb-2">
                                         <div class="row">
                                             <div class="col-auto m-index-news-title">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2603,9 +2898,8 @@
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
                                         동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다.
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
                             </div>
@@ -2735,9 +3029,35 @@
                     </article>
                 </form>
             </section>
+            <!-- About -->
+            <section class="about d-lg-none" v-if="section">
+                <article class="vh-100 px-3 px-lg-0">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-12 py-3 border-bottom">
+                                <span>ABOUT</span>
+                            </div>
+                            <div class="col-12 py-5">
+                                <b>KOINVESTOR</b>
+                            </div>
+                            <div class="col-12">
+                                코인베스터는 각구의 프로젝트팀과의 긴밀한 <br>
+                                co-work을 통하여 신뢰할 만한 뉴스와 정보를 <br>
+                                가장 빠르고 정확하게 전달하고 있습니다.
+                            </div>
+                            <div class="col-12 py-5">
+                                KOIINVESTOR deliver reliable news <br>
+                                and information quickly and accurately <br>
+                                through close co-work with all over <br>
+                                the world’s project teams.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
         </main>
 
-        
+
 
         <!-- 관리자 -->
         <main id="admin" class="admin bg-white" v-if="admin">
@@ -3916,75 +4236,75 @@
                 </div>
             </div>
         </main>
-    </div>
+        </div>
 
-    <!-- Footer -->
-    <footer class="d-none d-lg-block">
-        <div class="main-footer d-flex justify-content-center w-100 bg-dark">
-            <div class="w-1100px">
-                <div class="row m-0 text-gray pt-4">
-                    <div class="col-lg-9">
-                        <div class="row">
-                            <div class="col-lg-4 d-flex justify-content-center">
-                                <span class="fs-18 w250">KOINVESTOR</span>
-                            </div>
-                            <div class="col-lg-8 pl-0">
-                                <p class="">
-                                    코인베스터는 각국의 프로젝트팀과의 긴밀한 co-work을 통하여
-                                    <br> 신뢰할 만한 뉴스와 정보를 가장 빠르고 정확하게 전달하고 있습니다.
-                                </p>
-                                <p class="fs-08 text-gray-deep-dark">
-                                    KOIINVESTOR deliver reliable news and information quickly and accurately
-                                    <br> through close co-work with all over the world’s project teams.
-                                </p>
+        <!-- Footer -->
+        <footer class="d-none d-lg-block">
+            <div class="main-footer d-flex justify-content-center w-100 bg-dark">
+                <div class="w-1100px">
+                    <div class="row m-0 text-gray pt-4">
+                        <div class="col-lg-9">
+                            <div class="row">
+                                <div class="col-lg-4 d-flex justify-content-center">
+                                    <span class="fs-18 w250">KOINVESTOR</span>
+                                </div>
+                                <div class="col-lg-8 pl-0">
+                                    <p class="">
+                                        코인베스터는 각국의 프로젝트팀과의 긴밀한 co-work을 통하여
+                                        <br> 신뢰할 만한 뉴스와 정보를 가장 빠르고 정확하게 전달하고 있습니다.
+                                    </p>
+                                    <p class="fs-08 text-gray-deep-dark">
+                                        KOIINVESTOR deliver reliable news and information quickly and accurately
+                                        <br> through close co-work with all over the world’s project teams.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <ul class="d-inline-block pl-0">
-                            <li>개인정보처리방침</li>
-                            <li>서비스이용약관</li>
-                            <li>제휴제안</li>
-                            <li>고객센터</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-12 pt-4 pl-5">
-                        <span class="pl-3">
-                            copyⓒright 2018 0316COMPANY. All rights reserved.
-                        </span>
+                        <div class="col-lg-3">
+                            <ul class="d-inline-block pl-0">
+                                <li>개인정보처리방침</li>
+                                <li>서비스이용약관</li>
+                                <li>제휴제안</li>
+                                <li>고객센터</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-12 pt-4 pl-5">
+                            <span class="pl-3">
+                                copyⓒright 2018 0316COMPANY. All rights reserved.
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- Vue.js -->
-    <script src="https://unpkg.com/vue"></script>
-    <!-- Vue DatePicker -->
-    <script src="https://unpkg.com/vuejs-datepicker"></script>
-    <!-- Moment.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/ko.js"></script> -->
-    <!-- FlatPicker -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <!-- Prefixfree -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <!-- Web Animations API Polyfill -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
-    <!-- Hammer.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-    <!-- Typed.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
-    <!-- Sticky-JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script>
-    <!-- Waypoints -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
-    <!-- ScrollReveal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script>
-    <!-- custom JS -->
-    <script src="./js/index.js"></script>
+        <!-- Vue.js -->
+        <script src="https://unpkg.com/vue"></script>
+        <!-- Vue DatePicker -->
+        <script src="https://unpkg.com/vuejs-datepicker"></script>
+        <!-- Moment.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/ko.js"></script> -->
+        <!-- FlatPicker -->
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <!-- Prefixfree -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        <!-- Web Animations API Polyfill -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script> -->
+        <!-- Hammer.js -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script> -->
+        <!-- Typed.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
+        <!-- Swiper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+        <!-- Sticky-JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script>
+        <!-- Waypoints -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+        <!-- ScrollReveal -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script>
+        <!-- custom JS -->
+        <script src="./js/index.js"></script>
 
 </body>
 
