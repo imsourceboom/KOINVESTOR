@@ -358,6 +358,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+            /*
+            My Page Section
+            */
+            var myPageSection = doc.querySelector('.my-page');
+
+            if (myPageSection != null) {
+                if (myPageSection.classList.contains('my-page')) {
+
+
+                    var myPageEl = {
+                        teleCancel: doc.querySelector('.tele-cancel'),
+                        modal: doc.querySelector('.tele-modal'),
+                        modalCancel: doc.querySelector('.modal-cancel')
+                    }
+
+                    var myPageMethod = {
+                        cancelEvent: function() {
+                            console.log('hi');
+                            myPageEl.modal.classList.toggle('d-none')
+                        }
+                    }
+
+                    myPageEl.teleCancel.addEventListener('click', myPageMethod.cancelEvent);
+                    myPageEl.modalCancel.addEventListener('click', myPageMethod.cancelEvent);
+                    
+
+                }    
+            }
+            
+
+
+
+
         }
     }
 
