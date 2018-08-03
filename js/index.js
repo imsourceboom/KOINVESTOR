@@ -376,7 +376,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     var myPageMethod = {
                         cancelEvent: function() {
-                            console.log('hi');
                             myPageEl.modal.classList.toggle('d-none')
                         }
                     }
@@ -384,7 +383,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     myPageEl.teleCancel.addEventListener('click', myPageMethod.cancelEvent);
                     myPageEl.modalCancel.addEventListener('click', myPageMethod.cancelEvent);
                     
-
                 }    
             }
             
