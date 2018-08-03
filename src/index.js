@@ -1,3 +1,10 @@
+import moment from 'moment';
+import flatpickr from 'flatpickr';
+import '../node_modules/flatpickr/dist/flatpickr.min.css';
+// import '../node_modules/flatpickr/dist/themes/dark.css';
+import './index.css'
+
+
 document.addEventListener('DOMContentLoaded', function () {
     /*
     Array.from Polyfill
