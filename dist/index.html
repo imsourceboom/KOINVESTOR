@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -8,18 +8,18 @@
     <meta name="format-detection" content="telephone=no">
     <title>KOINVESTOR</title>
     <!-- 초기화 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"> -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"> -->
     <!-- Fontawesome Icon -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
     <!-- Material Icon -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- animate CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css"> -->
     <!-- FlatPickr -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
     <!-- Flatpickr Theme -->
@@ -28,7 +28,7 @@
     <!-- custom CSS -->
     <!-- <link rel="stylesheet" href="css/common.css"> -->
     <!-- <link rel="stylesheet" href="css/index.css"> -->
-    <link rel="stylesheet" href="./dist/app.css">
+    <link rel="stylesheet" href="./dist/vendor.css">
 </head>
 
 <body class="text-gray-deep-dark">
@@ -126,6 +126,10 @@
 
     <!-- 전체 wrap -->
     <div class="root-wrap d-flex justify-content-center">
+        <!-- Coming Soon -->
+        <div class="coming-soon d-none">
+            <span class="animated pulse infinite">KOINVESTOR</span>
+        </div>
         <!-- Search -->
         <div class="search-wrap-desk row align-items-center no-gutters position-fixed pl-3 d-none animated">
             <div class="col-lg-11 s-input-wrap">
@@ -294,10 +298,10 @@
         </section>
                 
         <!-- 메인 컨텐츠 영역 -->
-        <main id="main" class="main" v-if="main">
+        <main id="main" class="main" v-if="!main">
             <!-- Desk-Top Ver. -->
             <!-- index Page -->
-            <section class="index d-none d-lg-block" v-if="section">
+            <section class="index d-none d-lg-block" v-if="!section">
                 <!-- HEADLINE -->
                 <article class="headline container-fluid text-center pb-5 bg-white">
                     <!-- headline-a a-row -->
@@ -651,7 +655,7 @@
             </section>
             <!-- Mobile Ver. -->
             <!-- index Page -->
-            <section class="m-index d-lg-none" v-if="section">
+            <section class="m-index d-lg-none" v-if="!section">
                 <!-- m-headline -->
                 <article class="m-headline-wrap">
                     <div class="swiper-container">
@@ -2450,7 +2454,7 @@
                 </div>
             </section>
             <!-- My Page -->
-            <section class="my-page" v-if="!section">
+            <section class="my-page" v-if="section">
                 <div class="container">
                     <div class="row justify-content-center pb-5">
                         <div class="col col-lg-9">
@@ -3061,7 +3065,7 @@
 
 
         <!-- 관리자 -->
-        <main id="admin" class="admin bg-white" v-if="!admin">
+        <main id="admin" class="admin bg-white" v-if="admin">
             <div class="container-fluid border-top">
                 <div class="row">
                     <!-- admin Navigation -->
@@ -4295,16 +4299,17 @@
         <!-- Hammer.js -->
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script> -->
         <!-- Typed.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script> -->
         <!-- Swiper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script> -->
         <!-- Sticky-JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script> -->
         <!-- Waypoints -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script> -->
         <!-- ScrollReveal -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script> -->
         <!-- custom JS -->
+        <script src="./dist/vendor.js"></script>
         <script src="./dist/app.js"></script>
 
 </body>
