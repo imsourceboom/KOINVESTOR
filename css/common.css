@@ -29,6 +29,8 @@ body {
     font-family: 'NanumBarunGothic', sans-serif;
     font-size: 14px;
     background-color: #F7F7F7;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 @media (max-width: 320px) {
     html,
