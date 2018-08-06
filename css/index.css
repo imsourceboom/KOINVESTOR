@@ -1,4 +1,52 @@
+
+/* 임시 데이터 */
+
+.temporary-data {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.temporary-data span {
+    background-color: rgb(75, 89, 126);
+    color: #f7f7f7;
+    padding: .3rem;
+}
+
+/* Coming Soon */
+
+.coming-soon {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fdfcfc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.coming-soon span {
+    font-size: 3rem;
+    animation-duration: 5s;
+}
+
+@media (min-width: 992px) {
+    .coming-soon span {
+        font-size: 5rem;
+    }
+}
+
 /* Mobile Header */
+
 .m-header {
     width: 100%;
     height: 3.7rem;
@@ -69,6 +117,7 @@ ul li {
 }
 
 /* Search */
+
 .search-wrap-desk {
     width: 100%;
     height: 3.7rem;
@@ -90,7 +139,9 @@ ul li {
     padding-left: 0;
     border-bottom: 0;
 }
+
 /* search - DeskTop */
+
 @media (min-width: 992px) {
     .search-wrap-desk {
         width: 1100px;
@@ -138,7 +189,9 @@ ul li {
     position: relative;
     z-index: 2;
 }
+
 /* main - DeskTop */
+
 @media (min-width: 992px) {
     .main,
     .admin {
@@ -146,10 +199,6 @@ ul li {
         padding-top: 10rem;
     }
 }
-
-
-
-
 
 /* 
 Login Section
@@ -185,16 +234,13 @@ Login Section
     color: rgba(122, 140, 178, 1);
 }
 
-
 .login-tele {
     transition: .5s;
 }
+
 .login-tele:hover {
     color: rgba(53, 101, 161, 1);
 }
-
-
-
 
 /* 
 Mobile Index Section
@@ -367,22 +413,22 @@ Mobile Index Section
     padding: 0 1rem;
 }
 
+/* headline-a */
+
 .headline-a {
     height: 17rem;
 }
 
-.headline-a .a-title {
-    font-size: 2.5rem;
-    z-index: 2;
-    color: #ffffff;
-    transition: .5s;
+.headline-a:nth-child(1),
+.headline-a:nth-child(1) img {
+    padding-bottom: .54rem;
+    padding-right: .54rem;
 }
 
-.headline-a .a-content {
-    font-size: 1rem;
-    z-index: 2;
-    color: #ffffff;
-    transition: .5s;
+.headline-a:nth-child(2),
+.headline-a:nth-child(2) img {
+    padding-bottom: .54rem;
+    padding-left: .54rem;
 }
 
 .headline-a img {
@@ -392,40 +438,52 @@ Mobile Index Section
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
-.headline-a:nth-child(1) img {
-    padding-bottom: .54rem;
-    padding-right: .54rem;
-}
-
-.headline-a:nth-child(2) img {
-    padding-bottom: .54rem;
-    padding-left: .54rem;
-}
-
-.headline-a:hover .a-title {
-    color: #000000;
-}
-
-.headline-a:hover .a-content {
-    color: #000000;
-    font-size: 1.1rem;
-}
-
-.headline-a .img-cover {
+.headline-a .a-cover {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transition: .8s;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+    transition: .7s;
 }
 
-.headline-a:hover .img-cover {
-    background-color: #fff;
+.headline-a .a-cover .content-wrap {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(251, 252, 252, 0.75);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    transition: .7s;
+    text-align: left !important;
+}
+
+.headline-a .a-cover .content-wrap small {
+    position: absolute;
+    right: .5rem;
+    bottom: .5rem;
     opacity: .7;
+    transition: .7s;
+}
+
+.headline-a:hover .a-cover {
+    padding-bottom: 0;
+}
+
+.headline-a:hover .content-wrap {
+    height: 6rem;
+    background-color: rgba(251, 252, 252, 0.9);
+}
+
+.headline-a:hover small {
+    opacity: 1;
+    font-size: 85%;
 }
 
 /* headline-b */
@@ -572,6 +630,7 @@ Mobile Index Section
 }
 
 /* twitter menu */
+
 .twitter-menu-wrap {
     overflow: hidden;
     background-color: #fff;
@@ -611,14 +670,17 @@ Mobile Index Section
 }
 
 /* twitter-koinvestor */
+
 .twitter-koinvestor-bgcover {
     height: 6rem;
 }
+
 .twitter-koinvestor-bgcover img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .twitter-koinvestor-logo-wrap {
     transform: translateY(-50%);
     padding: 3px;
@@ -627,6 +689,7 @@ Mobile Index Section
     position: relative;
     z-index: 1;
 }
+
 .twitter-koinvestor-logo {
     width: 100%;
     height: 100%;
@@ -634,6 +697,7 @@ Mobile Index Section
     border-radius: 50%;
     transition: .5s;
 }
+
 /* t-koinvestor */
 
 .t-koinvestor-link {
@@ -692,6 +756,7 @@ Mobile Index Section
 /* NOTICE section*/
 
 /* notice-design */
+
 .notice-design-big {
     width: 2.5rem;
     height: .3rem;
@@ -723,9 +788,8 @@ Mobile Index Section
     }
 }
 
-
-
 /* BlockChain AND Project Section */
+
 .blockchain-news-items,
 .project-news-items {
     border-bottom: 1px solid #dee2e6;
@@ -745,6 +809,7 @@ Mobile Index Section
 .more-plus {
     transition: .7s;
 }
+
 .more-plus:hover {
     cursor: pointer;
     color: #fff;
@@ -780,7 +845,9 @@ Mobile Index Section
         font-size: 1rem;
     }
 }
+
 /* block chain DeskTop ver. */
+
 @media (min-width: 992px) {
     .blockchain-news-items,
     .project-news-items {
@@ -818,7 +885,6 @@ Mobile Index Section
     .project-news-items .b-img-cover {
         height: 70%;
     }
-
     /* project list And Menu */
     .pc-project-all,
     .pc-project-list-menu-wrap,
@@ -827,15 +893,12 @@ Mobile Index Section
         cursor: pointer;
         transition: .7s;
     }
-
     .pc-project-all:hover {
         color: rgba(147, 214, 191, 1);
     }
-    
     .pc-project-list-menu-wrap:hover .pc-project-list-menu-item {
         animation: pc-menu-item 1s infinite alternate;
     }
-    
     @keyframes pc-menu-item {
         from {
             opacity: 1;
@@ -846,15 +909,10 @@ Mobile Index Section
             background-color: #eeeeee;
         }
     }
-
-
     .project-list-img-cover img {
         width: 80%;
     }
 }
-
-
-
 
 /*
 Project Section
@@ -896,11 +954,8 @@ Project Section
     }
 }
 
-
-
-
-
 /* Contact, Cooperate Section */
+
 .contact input[type="submit"],
 .cooperate input[type="submit"] {
     width: 10rem;
@@ -936,11 +991,8 @@ Project Section
     border: none;
 }
 
-
-
-
-
 /* Detail Section */
+
 .modi-del {
     border: none;
     background-color: #FAD267;
@@ -951,6 +1003,7 @@ Project Section
     cursor: pointer;
     transition: .7s;
 }
+
 .modi-del-twit {
     border: none;
     background-color: #FAD267;
@@ -961,6 +1014,7 @@ Project Section
     cursor: pointer;
     transition: .7s;
 }
+
 .modi-del:hover,
 .modi-del-twit:hover {
     color: rgba(76, 103, 161, 1);
@@ -1027,6 +1081,7 @@ Project Section
 .like-icon.active {
     animation: like-active .5s ease-in-out both;
 }
+
 .like-icon.destroy {
     animation: like-destroy .5s;
 }
@@ -1059,14 +1114,8 @@ Project Section
     }
 }
 
-
-
-
-
-
-
-
 /* JOIN US Section */
+
 .profile-img-wrap {
     width: 8rem;
     height: 8rem;
@@ -1097,15 +1146,11 @@ Project Section
     overflow: scroll;
 }
 
-
-
-
-
 /* My page */
 
 .tele-modal {
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     z-index: 999;
     width: 100vw;
@@ -1113,12 +1158,6 @@ Project Section
     background-color: rgba(0, 0, 0, .7);
     animation-duration: .5s;
 }
-
-
-
-
-
-
 
 /* Footer */
 
@@ -1133,30 +1172,8 @@ footer {
     padding-top: 200px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Admin CSS */
+
 .admin-nav.active {
     border-top: 1px solid rgba(238, 238, 238, 1);
     border-bottom: 1px solid rgba(238, 238, 238, 1);
@@ -1190,10 +1207,6 @@ footer {
     transform: translateY(-.2rem);
     opacity: 1;
 }
-
-
-
-
 
 .filebox input[type="file"] {
     position: absolute;
@@ -1232,7 +1245,6 @@ footer {
     border: 0;
 }
 
-
 .profilebox label {
     display: inline-block;
     line-height: normal;
@@ -1261,4 +1273,3 @@ footer {
     appearance: none;
     color: rgba(140, 140, 140, 1);
 }
-
