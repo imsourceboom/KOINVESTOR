@@ -296,22 +296,46 @@
         <main id="main" class="main" v-if="!main">
             <!-- Desk-Top Ver. -->
             <!-- index Page -->
-            <section class="index d-none d-lg-block" v-if="section">
+            <section class="index d-none d-lg-block" v-if="!section">
                 <!-- HEADLINE -->
                 <article class="headline container-fluid text-center pb-5 bg-white">
                     <!-- headline-a a-row -->
                     <div class="row no-gutters">
-                        <div class="col-lg-8 flex-c-center headline-a">
-                            <div class="img-cover"></div>
-                            <p class="a-title">제목이 길 떄 화면에 어떻게 표시가 되는지 확인하기 위해서 제목을 길게 쓰고있다.</p>
-                            <p class="a-content">by Amanda showman</p>
+                        <div class="col-lg-8 headline-a">
+                            <div class="a-cover">
+                                <div class="content-wrap">
+                                    
+                                    <b>헤드라인 A영역의 제목 부분입니다. 테스트를 위해 길게 작성하고 있습니다. 오류가 있는지 확인 중입니다.</b>
+                                    <small>by Author name</small>
+                                    
+                                </div>
+                            </div>
                             <img src="https://picsum.photos/1000/500?image=1" alt="">
+                            <!-- <div class="temporary-data">
+                                <div>더욱 정확하고 신속하게</div>
+                                <div>
+                                    <span>정보</span>
+                                    를 전달하겠습니다.
+                                </div>
+                            </div> -->
                         </div>
-                        <div class="col-lg-4 flex-c-center headline-a">
-                            <div class="img-cover"></div>
-                            <p class="a-title">Alpha is coming!</p>
-                            <p class="a-content">by Amanda showman</p>
-                            <img src="https://picsum.photos/1000/500?image=11" alt="">
+                        <div class="col-lg-4 headline-a">
+                            <div class="a-cover">
+                                <div class="content-wrap">
+                                    
+                                    <b>헤드라인 A영역의 제목 부분입니다. 테스트를 위해 길게 작성하고 있습니다. 오류가 있는지 확인 중입니다.</b>
+                                    <small>by Author name</small>
+                                    
+                                </div>
+                            </div>
+                            <img src="https://picsum.photos/1000/500?image=1" alt="">
+                            <!-- <div class="temporary-data">
+                                <div>더욱 정확하고 신속하게</div>
+                                <div>
+                                    <span>정보</span>
+                                    를 전달하겠습니다.
+                                </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- headline-b b-row -->
@@ -650,7 +674,7 @@
             </section>
             <!-- Mobile Ver. -->
             <!-- index Page -->
-            <section class="m-index d-lg-none" v-if="section">
+            <section class="m-index d-lg-none" v-if="!section">
                 <!-- m-headline -->
                 <article class="m-headline-wrap">
                     <div class="swiper-container">
@@ -2449,7 +2473,7 @@
                 </div>
             </section>
             <!-- My Page -->
-            <section class="my-page" v-if="!section">
+            <section class="my-page" v-if="section">
                 <div class="container">
                     <div class="row justify-content-center pb-5">
                         <div class="col col-lg-9">
