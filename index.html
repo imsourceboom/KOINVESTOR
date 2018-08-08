@@ -293,10 +293,10 @@
         </section>
                 
         <!-- 메인 컨텐츠 영역 -->
-        <main id="main" class="main" v-if="!main">
+        <main id="main" class="main" v-if="main">
             <!-- Desk-Top Ver. -->
             <!-- index Page -->
-            <section class="index d-none d-lg-block" v-if="!section">
+            <section class="index d-none d-lg-block" v-if="section">
                 <!-- HEADLINE -->
                 <article class="headline container-fluid text-center pb-5 bg-white">
                     <!-- headline-a a-row -->
@@ -674,7 +674,7 @@
             </section>
             <!-- Mobile Ver. -->
             <!-- index Page -->
-            <section class="m-index d-lg-none" v-if="!section">
+            <section class="m-index d-lg-none" v-if="section">
                 <!-- m-headline -->
                 <article class="m-headline-wrap">
                     <div class="swiper-container">
@@ -1498,7 +1498,7 @@
                 </article>
             </section>
             <!-- Twitter -->
-            <section class="twitter" v-if="section">
+            <section class="twitter" v-if="!section">
                 <div class="container p-0">
                     <!-- Twitter Logo -->
                     <div class="flex-center twitter-logo-wrap bg-white">
@@ -1625,7 +1625,7 @@
                         <!-- Twitter timeline -->
                         <div class="col-lg-6 bg-white">
                             <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-2 t-timeline-logo text-center px-0">
                                         <img src="./img/logo/telegram.svg" alt="">
                                     </div>
@@ -1641,6 +1641,13 @@
                                             eligendi cum molestias expedita corrupti magnam reiciendis, facilis veritatis
                                             nobis doloremque ratione veniam porro delectus asperiores dolorum, totam recusandae.</p>
                                         <img src="https://picsum.photos/1000?image=91" alt="">
+                                    </div>
+                                </div> -->
+                                <div class="temporary-data-twitter">
+                                    <div>더욱 정확하고 신속하게</div>
+                                    <div>
+                                        <span>정보</span>
+                                        를 전달하겠습니다.
                                     </div>
                                 </div>
                             </div>
@@ -3084,14 +3091,14 @@
 
 
         <!-- 관리자 -->
-        <main id="admin" class="admin bg-white" v-if="admin">
+        <main id="admin" class="admin bg-white" v-if="!admin">
             <div class="container-fluid border-top">
                 <div class="row">
                     <!-- admin Navigation -->
                     <aside class="col-lg-3 border-right" style="min-height: 50vh;">
-                        <div class="row justify-content-center">
-                            <nav class="position-fixed pt-lg-5">
-                                <ul class="admin-nav-wrap col-auto py-lg-5 px-0">
+                        <!-- <div class="row"> -->
+                            <nav class="pt-lg-5 position-fixed" style="width: 245px;">
+                                <ul class="admin-nav-wrap text-center pt-lg-5 px-0 m-0">
                                     <!-- <li v-for="(nav, index) in navs" class="admin-nav py-lg-4" v-bind:class="{'active' : nav.active}" v-bind:key="nav.id" v-bind:style="trans"
                                         v-on:click="navActive(index)">
                                         {{nav.name.ko}}
@@ -3100,10 +3107,17 @@
                                     <li class="admin-nav py-lg-4">블록체인</li>
                                     <li class="admin-nav py-lg-4">프로젝트</li>
                                     <li class="admin-nav py-lg-4">트위터</li>
+                                    <li class="admin-nav py-lg-4">메일 보내기</li>
                                     <li class="admin-nav py-lg-4">통계</li>
                                 </ul>
+                                <ul class="chart-children-nav-wrap d-none animated">
+                                    <li class="active">공지사항</li>
+                                    <li>블록체인</li>
+                                    <li>프로젝트</li>
+                                    <li>트위터</li>
+                                </ul>
                             </nav>
-                        </div>
+                        <!-- </div> -->
                     </aside>
                     <!-- admin Section List -->
                     <div class="col-lg-9">
@@ -3333,7 +3347,7 @@
                                         </div>
                                     </article>
                                     <!-- notice write -->
-                                    <article class="container py-5">
+                                    <article class="container py-5 d-none">
                                         <!-- 제목 -->
                                         <div class="row pt-5">
                                             <div class="col-12">
@@ -4221,7 +4235,7 @@
                                             <!-- 날짜 선택 -->
                                             <div class="col-8">
                                                 <div class="row text-center">
-                                                    <div class="col-4">
+                                                    <div class="col-3">
                                                         <span class="text-gray">원문날짜</span>
                                                     </div>
                                                     <div class="col-4">
@@ -4252,8 +4266,411 @@
                                         </div>
                                     </article>
                                 </section>
+                                <!-- Mail -->
+                                <section class="mail-admin">
+                                    <!-- Mail write -->
+                                    <article class="container py-5 d-none">
+                                        <div class="row py-4">
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" placeholder="받는 사람 이메일 주소">
+                                            </div>
+                                            <div class="col-12 pt-3">
+                                                <input type="text" class="form-control" placeholder="제목">
+                                            </div>
+                                        </div>
+                                        <!-- 본문 -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <textarea id="" class="form-control" rows="30"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row up-tempo-btn-wrap justify-content-center text-center py-5">
+                                            <div class="col-4">
+                                                <input type="submit" value="Upload" class="">
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="submit" value="Temporary Storage" class="">
+                                            </div>
+                                        </div>
+                                    </article>
+                                </section>
                                 <!-- Statistic -->
-                                <section class="statistic"></section>
+                                <section class="statistic">
+                                    <!-- Chart notice -->
+                                    <article class="chart-notice d-none">
+                                        <div class="container py-5">
+                                            <div class="row py-5">
+                                                <div class="col-1"></div>
+                                                <div class="col-11">
+                                                    <div class="notice-hits view-count">9999</div>
+                                                </div>
+                                                <div class="col-3"></div>
+                                                <div class="col-9">
+                                                    <span class="fs-16 w250">Today Hits</span>
+                                                </div>
+                                            </div>
+                                            <!-- Chart Area -->
+                                            <div class="row py-5">
+                                                <div class="col-1 pr-0"></div>
+                                                <div class="col-4 pl-0">
+                                                    <div class="border-top py-3 pl-3">Year</div>
+                                                </div>
+                                                <!-- Chart -->
+                                                <div class="col-12 pb-5">
+                                                    <canvas id="notice-graph"></canvas>
+                                                </div>
+                                                <!-- Data Table -->
+                                                <div class="col-12 pl-5 py-5 text-center">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th style="width: 15%;">랭킹</th>
+                                                                <th scope="col">년도</th>
+                                                                <th scope="col">조회수</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">2</th>
+                                                                <td>Jacob</td>
+                                                                <td>Thornton</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">5</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">6</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">7</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">8</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">9</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">10</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <!-- Chart blockchain -->
+                                    <article class="chart-blockchain">
+                                        <div class="container py-5">
+                                            <div class="row py-5">
+                                                <div class="col-1"></div>
+                                                <div class="col-11">
+                                                    <div class="blockchain-hits view-count">9999</div>
+                                                </div>
+                                                <div class="col-3"></div>
+                                                <div class="col-9">
+                                                    <span class="fs-16 w250">Total hits today</span>
+                                                </div>
+                                            </div>
+                                            <!-- Chart Area -->
+                                            <div class="row py-5">
+                                                <div class="col-1 pr-0"></div>
+                                                <div class="col-8 pl-0">
+                                                    <div class="row no-gutters hit-like-wrap">
+                                                        <div class="col">
+                                                            <div class="hit-like bg-dark text-white py-3 pl-3 cursor-pointer">Hit</div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="hit-like py-3 pl-3 cursor-pointer">Like</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Chart -->
+                                                <div class="col-12 pb-5">
+                                                    <canvas id="blockchain-graph"></canvas>
+                                                </div>
+                                                <!-- Data Table -->
+                                                <div class="col-12 pl-5 py-5 text-center">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th style="width: 15%;">랭킹</th>
+                                                                <th style="width: 65%;">제목</th>
+                                                                <th scope="col">조회수</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th style="background-color: #af5faf;">1</th>
+                                                                <td>페이파이 알파 서비스 출시 예정</td>
+                                                                <td>1101</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #dae0d0;">2</th>
+                                                                <td>대박!!! 광고없는 텔레그램 사용자 2만명 넘었다</td>
+                                                                <td>990</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #64767c;">3</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #8389b4;">4</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #95b7d8;">5</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #a6dce8;">6</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #f0d3d0;">7</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #6b5e86;">8</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #d6daac;">9</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #c3a8ee;">10</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <!-- Chart project -->
+                                    <article class="chart-project d-none">
+                                        <div class="container py-5">
+                                            <div class="row py-5">
+                                                <div class="col-1"></div>
+                                                <div class="col-11">
+                                                    <div class="project-hits view-count">9999</div>
+                                                </div>
+                                                <div class="col-3"></div>
+                                                <div class="col-9">
+                                                    <span class="fs-16 w250">Total hits today</span>
+                                                </div>
+                                            </div>
+                                            <!-- Chart Area -->
+                                            <div class="row py-5">
+                                                <div class="col-1 pr-0"></div>
+                                                <div class="col-8 pl-0">
+                                                    <div class="row no-gutters hit-like-wrap">
+                                                        <div class="col">
+                                                            <div class="hit-like bg-dark text-white py-3 pl-3 cursor-pointer">Hit</div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="hit-like py-3 pl-3 cursor-pointer">Like</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Chart -->
+                                                <div class="col-12 pb-5">
+                                                    <canvas id="project-graph"></canvas>
+                                                </div>
+                                                <!-- Data Table -->
+                                                <div class="col-12 pl-5 py-5 text-center">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th style="width: 15%;">랭킹</th>
+                                                                <th style="width: 65%;">제목</th>
+                                                                <th scope="col">조회수</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th style="background-color: #af5faf;">1</th>
+                                                                <td>페이파이 알파 서비스 출시 예정</td>
+                                                                <td>1101</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #dae0d0;">2</th>
+                                                                <td>대박!!! 광고없는 텔레그램 사용자 2만명 넘었다</td>
+                                                                <td>990</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #64767c;">3</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #8389b4;">4</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #95b7d8;">5</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #a6dce8;">6</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #f0d3d0;">7</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #6b5e86;">8</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #d6daac;">9</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: #c3a8ee;">10</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <!-- Chart notice -->
+                                    <article class="chart-twitter d-none">
+                                        <div class="container py-5">
+                                            <div class="row py-5">
+                                                <div class="col-1"></div>
+                                                <div class="col-11">
+                                                    <div class="twitter-hits view-count">9999</div>
+                                                </div>
+                                                <div class="col-3"></div>
+                                                <div class="col-9">
+                                                    <span class="fs-16 w250">Today Hits</span>
+                                                </div>
+                                            </div>
+                                            <!-- Chart Area -->
+                                            <div class="row py-5">
+                                                <div class="col-1 pr-0"></div>
+                                                <div class="col-4 pl-0">
+                                                    <div class="border-top py-3 pl-3">Year</div>
+                                                </div>
+                                                <!-- Chart -->
+                                                <div class="col-12 pb-5">
+                                                    <canvas id="twitter-graph"></canvas>
+                                                </div>
+                                                <!-- Data Table -->
+                                                <div class="col-12 pl-5 py-5 text-center">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th style="width: 15%;">랭킹</th>
+                                                                <th scope="col">년도</th>
+                                                                <th scope="col">조회수</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">2</th>
+                                                                <td>Jacob</td>
+                                                                <td>Thornton</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">5</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">6</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">7</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">8</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">9</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">10</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </section>
                             </div>
                         </div>
                     </div>
@@ -4263,7 +4680,7 @@
         </div>
 
         <!-- Footer -->
-        <footer class="d-none d-lg-block">
+        <footer class="d-lg-block">
             <div class="main-footer d-flex justify-content-center w-100 bg-dark">
                 <div class="w-1100px">
                     <div class="row m-0 text-gray pt-4">
@@ -4327,6 +4744,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
         <!-- ScrollReveal -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script>
+        <!-- CountUp -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.3/countUp.min.js"></script>
+        <!-- Chart JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
         <!-- custom JS -->
         <script src="./js/index.js"></script>
 
