@@ -1,7 +1,8 @@
 
 /* 임시 데이터 */
 
-.temporary-data {
+.temporary-data,
+.temporary-data-twitter {
     position: relative;
     width: 100%;
     height: 100%;
@@ -12,7 +13,12 @@
     align-items: center;
 }
 
-.temporary-data span {
+.temporary-data-twitter {
+    height: 280px;
+}
+
+.temporary-data span,
+.temporary-data-twitter span {
     background-color: rgb(75, 89, 126);
     color: #f7f7f7;
     padding: .3rem;
@@ -24,7 +30,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #fdfcfc;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 10000;
@@ -1172,13 +1178,51 @@ footer {
     padding-top: 200px;
 }
 
-/* Admin CSS */
+
+
+
+
+
+
+/* 
+
+Admin CSS 
+
+*/
+
+.admin-nav {
+    transition: .5s;
+}
 
 .admin-nav.active {
-    border-top: 1px solid rgba(238, 238, 238, 1);
-    border-bottom: 1px solid rgba(238, 238, 238, 1);
+    /* border-top: 1px solid rgba(238, 238, 238, 1);
+    border-bottom: 1px solid rgba(238, 238, 238, 1); */
+    /* font-size: 1.05rem; */
+    padding-left: 1rem;
     font-weight: bold;
 }
+
+/* Chart's Children Nav */
+
+.chart-children-nav-wrap {
+    padding: 0;
+    margin-left: 1rem;
+    color: #ced4da !important;
+    font-weight: 200 !important;
+    text-align: center;
+    background-color: white;
+    animation-duration: .5s;
+}
+
+.chart-children-nav-wrap li {
+    padding: .75rem 0;
+    transition: .7s;
+}
+
+.chart-children-nav-wrap li.active {
+    background-color: #4A3D4C;
+}
+
 
 .notice-date input {
     text-align: center;
@@ -1272,4 +1316,18 @@ footer {
     -moz-appearance: none;
     appearance: none;
     color: rgba(140, 140, 140, 1);
+}
+
+
+
+/* Chart's Common */
+
+.view-count {
+    font-size: 4rem;
+    line-height: .7;
+    border-bottom: 1px solid rgba(133, 133, 133, 1);
+}
+
+.hit-like {
+    transition: .4s;
 }
