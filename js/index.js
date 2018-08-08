@@ -1011,14 +1011,41 @@ document.addEventListener('DOMContentLoaded', function () {
         if(adminClass.indexOf('admin') != -1) {
             
 
-            // Admin Navigation Active script
+            // 관리자 메뉴
             var adminNavWrap = document.querySelector('.admin-nav-wrap');
             var adminNav = Array.from(document.querySelectorAll('.admin-nav'));
-
-            adminNavWrap.addEventListener('click', adminNavActive)
-
+            // 관리자 메뉴의 통계의 자식들
+            var chartChildrenWrap = document.querySelector('.chart-children-nav-wrap');
+            var chartChildren = Array.from(chartChildrenWrap.children);
+            
+            adminNavWrap.addEventListener('click', adminNavActive);
+            chartChildrenWrap.addEventListener('click', chartChildrenActive);
+            // Admin Navigation Active script
             function adminNavActive() {
                 adminNav.map(function (el, index) {
+                    if (el === event.target) {
+                        el.classList.add('active');
+                        if (el.innerText === '통계') {
+                            chartChildrenWrap.classList.remove('d-none');
+                            chartChildrenWrap.classList.remove('fadeOutDown');
+                            chartChildrenWrap.classList.add('fadeInUp');
+                        } else {
+                            if (chartChildrenWrap.classList.contains('fadeInUp')) {
+                                chartChildrenWrap.classList.add('fadeOutDown');
+                                setTimeout(function() {
+                                    chartChildrenWrap.classList.add('d-none');
+                                }, 500);
+                            }
+                            chartChildrenWrap.classList.remove('fadeInUp');
+                        }
+                    } else {
+                        el.classList.remove('active');
+                    }
+                })
+            }
+            // 통계의 자식들 클릭 이벤트 함수
+            function chartChildrenActive() {
+                chartChildren.map(function (el) {
                     if (el === event.target) {
                         el.classList.add('active');
                     } else {
@@ -1056,6 +1083,211 @@ document.addEventListener('DOMContentLoaded', function () {
               dateFormat: "Y.m.d",
             //   defaultDate: "today"
             })
+
+
+
+
+            // CountUP.js
+            var noticeHits = document.querySelector('.notice-hits');
+            var blockchainHits = document.querySelector('.blockchain-hits');
+            var projectHits = document.querySelector('.project-hits');
+            var twitterHits = document.querySelector('.twitter-hits');
+
+            var options = {  
+                useEasing: true,
+                  useGrouping: true,
+                  separator: ',',
+                  decimal: '.',
+            };
+
+            new CountUp(noticeHits , 0, noticeHits.innerText, 0, 2, options).start();
+            new CountUp(blockchainHits , 0, blockchainHits.innerText, 0, 2, options).start();
+            new CountUp(projectHits , 0, projectHits.innerText, 0, 2, options).start();
+            new CountUp(twitterHits , 0, twitterHits.innerText, 0, 2, options).start();
+            
+            // if (!demo.error) {  
+            //     demo.start();
+            // } else {  
+            //     console.error(demo.error);
+            // }
+
+
+
+
+            // Chart JS
+            // notice Graph
+            var noticeGraph = document.querySelector('#notice-graph').getContext('2d');
+            new Chart(noticeGraph, {
+                type: 'line',
+                data: {
+                    labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
+                    datasets: [{
+                        label: 'Hits',
+                        data: [
+                            100,
+                            300,
+                            200,
+                            500,
+                            2500,
+                            2000,
+                            3500,
+                            3000,
+                            1000,
+                            5400
+                        ],
+                        lineTension: 0,
+                        // fill: false,
+                        borderColor: '#9B3838',
+                        pointHoverBackgroundColor: '#fbfcfc',
+                        pointHoverBorderColor: '#eb0e0e',
+                        pointHoverBorderWidth: 2,
+                        pointHoverRadius: 7,
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: false
+                    } 
+                }
+            });
+            // blockchain Graph
+            var blockchainGraph = document.querySelector('#blockchain-graph').getContext('2d');
+            new Chart(blockchainGraph, {
+                type: 'bar',
+                data: {
+                    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                    datasets: [{
+                        label: 'Hits',
+                        data: [
+                            1101,
+                            990,
+                            870,
+                            750,
+                            610,
+                            534,
+                            489,
+                            390,
+                            210,
+                            100
+                        ],
+                        // backgroundColor: 'green',
+                        backgroundColor: [
+                            '#AF5FA5',
+                            '#DAE0D0',
+                            '#64767C',
+                            '#8389B4',
+                            '#95B7D8',
+                            '#A6DCE8',
+                            '#F0D3D0',
+                            '#6B5E86',
+                            '#D6DAAC',
+                            '#C3A8EE',
+                        ]
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: false
+                    } 
+                }
+            });
+            // project Graph
+            var projectGraph = document.querySelector('#project-graph').getContext('2d');
+            new Chart(projectGraph, {
+                type: 'bar',
+                data: {
+                    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                    datasets: [{
+                        label: 'Hits',
+                        data: [
+                            1101,
+                            990,
+                            870,
+                            750,
+                            610,
+                            534,
+                            489,
+                            390,
+                            210,
+                            100
+                        ],
+                        // backgroundColor: 'green',
+                        backgroundColor: [
+                            '#AF5FA5',
+                            '#DAE0D0',
+                            '#64767C',
+                            '#8389B4',
+                            '#95B7D8',
+                            '#A6DCE8',
+                            '#F0D3D0',
+                            '#6B5E86',
+                            '#D6DAAC',
+                            '#C3A8EE',
+                        ]
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: false
+                    } 
+                }
+            });
+            // notice Graph
+            var twitterGraph = document.querySelector('#twitter-graph').getContext('2d');
+            new Chart(twitterGraph, {
+                type: 'line',
+                data: {
+                    labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
+                    datasets: [{
+                        label: 'Hits',
+                        data: [
+                            100,
+                            300,
+                            200,
+                            500,
+                            2500,
+                            2000,
+                            3500,
+                            3000,
+                            1000,
+                            5400
+                        ],
+                        lineTension: 0,
+                        // fill: false,
+                        borderColor: '#9B3838',
+                        pointHoverBackgroundColor: '#fbfcfc',
+                        pointHoverBorderColor: '#eb0e0e',
+                        pointHoverBorderWidth: 2,
+                        pointHoverRadius: 7,
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: false
+                    }
+                }
+            });
+
+
+            // Hit AND Like Swich button to blockchain & project
+            var hitLikeWrap = document.querySelector('.hit-like-wrap');
+            var hitLike = Array.from(document.querySelectorAll('.hit-like'));
+            
+            hitLikeWrap.addEventListener('click', hitLikeSwich );
+
+            function hitLikeSwich() {
+                hitLike.map(function(el, index) {
+                    if(el === event.target) {
+                        el.classList.add('bg-dark');
+                        el.classList.add('text-white');
+                    } else {
+                        el.classList.remove('bg-dark');
+                        el.classList.remove('text-white');
+                    }
+                })
+            }
+
+
         }
     }
 
