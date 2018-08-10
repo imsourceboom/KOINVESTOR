@@ -273,7 +273,21 @@ Mobile Index Section
     height: 20vh;
     background-color: #ffffff;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.m-headline-text-cover .title {
+    height: 1.5rem;
+    display: block;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 1.5rem;
 }
 
 .m-headline-context {
@@ -388,7 +402,9 @@ Mobile Index Section
 }
 
 /* 프로젝트 소식 title의 project icon */
-
+.index-project-img-cover {
+    height: 1.5rem;
+}
 .index-project-img-cover img {
     height: 100%;
 }
