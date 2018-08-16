@@ -34,9 +34,9 @@
     <!-- 플로팅 버튼 -->
     <div class="floating d-none d-lg-block">
         <!-- 플로팅 메인 버튼 -->
-        <div name="floating-btn" class="floating-btn position-fixed flex-center rounded-circle shadow-box cursor-pointer">
+        <div id="floating-btn" class="floating-btn position-fixed flex-center rounded-circle cursor-pointer">
             <div id="line-wrapper">
-                <div id="line-top" class="line   line-top line-top-reverse init"></div>
+                <div id="line-top" class="line line-top line-top-reverse init"></div>
                 <!-- <div id="line-mid" clline ass="line init mid-reverse"></div> -->
                 <div id="line-dot" class="line line-dot line-dot-reverse init"></div>
             </div>
@@ -145,7 +145,7 @@
                 <div class="col-lg-3"></div>
                 <div class="col-lg-5">
                     <nav>
-                        <ul class="pc-nav-list d-flex justify-content-between m-0 p-0 main-menu text-gray">
+                        <ul class="pc-nav-list d-flex justify-content-between m-0 p-0 text-gray">
                             <li>블록체인 뉴스</li>
                             <li>프로젝트 소식</li>
                             <li>실시간 트위터</li>
@@ -1161,7 +1161,7 @@
                 </article>
             </section>
             <!-- Project -->
-            <section class="project" v-if="section">
+            <section class="project" v-if="!section">
                 <article class="project-wrapper px-3 px-lg-0 pb-3">
                     <div class="container">
                         <div class="row">
@@ -1570,7 +1570,7 @@
                     <div class="row m-0">
                         <!-- Koinvestor Twitter Introduce and Link -->
                         <div class="col-lg-3 twitter-left-wrapper d-none d-lg-block" data-sticky-container>
-                            <div class="row bg-white twi-section-left m-0 opacity-0 animated" data-sticky data-margin-top="155">
+                            <div class="row bg-white twi-section-left m-0 opacity-0 animated fadeInUp" data-sticky data-margin-top="155">
                                 <div class="col-12 p-0 twitter-koinvestor-bgcover">
                                     <img src="https://blog.xtrabytes.global/wp-content/uploads/2017/08/blockchain21.png" alt="">
                                 </div>
@@ -1705,7 +1705,7 @@
                         </div>
                         <!-- Twitter Project Menu -->
                         <div class="col-lg-3 twitter-right-wrapper d-none d-lg-block" data-sticky-container>
-                            <div class="row bg-white twi-section-right px-4 m-0 opacity-0 animated" data-sticky data-margin-top="155">
+                            <div class="row bg-white twi-section-right px-4 m-0 opacity-0 animated fadeInUp" data-sticky data-margin-top="155">
                                 <div class="col-12 pt-4 pb-1 fs-11">
                                     프로젝트 보기
                                 </div>
@@ -1823,7 +1823,7 @@
                 </div>
             </section>
             <!-- Detail -->
-            <section class="detail" v-if="!section">
+            <section class="detail" v-if="section">
                 <article class="container pb-4 pb-lg-5">
                     <!-- title -->
                     <div class="row justify-content-center pt-4 pt-lg-5">
@@ -1886,10 +1886,10 @@
                         </div>
                     </div>
                     <div class="row justify-content-center py-4 py-lg-5">
-                        <div class="col-11 col-lg-7">
-                            <div class="row text-gray-light">
-                                <div class="col-auto share-btn bg-dark py-2 cursor-pointer position-relative">
-                                    <span class="px-lg-3">공유하기</span>
+                        <div class="col-12 col-lg-8">
+                            <div class="row align-items-center text-gray-light">
+                                <div class="col-auto share-btn position-relative">
+                                    <div class="share-list-btn">공유하기</div>
                                     <span class="address-copy-alert">주소가 복사되었습니다.</span>
                                 </div>
                                 <div class="col p-0">
@@ -1902,8 +1902,8 @@
                                         </small>
                                     </div>
                                 </div>
-                                <div class="col-auto bg-dark py-2 cursor-pointer">
-                                    <span class="px-lg-3">목록보기</span>
+                                <div class="col-auto">
+                                    <span class="share-list-btn">목록보기</span>
                                 </div>
                             </div>
                         </div>
