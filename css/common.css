@@ -29,8 +29,10 @@ body {
     font-family: 'NanumBarunGothic', sans-serif;
     font-size: 14px;
     background-color: #F7F7F7;
-    word-break: break-all;
+    overflow-wrap: break-word;
     word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
 }
 @media (max-width: 320px) {
     html,
