@@ -84,7 +84,7 @@
     height: 6rem;
 }
 
-.main-menu>li:hover {
+.pc-nav-list li.active {
     color: #000000;
 }
 
@@ -161,8 +161,9 @@ ul li {
     .search-wrap-desk input {
         /* border: none; */
         height: 4rem;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         padding-left: 3rem;
+        padding-top: .3rem;
         border-bottom: 1px solid #dee2e6;
     }
 }
@@ -1048,6 +1049,17 @@ Project Section
     object-fit: contain;
 }
 
+
+.share-list-btn {
+    width: 5.6rem;
+    height: 2.2rem;
+    background-color: #343a40;
+    cursor: pointer;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .address-copy-alert {
     width: 15rem;
     height: 2.5rem;
@@ -1055,7 +1067,7 @@ Project Section
     background-color: #fff;
     border: 1px solid #dee2e6;
     position: absolute;
-    top: 0;
+    top: -.1rem;
     left: 0;
     display: inline-block;
     z-index: 10;
@@ -1063,6 +1075,18 @@ Project Section
     transform: translateX(-100%);
     opacity: 0;
 }
+
+@media (min-width: 992px) {
+    .share-list-btn{
+        width: 8.7rem;
+        height: 2.5rem;
+    }
+    .address-copy-alert {
+        top: 0;
+    }
+}
+
+
 
 .copy-alert-toggle {
     animation: copy-alert 3s ease-in-out infinite;
