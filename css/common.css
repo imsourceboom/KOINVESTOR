@@ -421,7 +421,7 @@ body {
     background-color: #3C3B3B;
 }
 
-div[name='floating-btn'] {
+#floating-btn {
     z-index: 999;
 }
 
