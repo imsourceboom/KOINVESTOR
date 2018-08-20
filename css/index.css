@@ -908,6 +908,16 @@ Mobile Index Section
     .project-news-items .b-img-cover {
         height: 70%;
     }
+    .blockchain-news-items .title-cover,
+    .project-news-items .title-cover {
+        position: relative;
+        height: 30%;
+    }
+    .blockchain-news-items .title-cover span,
+    .project-news-items .title-cover span {
+        position: absolute;
+        bottom: 0;
+    }
     /* project list And Menu */
     .pc-project-all,
     .pc-project-list-menu-wrap,
