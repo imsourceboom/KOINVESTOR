@@ -83,6 +83,46 @@
     color: #000000;
 }
 
+/* 
+헤더 메뉴의 블록체인 뉴스와 트위터 마우스 오버시 '서비스 준비중'으로 
+*/
+.pc-nav-list li:nth-child(1),
+.pc-nav-list li:nth-child(3) {
+    cursor: default;
+}
+
+.pc-nav-list li:nth-child(1):before {
+    content: '블록체인 뉴스';
+    /* transition: 1s; */
+}
+.pc-nav-list li:nth-child(3):before {
+    cursor: default;
+    content: '트위터';
+    margin: 0 1.45rem;
+    /* transition: 1s; */
+}
+
+.pc-nav-list li:nth-child(1):after,
+.pc-nav-list li:nth-child(3):after {
+    content: '';
+    transition: 1s;
+    opacity: 0;
+}
+
+.pc-nav-list li:nth-child(1):hover:before,
+.pc-nav-list li:nth-child(3):hover:before {
+    content: '';
+    opacity: 0;
+    margin: 0;
+}
+
+.pc-nav-list li:nth-child(1):hover:after, 
+.pc-nav-list li:nth-child(3):hover:after {
+    content: '서비스 준비중';
+    text-decoration-line: line-through;
+    opacity: .5;
+}
+
 ul li {
     list-style: none;
     cursor: pointer;
@@ -105,8 +145,7 @@ ul li {
 /* .logo {
     font-size: 1.8rem;
 } */
-
-.logo img{
+.logo img {
     width: 152px;
 }
 
@@ -631,17 +670,18 @@ Mobile Index Section
     z-index: 1;
     background-color: #f7f7f7;
 }
+
 .twitter-logo-wrap .in-wrap {
     height: 4rem;
     background: white;
 }
+
 /* .twitter-logo-wrap {
     margin: 1.071rem 0;
     height: 4rem;
     position: relative;
     z-index: 1;
 } */
-
 .twitter-logo-wrap img {
     width: 2rem;
     transition: .3s;
@@ -1241,9 +1281,6 @@ Project Section
     animation-duration: .5s;
 }
 
-
-
-
 /* Clause Section */
 /* person-info, utilization */
 .person-info button {
@@ -1251,13 +1288,11 @@ Project Section
     height: 3rem;
     cursor: pointer;
 }
+
 .person-info button:active,
 .person-info button:focus {
     outline: none;
 }
-
-
-
 
 /* Footer */
 footer {
@@ -1401,11 +1436,6 @@ Admin CSS
     color: rgba(140, 140, 140, 1);
 }
 
-
-
-
-
-
 /* Project Management */
 .project-management table tbody tr {
     height: 4rem;
@@ -1421,11 +1451,9 @@ Admin CSS
     vertical-align: middle;
 }
 
-.project-management table tbody tr .logo-cel img{
+.project-management table tbody tr .logo-cel img {
     width: 2rem;
 }
-
-
 
 /* Chart's Common */
 .view-count {
