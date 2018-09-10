@@ -130,8 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     function twitTyped() {
                         var typed = new Typed("#typed", {
                             strings: [
-                                "실시간 트위터 <strong>페이지</strong>",
-                                "실시간 트위터 <strong>바로가기</strong>"
+                                "트위터 <strong>페이지</strong>",
+                                "트위터 <strong>바로가기</strong>"
                             ],
                             typeSpeed: 30,
                             backSpeed: 50
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         handler: function (item) {
                             this.element.classList.add("fadeInUp")
                         },
-                        offset: "10%"
+                        offset: "50%"
                     })
                     // Twitter left wrpper의 koinvestor twit waypoint
                     var waypoint = new Waypoint({
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         handler: function (item) {
                             this.element.classList.add("fadeInUp")
                         },
-                        offset: "bottom-in-view"
+                        offset: "50%"
                     })
                 }
             }
@@ -738,13 +738,13 @@ document.addEventListener("DOMContentLoaded", function () {
     /*
       ScrollReveal
       */
-    window.sr = ScrollReveal();
-    sr.reveal(".main-footer", {
-        reset: true,
-        distance: "400px",
-        scale: 1,
-        duration: 1000
-    })
+    // window.sr = ScrollReveal();
+    // sr.reveal(".main-footer", {
+    //     reset: true,
+    //     distance: "400px",
+    //     scale: 1,
+    //     duration: 1000
+    // })
 
     // ( Mobile ver. ) Hamburger Menu
     // m-header에 있는 햄버거
