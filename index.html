@@ -175,10 +175,11 @@
             </div>
             <!-- Header의 Logo 영역 -->
             <div class="row mx-0 logo-wrap align-items-center">
-                <div class="col-lg-3 d-flex justify-content-center logo">
-                    <div class="logo w250 cursor-pointer">
-                        KOINVESTOR
-                    </div>
+                <div class="col-lg-3 d-flex justify-content-center logo cursor-pointer">
+                    <!-- <div class="logo w250 cursor-pointer"> -->
+                        <img src="./img/koinvestor_logo.svg" alt="">
+                        <!-- KOINVESTOR -->
+                    <!-- </div> -->
                 </div>
                 <div class="col-lg-8">
                     <div class="explain">
@@ -194,7 +195,7 @@
         </header>
         <!-- Header Mobile -->
         <header class="m-header d-lg-none">
-            <div class="container h-100">
+            <div class="container-fluid h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-auto">
                         KOINVESTOR
@@ -219,7 +220,7 @@
         </header>
         <!-- Mobile Navigation -->
         <nav class="nav d-none animated">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navi-close-wrap">
                     <div class="row h-100 align-items-center">
                         <div class="col"></div>
@@ -293,7 +294,7 @@
         </section>
 
         <!-- 메인 컨텐츠 영역 -->
-        <main id="main" class="main" v-if="!main">
+        <main id="main" class="main" v-if="main">
             <!-- Desk-Top Ver. -->
             <!-- index Page -->
             <section class="index d-none d-lg-block" v-if="section">
@@ -301,7 +302,7 @@
                 <article class="headline container-fluid text-center pb-5 bg-white">
                     <!-- headline-a a-row -->
                     <div class="row no-gutters">
-                        <div class="col-lg-8 headline-a">
+                        <!-- <div class="col-lg-8 headline-a">
                             <div class="a-cover">
                                 <div class="content-wrap">
 
@@ -311,13 +312,6 @@
                                 </div>
                             </div>
                             <img src="https://picsum.photos/1000/500?image=1" alt="">
-                            <!-- <div class="temporary-data">
-                                <div>더욱 정확하고 신속하게</div>
-                                <div>
-                                    <span>정보</span>
-                                    를 전달하겠습니다.
-                                </div>
-                            </div> -->
                         </div>
                         <div class="col-lg-4 headline-a">
                             <div class="a-cover">
@@ -329,13 +323,17 @@
                                 </div>
                             </div>
                             <img src="https://picsum.photos/1000/500?image=1" alt="">
-                            <!-- <div class="temporary-data">
-                                <div>더욱 정확하고 신속하게</div>
-                                <div>
-                                    <span>정보</span>
-                                    를 전달하겠습니다.
-                                </div>
-                            </div> -->
+                        </div> -->
+                        <div class="col-lg-12 headline-a pr-0" style="
+                            cursor: none;
+                        ">
+                            <div class="a-cover" style="
+                                overflow: hidden;
+                                ">
+                                <video autoplay loop>
+                                    <source src="./img/sample.mp4" type="video/mp4">
+                                </video>
+                            </div>
                         </div>
                     </div>
                     <!-- headline-b b-row -->
@@ -345,7 +343,8 @@
                                 <img src="https://picsum.photos/1000/500?image=21" alt="">
                             </div>
                             <div class="title-wrap-b flex-c-center">
-                                <b>Javascript is awesome! and Great! and Sexy!Javascript is awesome! and Great! and Sexy!</b>
+                                <b>Javascript is awesome! and Great! and Sexy!Javascript is awesome! and Great! and
+                                    Sexy!</b>
                                 <small>by Joe H.J</small>
                             </div>
                         </div>
@@ -410,28 +409,40 @@
                 </article>
                 <!-- TWITTER -->
                 <article class="twitter-wrap">
-                    <div class="container p-0">
+                    <div class="container-fluid p-0" data-sticky-container>
                         <!-- Twitter Logo -->
-                        <div class="flex-center twitter-logo-wrap bg-white">
+                        <div class="twitter-logo-wrap" data-sticky data-margin-top="140">
+                            <div class="flex-center in-wrap">
+                                <div class="twitter-logo cursor-pointer">
+                                    <img src="https://upload.wikimedia.org/wikipedia/ko/thumb/9/9e/%ED%8A%B8%EC%9C%84%ED%84%B0_%EB%A1%9C%EA%B3%A0_%282012%29.svg/1200px-%ED%8A%B8%EC%9C%84%ED%84%B0_%EB%A1%9C%EA%B3%A0_%282012%29.svg.png"
+                                        alt="">
+                                    <span id="typed"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="flex-center twitter-logo-wrap bg-white" data-sticky data-margin-top="140">
                             <div class="twitter-logo cursor-pointer">
                                 <img src="https://upload.wikimedia.org/wikipedia/ko/thumb/9/9e/%ED%8A%B8%EC%9C%84%ED%84%B0_%EB%A1%9C%EA%B3%A0_%282012%29.svg/1200px-%ED%8A%B8%EC%9C%84%ED%84%B0_%EB%A1%9C%EA%B3%A0_%282012%29.svg.png"
                                     alt="">
                                 <span id="typed"></span>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Twitter Content -->
                         <div class="row m-0">
                             <!-- Koinvestor Twitter Introduce and Link -->
                             <div class="col-lg-3 twitter-left-wrapper" data-sticky-container>
-                                <div class="row bg-white t-koinvestor-link m-0 opacity-0 animated" data-sticky data-margin-top="155">
+                                <div class="row bg-white t-koinvestor-link m-0 opacity-0 animated" data-sticky
+                                    data-margin-top="225">
                                     <div class="col-12 p-0 twitter-koinvestor-bgcover">
-                                        <img src="https://blog.xtrabytes.global/wp-content/uploads/2017/08/blockchain21.png" alt="">
+                                        <img src="https://blog.xtrabytes.global/wp-content/uploads/2017/08/blockchain21.png"
+                                            alt="">
                                     </div>
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-4 pr-0">
                                                 <div class="twitter-koinvestor-logo-wrap">
-                                                    <img src="https://pbs.twimg.com/profile_images/910014716323422208/0uE556Rt_400x400.jpg" alt="" class="twitter-koinvestor-logo">
+                                                    <img src="https://pbs.twimg.com/profile_images/910014716323422208/0uE556Rt_400x400.jpg"
+                                                        alt="" class="twitter-koinvestor-logo">
                                                 </div>
                                             </div>
                                             <div class="col pl-2 pt-2">
@@ -444,8 +455,10 @@
                                     </div>
                                     <div class="col-12 pb-3">
                                         <span>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate tempore fuga laudantium molestias corporis qui deserunt
-                                            dolor! Praesentium, modi. Quidem, doloremque quis temporibus ipsum vel quisquam
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate tempore
+                                            fuga laudantium molestias corporis qui deserunt
+                                            dolor! Praesentium, modi. Quidem, doloremque quis temporibus ipsum vel
+                                            quisquam
                                             dolore aperiam quasi dolorem?
                                         </span>
                                     </div>
@@ -453,7 +466,7 @@
                             </div>
                             <!-- Twitter timeline -->
                             <div class="col-lg-6 bg-white">
-                                <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
+                                <div class="col-12 p-3 t-timeline-item border-bottom">
                                     <div class="row">
                                         <div class="col-2 t-timeline-logo text-center px-0">
                                             <img src="./img/logo/telegram.svg" alt="">
@@ -464,15 +477,18 @@
                                                 <span class="text-gray-light fs-08 ml-4">@telegram</span>
                                                 <span class="text-gray-light fs-08">6월 18일</span>
                                             </p>
-                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus
-                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis, facilis
-                                                veritatis nobis doloremque ratione veniam porro delectus asperiores dolorum,
+                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Excepturi temporibus
+                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis,
+                                                facilis
+                                                veritatis nobis doloremque ratione veniam porro delectus asperiores
+                                                dolorum,
                                                 totam recusandae.</p>
                                             <img src="https://picsum.photos/1000?image=91" alt="">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
+                                <div class="col-12 p-3 t-timeline-item border-bottom">
                                     <div class="row">
                                         <div class="col-2 t-timeline-logo text-center px-0">
                                             <img src="./img/logo/telegram.svg" alt="">
@@ -483,15 +499,18 @@
                                                 <span class="text-gray-light fs-08 ml-4">@telegram</span>
                                                 <span class="text-gray-light fs-08">6월 18일</span>
                                             </p>
-                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus
-                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis, facilis
-                                                veritatis nobis doloremque ratione veniam porro delectus asperiores dolorum,
+                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Excepturi temporibus
+                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis,
+                                                facilis
+                                                veritatis nobis doloremque ratione veniam porro delectus asperiores
+                                                dolorum,
                                                 totam recusandae.</p>
                                             <img src="https://picsum.photos/300/400?image=101" alt="">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
+                                <div class="col-12 p-3 t-timeline-item border-bottom">
                                     <div class="row">
                                         <div class="col-2 t-timeline-logo text-center px-0">
                                             <img src="./img/logo/telegram.svg" alt="">
@@ -502,15 +521,18 @@
                                                 <span class="text-gray-light fs-08 ml-4">@telegram</span>
                                                 <span class="text-gray-light fs-08">6월 18일</span>
                                             </p>
-                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus
-                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis, facilis
-                                                veritatis nobis doloremque ratione veniam porro delectus asperiores dolorum,
+                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Excepturi temporibus
+                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis,
+                                                facilis
+                                                veritatis nobis doloremque ratione veniam porro delectus asperiores
+                                                dolorum,
                                                 totam recusandae.</p>
                                             <img src="https://picsum.photos/600/200?image=111" alt="">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
+                                <!-- <div class="col-12 p-3 pb-5 t-timeline-item border-bottom">
                                     <div class="row">
                                         <div class="col-2 t-timeline-logo text-center px-0">
                                             <img src="./img/logo/telegram.svg" alt="">
@@ -521,9 +543,12 @@
                                                 <span class="text-gray-light fs-08 ml-4">@telegram</span>
                                                 <span class="text-gray-light fs-08">6월 18일</span>
                                             </p>
-                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus
-                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis, facilis
-                                                veritatis nobis doloremque ratione veniam porro delectus asperiores dolorum,
+                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Excepturi temporibus
+                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis,
+                                                facilis
+                                                veritatis nobis doloremque ratione veniam porro delectus asperiores
+                                                dolorum,
                                                 totam recusandae.</p>
                                             <img src="https://picsum.photos/200/400?image=131" alt="">
                                         </div>
@@ -540,132 +565,125 @@
                                                 <span class="text-gray-light fs-08 ml-4">@telegram</span>
                                                 <span class="text-gray-light fs-08">6월 18일</span>
                                             </p>
-                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus
-                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis, facilis
-                                                veritatis nobis doloremque ratione veniam porro delectus asperiores dolorum,
+                                            <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit. Excepturi temporibus
+                                                ipsa, eligendi cum molestias expedita corrupti magnam reiciendis,
+                                                facilis
+                                                veritatis nobis doloremque ratione veniam porro delectus asperiores
+                                                dolorum,
                                                 totam recusandae.</p>
                                             <img src="https://picsum.photos/500?image=141" alt="">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-12 py-5 text-center">
+                                </div> -->
+                                <!-- <div class="col-12 py-5 text-center">
                                     <span class="cursor-pointer fs-11 text-success">더보기</span>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- Twitter Project Menu -->
                             <div class="col-lg-3 twitter-right-wrapper" data-sticky-container>
-                                <div class="row bg-white t-project-menu-wrap px-4 m-0 opacity-0 animated" data-sticky data-margin-top="155">
-                                    <div class="col-12 pt-4 pb-1 fs-11">
-                                        프로젝트 보기
-                                    </div>
-                                    <!-- t-project-item -->
-                                    <div class="col-12 py-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-3 t-project-logo pr-0">
-                                                <img src="./img/logo/telegram.svg" alt="">
+                                <div class="row bg-white t-project-menu-wrap m-0 opacity-0 animated" data-sticky
+                                    data-margin-top="225">
+                                    <!-- indexPage twitter-project-item -->
+                                    <div class="col-12">
+                                        <div class="row justify-content-center align-items-center" style="min-height: 110px;">
+                                            <div class="col-5 index-twitter-project-logo">
+                                                <div class="row justify-content-end">
+                                                    <div class="col-auto">
+                                                        <img src="./img/logo/ambrosus_m.svg" alt="">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col">
-                                                <p class="fs-09 w900 m-0">Telegram</p>
-                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@telgram</p>
-                                                <button class="t-project-btn">보기</button>
+                                                <div class="column">
+                                                    <p class="fs-10 w600 mb-2">Ambrosus</p>
+                                                    <a href="https://telegram.org/" target="_blank">
+                                                        <span class="fs-07 text-gray-light m-0 w250">Homepage &nbsp;></span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="row justify-content-center">
-                                            <div class="col t-p-line"></div>
+                                            <div class="col t-item-b-line"></div>
                                         </div>
                                     </div>
-                                    <!-- t-project-item -->
-                                    <div class="col-12 py-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-3 t-project-logo pr-0">
-                                                <img src="./img/logo/windingtree.svg" alt="">
+                                    <!-- indexPage twitter-project-item -->
+                                    <div class="col-12">
+                                        <div class="row justify-content-center align-items-center" style="min-height: 110px;">
+                                            <div class="col-5 index-twitter-project-logo">
+                                                <div class="row justify-content-end">
+                                                    <div class="col-auto">
+                                                        <img src="./img/logo/playkey_m.svg" alt="">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col">
-                                                <p class="fs-09 w900 m-0">Winding Tree</p>
-                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@windingtree</p>
-                                                <button class="t-project-btn">보기</button>
+                                                <div class="column">
+                                                    <p class="fs-10 w600 mb-2">Play Key</p>
+                                                    <a href="https://telegram.org/" target="_blank">
+                                                        <span class="fs-07 text-gray-light m-0 w250">Homepage &nbsp;></span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="row justify-content-center">
-                                            <div class="col t-p-line"></div>
+                                            <div class="col t-item-b-line"></div>
                                         </div>
                                     </div>
-                                    <!-- t-project-item -->
-                                    <div class="col-12 py-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-3 t-project-logo pr-0">
-                                                <img src="./img/logo/rsk.svg" alt="">
+                                    <!-- indexPage twitter-project-item -->
+                                    <div class="col-12">
+                                        <div class="row justify-content-center align-items-center" style="min-height: 110px;">
+                                            <div class="col-5 index-twitter-project-logo">
+                                                <div class="row justify-content-end">
+                                                    <div class="col-auto">
+                                                        <img src="./img/logo/telegram.svg" alt="">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col">
-                                                <p class="fs-09 w900 m-0">Root Stock</p>
-                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@rootstock</p>
-                                                <button class="t-project-btn">보기</button>
+                                                <div class="column">
+                                                    <p class="fs-10 w600 mb-2">Telegram</p>
+                                                    <a href="https://telegram.org/" target="_blank">
+                                                        <span class="fs-07 text-gray-light m-0 w250">Homepage &nbsp;></span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="row justify-content-center">
-                                            <div class="col t-p-line"></div>
+                                            <div class="col t-item-b-line"></div>
                                         </div>
                                     </div>
-                                    <!-- t-project-item -->
-                                    <div class="col-12 py-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-3 t-project-logo pr-0">
-                                                <img src="./img/logo/qash_m.svg" alt="">
+                                    <!-- indexPage twitter-project-item -->
+                                    <div class="col-12">
+                                        <div class="row justify-content-center align-items-center" style="min-height: 110px;">
+                                            <div class="col-5 index-twitter-project-logo">
+                                                <div class="row justify-content-end">
+                                                    <div class="col-auto">
+                                                        <img src="./img/logo/windingtree.svg" alt="">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col">
-                                                <p class="fs-09 w900 m-0">QASH</p>
-                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@qash</p>
-                                                <button class="t-project-btn">보기</button>
+                                                <div class="column">
+                                                    <p class="fs-10 w600 mb-2">Winding Tree</p>
+                                                    <a href="https://telegram.org/" target="_blank">
+                                                        <span class="fs-07 text-gray-light m-0 w250">Homepage &nbsp;></span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="row justify-content-center">
-                                            <div class="col t-p-line"></div>
+                                            <div class="col t-item-b-line"></div>
                                         </div>
                                     </div>
-                                    <!-- t-project-item -->
-                                    <div class="col-12 py-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-3 t-project-logo pr-0">
-                                                <img src="./img/logo/paypie_m.svg" alt="">
-                                            </div>
-                                            <div class="col">
-                                                <p class="fs-09 w900 m-0">PayPie</p>
-                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@paypie</p>
-                                                <button class="t-project-btn">보기</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="row justify-content-center">
-                                            <div class="col t-p-line"></div>
-                                        </div>
-                                    </div>
-                                    <!-- t-project-item -->
-                                    <div class="col-12 py-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-3 t-project-logo pr-0">
-                                                <img src="./img/logo/playkey_m.svg" alt="">
-                                            </div>
-                                            <div class="col">
-                                                <p class="fs-09 w900 m-0">Play Key</p>
-                                                <p class="fs-08 text-gray-light m-0 pb-2 py-1">@playkey</p>
-                                                <button class="t-project-btn">보기</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="col-12">
-                                            <div class="row justify-content-center">
-                                                <div class="col t-p-line"></div>
-                                            </div>
-                                        </div> -->
                                 </div>
                             </div>
                         </div>
@@ -692,10 +710,14 @@
                                             페이파이 '알파 서비스 출시 예정' 페이파이 '알파 서비스 출시 예정'
                                         </div>
                                         <div class="m-headline-context text-gray px-5">
-                                            우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만
-                                            집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직
-                                            플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다.
-                                            우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것
+                                            우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는
+                                            것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만
+                                            집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은
+                                            오직
+                                            플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는
+                                            것이다.
+                                            우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는
+                                            것
                                             만큼 정확할 것이라는 것이다.
                                         </div>
                                     </div>
@@ -714,8 +736,10 @@
                                             텔레그램 사용자 2억명 돌파 텔레그램 사용자 2억명 돌파
                                         </div>
                                         <div class="m-headline-context text-gray px-5">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt temporibus odio, sint laboriosam cum at aut magnam repellat
-                                            doloribus porro nisi cupiditate. Recusandae delectus accusamus quasi doloribus
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+                                            temporibus odio, sint laboriosam cum at aut magnam repellat
+                                            doloribus porro nisi cupiditate. Recusandae delectus accusamus quasi
+                                            doloribus
                                             molestias a quisquam.
                                         </div>
                                     </div>
@@ -734,10 +758,14 @@
                                             RSK 말 바꾸기 달인인가
                                         </div>
                                         <div class="m-headline-context text-gray px-5">
-                                            우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만
-                                            집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직
-                                            플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다.
-                                            우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것
+                                            우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는
+                                            것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만
+                                            집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는 것이다. 우리의 알파 버전은
+                                            오직
+                                            플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는 것 만큼 정확할 것이라는
+                                            것이다.
+                                            우리의 알파 버전은 오직 플랫폼의 신용 위험 평가에만 집중할 것이다. 이 부분은 먼저 광택을 내서 우리가 모든 데이터가 우리가 상상하는
+                                            것
                                             만큼 정확할 것이라는 것이다.
                                         </div>
                                     </div>
@@ -779,7 +807,8 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기
+                                        앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
                                         굳게 다짐합니다.
                                     </div>
                                 </div>
@@ -799,8 +828,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-gray m-headline-context">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nam quasi autem rerum numquam, minima voluptas cum nulla
-                                        quam similique consequuntur voluptatibus ex, ratione soluta nostrum magni. Nesciunt,
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nam quasi
+                                        autem rerum numquam, minima voluptas cum nulla
+                                        quam similique consequuntur voluptatibus ex, ratione soluta nostrum magni.
+                                        Nesciunt,
                                         incidunt? Labore.
                                     </div>
                                 </div>
@@ -838,8 +869,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-gray m-headline-context">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nam quasi autem rerum numquam, minima voluptas cum nulla
-                                        quam similique consequuntur voluptatibus ex, ratione soluta nostrum magni. Nesciunt,
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nam quasi
+                                        autem rerum numquam, minima voluptas cum nulla
+                                        quam similique consequuntur voluptatibus ex, ratione soluta nostrum magni.
+                                        Nesciunt,
                                         incidunt? Labore.
                                     </div>
                                 </div>
@@ -862,8 +895,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-gray m-headline-context">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nam quasi autem rerum numquam, minima voluptas cum nulla
-                                        quam similique consequuntur voluptatibus ex, ratione soluta nostrum magni. Nesciunt,
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nam quasi
+                                        autem rerum numquam, minima voluptas cum nulla
+                                        quam similique consequuntur voluptatibus ex, ratione soluta nostrum magni.
+                                        Nesciunt,
                                         incidunt? Labore.
                                     </div>
                                 </div>
@@ -903,7 +938,7 @@
                     </div>
                 </article>
                 <article class="m-notice-start d-lg-none px-3">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 text-center py-3 border-bottom">
                                 <span>공지사항</span>
@@ -924,14 +959,20 @@
                             <span class="notice-title w500">질리카 상장 안내 [Zilliqa Listing Announcement]</span>
                         </div>
                         <div class="col-lg-12 my-3 notice-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus,
+                            totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                            ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis,
+                            expedita
                             voluptatem voluptatibus, totam ipsum!
                             <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                            ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem
                             voluptatibus, totam ipsum!
                         </div>
                         <div class="col">
@@ -952,14 +993,20 @@
                             <span class="notice-title w500">질리카 상장 안내 [Zilliqa Listing Announcement]</span>
                         </div>
                         <div class="col-lg-12 my-3 notice-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus,
+                            totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                            ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis,
+                            expedita
                             voluptatem voluptatibus, totam ipsum!
                             <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                            ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem
                             voluptatibus, totam ipsum!
                         </div>
                     </div>
@@ -976,14 +1023,20 @@
                             <span class="notice-title w500">질리카 상장 안내 [Zilliqa Listing Announcement]</span>
                         </div>
                         <div class="col-lg-12 my-3 notice-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam
-                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
-                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus
+                            quisquam deleniti deserunt? Ea
+                            nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus,
+                            totam
+                            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                            ducimus
+                            quisquam deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis,
+                            expedita
                             voluptatem voluptatibus, totam ipsum!
                             <br>
-                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
-                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                            ducimus quisquam
+                            deleniti deserunt? Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita
+                            voluptatem
                             voluptatibus, totam ipsum!
                         </div>
                     </div>
@@ -1075,8 +1128,10 @@
                                     <div class="col-6 d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>비트코인 우려하던 일이 벌어졌다. 700만 마지노선 무너졌다</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
-                                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극긱 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                            굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세.
+                                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                            태극긱 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                            굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로
+                                            길이보존하세.
                                             나는 자랑스런 태극긱 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                         </span>
                                         <small class="text-gray">2018.06.27</small>
@@ -1091,11 +1146,16 @@
                                     <div class="col-6 d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>코인베스터, 텔레그램 아시아 단독파트너쉽 체결</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est reiciendis animi in, quasi modi explicabo beatae esse
-                                            distinctio neque. Nesciunt at atque assumenda architecto magnam consequuntur
-                                            quia, placeat doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Laborum est reiciendis animi in, quasi modi explicabo beatae esse distinctio
-                                            neque. Nesciunt at atque assumenda architecto magnam consequuntur quia, placeat
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est
+                                            reiciendis animi in, quasi modi explicabo beatae esse
+                                            distinctio neque. Nesciunt at atque assumenda architecto magnam
+                                            consequuntur
+                                            quia, placeat doloribus. Lorem ipsum dolor sit amet consectetur adipisicing
+                                            elit.
+                                            Laborum est reiciendis animi in, quasi modi explicabo beatae esse
+                                            distinctio
+                                            neque. Nesciunt at atque assumenda architecto magnam consequuntur quia,
+                                            placeat
                                             doloribus.
                                         </span>
                                         <small class="text-gray">2018.06.27</small>
@@ -1110,8 +1170,10 @@
                                     <div class="col-6 d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>블록체인 규제안 오락가락, 준구가 시키드나</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
-                                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극긱 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                            굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세.
+                                            동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                            태극긱 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                            굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로
+                                            길이보존하세.
                                             나는 자랑스런 태극긱 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                         </span>
                                         <small class="text-gray">2018.06.27</small>
@@ -1126,11 +1188,16 @@
                                     <div class="col-6 d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>Mother father Gentleman</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est reiciendis animi in, quasi modi explicabo beatae esse
-                                            distinctio neque. Nesciunt at atque assumenda architecto magnam consequuntur
-                                            quia, placeat doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Laborum est reiciendis animi in, quasi modi explicabo beatae esse distinctio
-                                            neque. Nesciunt at atque assumenda architecto magnam consequuntur quia, placeat
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est
+                                            reiciendis animi in, quasi modi explicabo beatae esse
+                                            distinctio neque. Nesciunt at atque assumenda architecto magnam
+                                            consequuntur
+                                            quia, placeat doloribus. Lorem ipsum dolor sit amet consectetur adipisicing
+                                            elit.
+                                            Laborum est reiciendis animi in, quasi modi explicabo beatae esse
+                                            distinctio
+                                            neque. Nesciunt at atque assumenda architecto magnam consequuntur quia,
+                                            placeat
                                             doloribus.
                                         </span>
                                         <small class="text-gray">2018.06.27</small>
@@ -1145,11 +1212,16 @@
                                     <div class="col-6 d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>비트코인 우려하던 일이 벌어졌다. 700만 마지노선 무너졌다</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est reiciendis animi in, quasi modi explicabo beatae esse
-                                            distinctio neque. Nesciunt at atque assumenda architecto magnam consequuntur
-                                            quia, placeat doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Laborum est reiciendis animi in, quasi modi explicabo beatae esse distinctio
-                                            neque. Nesciunt at atque assumenda architecto magnam consequuntur quia, placeat
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est
+                                            reiciendis animi in, quasi modi explicabo beatae esse
+                                            distinctio neque. Nesciunt at atque assumenda architecto magnam
+                                            consequuntur
+                                            quia, placeat doloribus. Lorem ipsum dolor sit amet consectetur adipisicing
+                                            elit.
+                                            Laborum est reiciendis animi in, quasi modi explicabo beatae esse
+                                            distinctio
+                                            neque. Nesciunt at atque assumenda architecto magnam consequuntur quia,
+                                            placeat
                                             doloribus.
                                         </span>
                                         <small class="text-gray">2018.06.27</small>
@@ -1171,9 +1243,9 @@
                 </article>
             </section>
             <!-- Project -->
-            <section class="project" v-if="!section">
+            <section class="project" v-if="section">
                 <article class="project-wrapper px-3 px-lg-0 pb-3">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row">
                             <!-- Title AND project list select Mobile ver. -->
                             <div class="col-12 py-3 border-bottom d-lg-none">
@@ -1281,7 +1353,8 @@
                                                 <img src="https://picsum.photos/500/300?image=87" alt="">
                                             </div>
                                             <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>Use these shorthand uilities for quickly configuring the position of an element.</p>
+                                                <p>Use these shorthand uilities for quickly configuring the position of
+                                                    an element.</p>
                                                 <span>
                                                     <small class="text-gray pr-2">플레이키</small>
                                                     <small class="text-gray">2018.06.28</small>
@@ -1351,7 +1424,8 @@
                                                 <img src="https://picsum.photos/500/300?image=87" alt="">
                                             </div>
                                             <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>Use these shorthand uilities for quickly configuring the position of an element.</p>
+                                                <p>Use these shorthand uilities for quickly configuring the position of
+                                                    an element.</p>
                                                 <span>
                                                     <small class="text-gray pr-2">플레이키</small>
                                                     <small class="text-gray">2018.06.28</small>
@@ -1515,7 +1589,7 @@
             </section>
             <!-- Twitter -->
             <section class="twitter" v-if="section">
-                <div class="container p-0">
+                <div class="container-fluid p-0">
                     <!-- Twitter Logo -->
                     <div class="flex-center twitter-logo-wrap bg-white">
                         <div class="twitter-symbol animated infinite">
@@ -1610,15 +1684,18 @@
                     <div class="row m-0">
                         <!-- Koinvestor Twitter Introduce and Link -->
                         <div class="col-lg-3 twitter-left-wrapper d-none d-lg-block" data-sticky-container>
-                            <div class="row bg-white twi-section-left m-0 opacity-0 animated fadeInUp" data-sticky data-margin-top="155">
+                            <div class="row bg-white twi-section-left m-0 opacity-0 animated fadeInUp" data-sticky
+                                data-margin-top="155">
                                 <div class="col-12 p-0 twitter-koinvestor-bgcover">
-                                    <img src="https://blog.xtrabytes.global/wp-content/uploads/2017/08/blockchain21.png" alt="">
+                                    <img src="https://blog.xtrabytes.global/wp-content/uploads/2017/08/blockchain21.png"
+                                        alt="">
                                 </div>
                                 <div class="col-12">
                                     <div class="row">
                                         <div class="col-4 pr-0">
                                             <div class="twitter-koinvestor-logo-wrap">
-                                                <img src="https://pbs.twimg.com/profile_images/910014716323422208/0uE556Rt_400x400.jpg" alt="" class="twitter-koinvestor-logo">
+                                                <img src="https://pbs.twimg.com/profile_images/910014716323422208/0uE556Rt_400x400.jpg"
+                                                    alt="" class="twitter-koinvestor-logo">
                                             </div>
                                         </div>
                                         <div class="col pl-2 pt-2">
@@ -1631,8 +1708,10 @@
                                 </div>
                                 <div class="col-12 pb-3">
                                     <span>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate tempore fuga laudantium molestias corporis qui deserunt
-                                        dolor! Praesentium, modi. Quidem, doloremque quis temporibus ipsum vel quisquam dolore
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate tempore
+                                        fuga laudantium molestias corporis qui deserunt
+                                        dolor! Praesentium, modi. Quidem, doloremque quis temporibus ipsum vel quisquam
+                                        dolore
                                         aperiam quasi dolorem?
                                     </span>
                                 </div>
@@ -1678,9 +1757,12 @@
                                             <span class="text-gray-light fs-08 ml-4">@telegram</span>
                                             <span class="text-gray-light fs-08">6월 18일</span>
                                         </p>
-                                        <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus ipsa,
-                                            eligendi cum molestias expedita corrupti magnam reiciendis, facilis veritatis
-                                            nobis doloremque ratione veniam porro delectus asperiores dolorum, totam recusandae.</p>
+                                        <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Excepturi temporibus ipsa,
+                                            eligendi cum molestias expedita corrupti magnam reiciendis, facilis
+                                            veritatis
+                                            nobis doloremque ratione veniam porro delectus asperiores dolorum, totam
+                                            recusandae.</p>
                                         <img src="https://picsum.photos/300/400?image=101" alt="">
                                     </div>
                                 </div>
@@ -1696,9 +1778,12 @@
                                             <span class="text-gray-light fs-08 ml-4">@telegram</span>
                                             <span class="text-gray-light fs-08">6월 18일</span>
                                         </p>
-                                        <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus ipsa,
-                                            eligendi cum molestias expedita corrupti magnam reiciendis, facilis veritatis
-                                            nobis doloremque ratione veniam porro delectus asperiores dolorum, totam recusandae.</p>
+                                        <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Excepturi temporibus ipsa,
+                                            eligendi cum molestias expedita corrupti magnam reiciendis, facilis
+                                            veritatis
+                                            nobis doloremque ratione veniam porro delectus asperiores dolorum, totam
+                                            recusandae.</p>
                                         <img src="https://picsum.photos/600/200?image=111" alt="">
                                     </div>
                                 </div>
@@ -1714,9 +1799,12 @@
                                             <span class="text-gray-light fs-08 ml-4">@telegram</span>
                                             <span class="text-gray-light fs-08">6월 18일</span>
                                         </p>
-                                        <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus ipsa,
-                                            eligendi cum molestias expedita corrupti magnam reiciendis, facilis veritatis
-                                            nobis doloremque ratione veniam porro delectus asperiores dolorum, totam recusandae.</p>
+                                        <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Excepturi temporibus ipsa,
+                                            eligendi cum molestias expedita corrupti magnam reiciendis, facilis
+                                            veritatis
+                                            nobis doloremque ratione veniam porro delectus asperiores dolorum, totam
+                                            recusandae.</p>
                                         <img src="https://picsum.photos/200/400?image=131" alt="">
                                     </div>
                                 </div>
@@ -1732,9 +1820,12 @@
                                             <span class="text-gray-light fs-08 ml-4">@telegram</span>
                                             <span class="text-gray-light fs-08">6월 18일</span>
                                         </p>
-                                        <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus ipsa,
-                                            eligendi cum molestias expedita corrupti magnam reiciendis, facilis veritatis
-                                            nobis doloremque ratione veniam porro delectus asperiores dolorum, totam recusandae.</p>
+                                        <p class="fs-09 text-gray work-break">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Excepturi temporibus ipsa,
+                                            eligendi cum molestias expedita corrupti magnam reiciendis, facilis
+                                            veritatis
+                                            nobis doloremque ratione veniam porro delectus asperiores dolorum, totam
+                                            recusandae.</p>
                                         <img src="https://picsum.photos/500?image=141" alt="">
                                     </div>
                                 </div>
@@ -1745,7 +1836,8 @@
                         </div>
                         <!-- Twitter Project Menu -->
                         <div class="col-lg-3 twitter-right-wrapper d-none d-lg-block" data-sticky-container>
-                            <div class="row bg-white twi-section-right px-4 m-0 opacity-0 animated fadeInUp" data-sticky data-margin-top="155">
+                            <div class="row bg-white twi-section-right px-4 m-0 opacity-0 animated fadeInUp"
+                                data-sticky data-margin-top="155">
                                 <div class="col-12 pt-4 pb-1 fs-11">
                                     프로젝트 보기
                                 </div>
@@ -1886,42 +1978,70 @@
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-8 detail-content-wrap">
                             <img src="https://picsum.photos/1000/400?image=178" alt="">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur, sed voluptate
-                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non eos
-                                ullam adipisci debitis. Ipsa. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae
-                                unde quo consectetur, sed voluptate dolorum praesentium dolor cumque voluptatum amet necessitatibus
-                                sint, vero corrupti non eos ullam adipisci debitis. Ipsa. Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Vitae unde quo consectetur, sed voluptate dolorum praesentium dolor cumque
-                                voluptatum amet necessitatibus sint, vero corrupti non eos ullam adipisci debitis. Ipsa.
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur, sed
-                                voluptate dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
+                                sed voluptate
+                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non
+                                eos
+                                ullam adipisci debitis. Ipsa. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Vitae
+                                unde quo consectetur, sed voluptate dolorum praesentium dolor cumque voluptatum amet
+                                necessitatibus
+                                sint, vero corrupti non eos ullam adipisci debitis. Ipsa. Lorem ipsum dolor sit, amet
+                                consectetur
+                                adipisicing elit. Vitae unde quo consectetur, sed voluptate dolorum praesentium dolor
+                                cumque
+                                voluptatum amet necessitatibus sint, vero corrupti non eos ullam adipisci debitis.
+                                Ipsa.
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
+                                sed
+                                voluptate dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero
+                                corrupti
                                 non eos ullam adipisci debitis. Ipsa.
                             </p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur, sed voluptate
-                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non eos
-                                ullam adipisci debitis. Ipsa. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae
-                                unde quo consectetur, sed voluptate dolorum praesentium dolor cumque voluptatum amet necessitatibus
-                                sint, vero corrupti non eos ullam adipisci debitis. Ipsa. Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Vitae unde quo consectetur, sed voluptate dolorum praesentium dolor cumque
-                                voluptatum amet necessitatibus sint, vero corrupti non eos ullam adipisci debitis. Ipsa.
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur, sed
-                                voluptate dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
+                                sed voluptate
+                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non
+                                eos
+                                ullam adipisci debitis. Ipsa. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Vitae
+                                unde quo consectetur, sed voluptate dolorum praesentium dolor cumque voluptatum amet
+                                necessitatibus
+                                sint, vero corrupti non eos ullam adipisci debitis. Ipsa. Lorem ipsum dolor sit, amet
+                                consectetur
+                                adipisicing elit. Vitae unde quo consectetur, sed voluptate dolorum praesentium dolor
+                                cumque
+                                voluptatum amet necessitatibus sint, vero corrupti non eos ullam adipisci debitis.
+                                Ipsa.
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
+                                sed
+                                voluptate dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero
+                                corrupti
                                 non eos ullam adipisci debitis. Ipsa.
                             </p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur, sed voluptate
-                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non eos
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
+                                sed voluptate
+                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non
+                                eos
                                 ullam adipisci debitis. Ipsa.</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur, sed voluptate
-                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non eos
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
+                                sed voluptate
+                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non
+                                eos
                                 ullam adipisci debitis. Ipsa.</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur, sed voluptate
-                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non eos
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
+                                sed voluptate
+                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non
+                                eos
                                 ullam adipisci debitis. Ipsa.</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur, sed voluptate
-                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non eos
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
+                                sed voluptate
+                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non
+                                eos
                                 ullam adipisci debitis. Ipsa.</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur, sed voluptate
-                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non eos
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
+                                sed voluptate
+                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non
+                                eos
                                 ullam adipisci debitis. Ipsa.</p>
                         </div>
                     </div>
@@ -1979,7 +2099,8 @@
                                 </div>
                                 <div class="row py-3">
                                     <div class="col">
-                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="로그인(LOGIN)">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer"
+                                            value="로그인(LOGIN)">
                                     </div>
                                 </div>
                                 <div class="login-search row py-3 fs-08 fs-lg-09">
@@ -2041,7 +2162,8 @@
                                 </div>
                                 <div class="row py-3">
                                     <div class="col">
-                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="확인">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer"
+                                            value="확인">
                                     </div>
                                 </div>
 
@@ -2076,7 +2198,8 @@
                                 </div>
                                 <div class="row py-3">
                                     <div class="col">
-                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="로그인 페이지로 이동하기">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer"
+                                            value="로그인 페이지로 이동하기">
                                     </div>
                                 </div>
                             </div>
@@ -2100,7 +2223,8 @@
                                 </div>
                                 <div class="row py-3">
                                     <div class="col">
-                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="이전으로 돌아가기">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer"
+                                            value="이전으로 돌아가기">
                                     </div>
                                 </div>
                                 <hr>
@@ -2162,7 +2286,8 @@
                                 </div>
                                 <div class="row py-3">
                                     <div class="col">
-                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="확인">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer"
+                                            value="확인">
                                     </div>
                                 </div>
 
@@ -2207,7 +2332,8 @@
                                 </div>
                                 <div class="row py-3">
                                     <div class="col">
-                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="확인">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer"
+                                            value="확인">
                                     </div>
                                 </div>
                             </div>
@@ -2251,7 +2377,8 @@
                                 </div>
                                 <div class="row py-3">
                                     <div class="col">
-                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="확인">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer"
+                                            value="확인">
                                     </div>
                                 </div>
                             </div>
@@ -2274,7 +2401,8 @@
                                 </div>
                                 <div class="row py-3">
                                     <div class="col">
-                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer" value="로그인 페이지로 이동하기">
+                                        <input type="submit" class="w-100 border-0 bg-dark text-white py-1 cursor-pointer"
+                                            value="로그인 페이지로 이동하기">
                                     </div>
                                 </div>
                             </div>
@@ -2315,7 +2443,8 @@
                                                         <input type="text" class="form-control">
                                                     </div>
                                                     <div class="col-3 pl-0">
-                                                        <input type="submit" class="border-0 cursor-pointer py-2 px-3 px-lg-4 rounded bg-dark text-white w250 fs-08" value="중복확인">
+                                                        <input type="submit" class="border-0 cursor-pointer py-2 px-3 px-lg-4 rounded bg-dark text-white w250 fs-08"
+                                                            value="중복확인">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2371,7 +2500,8 @@
                                             <div class="col-7 col-lg-12 d-lg-flex justify-content-center">
                                                 <figure class="profile-img-wrap flex-center float-right">
                                                     <img src="https://picsum.photos/200/300?image=990" alt="">
-                                                    <figcaption class="position-absolute text-gray-light fs-09">프로필 이미지를
+                                                    <figcaption class="position-absolute text-gray-light fs-09">프로필
+                                                        이미지를
                                                         <br>지정해 주세요.</figcaption>
                                                 </figure>
                                             </div>
@@ -2393,35 +2523,64 @@
                                     </div>
                                     <div class="col-12 py-2">
                                         <div class="agree-contentbox">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum
-                                            placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
-                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
-                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
-                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
-                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
-                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
-                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
-                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
-                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
-                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
-                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
-                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
-                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
-                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
-                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
-                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
-                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
-                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
-                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
-                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
-                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae. Eius, corporis nisi itaque modi est, laborum
+                                            placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio?
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet
+                                            consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi
+                                            est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio
+                                            sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet
+                                            consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi
+                                            est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio
+                                            sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet
+                                            consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi
+                                            est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio
+                                            sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet
+                                            consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi
+                                            est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio
+                                            sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet
+                                            consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi
+                                            est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio
+                                            sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
                                             totam neque. Ratione in iusto odio sed optio?
                                         </div>
                                     </div>
@@ -2441,35 +2600,64 @@
                                     </div>
                                     <div class="col-12 py-2">
                                         <div class="agree-contentbox">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est, laborum
-                                            placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed optio?
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
-                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
-                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
-                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
-                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
-                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
-                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
-                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
-                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
-                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
-                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
-                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
-                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
-                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
-                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
-                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
-                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
-                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet consectetur
-                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi est,
-                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
-                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at repudiandae.
-                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam tempora,
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae. Eius, corporis nisi itaque modi est, laborum
+                                            placeat maiores veniam tempora, totam neque. Ratione in iusto odio sed
+                                            optio?
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet
+                                            consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi
+                                            est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio
+                                            sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet
+                                            consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi
+                                            est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio
+                                            sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet
+                                            consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi
+                                            est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio
+                                            sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet
+                                            consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi
+                                            est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio
+                                            sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
+                                            totam neque. Ratione in iusto odio sed optio? Lorem ipsum dolor, sit amet
+                                            consectetur
+                                            adipisicing elit. Quod, at repudiandae. Eius, corporis nisi itaque modi
+                                            est,
+                                            laborum placeat maiores veniam tempora, totam neque. Ratione in iusto odio
+                                            sed
+                                            optio? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at
+                                            repudiandae.
+                                            Eius, corporis nisi itaque modi est, laborum placeat maiores veniam
+                                            tempora,
                                             totam neque. Ratione in iusto odio sed optio?
                                         </div>
                                     </div>
@@ -2485,7 +2673,8 @@
                             </article>
                             <div class="row py-lg-5">
                                 <div class="col">
-                                    <input type="submit" class="form-control py-2 py-lg-3 bg-dark text-white cursor-pointer" value="회원가입">
+                                    <input type="submit" class="form-control py-2 py-lg-3 bg-dark text-white cursor-pointer"
+                                        value="회원가입">
                                 </div>
                                 <div class="col">
                                     <input type="submit" class="form-control py-2 py-lg-3 cursor-pointer" value="회원가입 취소">
@@ -2620,7 +2809,8 @@
                                             <div class="col-7 col-lg-12 d-lg-flex justify-content-center">
                                                 <figure class="profile-img-wrap flex-center float-right">
                                                     <img src="https://picsum.photos/200/300?image=990" alt="">
-                                                    <figcaption class="position-absolute text-gray-light fs-09">프로필 이미지를
+                                                    <figcaption class="position-absolute text-gray-light fs-09">프로필
+                                                        이미지를
                                                         <br>지정해 주세요.</figcaption>
                                                 </figure>
                                             </div>
@@ -2699,7 +2889,8 @@
                                     <div class="col-12 pt-4 pb-3 border-bottom">
                                         <div class="form-check">
                                             <label class="forom-check-label">
-                                                <input type="checkbox" class="form-check-input"> 안내 사항을 모두 확인하였으며, 이에 동의합니다.
+                                                <input type="checkbox" class="form-check-input"> 안내 사항을 모두 확인하였으며, 이에
+                                                동의합니다.
                                             </label>
                                         </div>
                                     </div>
@@ -2790,7 +2981,8 @@
                                     <div class="col-12 pb-2">
                                         <div class="row">
                                             <div class="col-auto m-index-news-title">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파
+                                                할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2800,8 +2992,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기
+                                        앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는
+                                        자랑스런
                                         태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
@@ -2809,7 +3003,8 @@
                                     <div class="col-12 pb-2">
                                         <div class="row">
                                             <div class="col-auto m-index-news-title">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파
+                                                할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2819,8 +3014,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기
+                                        앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는
+                                        자랑스런
                                         태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
@@ -2852,7 +3049,8 @@
                                                 <img src="./img/logo/ambrosus_m.svg" alt="">
                                             </div>
                                             <div class="col-auto m-index-project-title pl-1 pl-lg-3">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파
+                                                할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2862,8 +3060,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기
+                                        앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는
+                                        자랑스런
                                         태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
@@ -2874,7 +3074,8 @@
                                                 <img src="./img/logo/ambrosus_m.svg" alt="">
                                             </div>
                                             <div class="col-auto m-index-project-title pl-1 pl-lg-3">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파
+                                                할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2884,8 +3085,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기
+                                        앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는
+                                        자랑스런
                                         태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
@@ -2914,7 +3117,8 @@
                                     <div class="col-12 pb-2">
                                         <div class="row">
                                             <div class="col-auto m-index-news-title">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파
+                                                할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2924,8 +3128,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기
+                                        앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는
+                                        자랑스런
                                         태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
@@ -2933,7 +3139,8 @@
                                     <div class="col-12 pb-2">
                                         <div class="row">
                                             <div class="col-auto m-index-news-title">
-                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
+                                                광고없는 텔레그램 사용자 2억명 돌파 할까 말까 궁금합니다. 여러분은 궁금하지 않나요? 광고없는 텔레그램 사용자 2억명 돌파
+                                                할까 말까 궁금합니다. 여러분은 궁금하지 않나요?
                                             </div>
                                             <div class="col-auto px-0">
                                                 <small class="text-gray-light">
@@ -2943,8 +3150,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-gray m-headline-context fs-09">
-                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
-                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
+                                        동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런 태극기
+                                        앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을
+                                        굳게 다짐합니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는
+                                        자랑스런
                                         태극기 앞에 조국과 민족의 무궁한 영광을 위하여 몸과 마음을 받쳐 충성을 다할 것을 굳게 다짐합니다.
                                     </div>
                                 </div>
@@ -2956,7 +3165,7 @@
             <!-- Contact -->
             <section class="contact" v-if="section">
                 <form action="">
-                    <article class="container">
+                    <article class="container-fluid">
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-8 text-center py-4 py-lg-5">
                                 <b class="fs-12">
@@ -3078,7 +3287,7 @@
             <!-- About -->
             <section class="about d-lg-none" v-if="section">
                 <article class="vh-100 px-3 px-lg-0">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row text-center">
                             <div class="col-12 py-3 border-bottom">
                                 <span>ABOUT</span>
@@ -3101,16 +3310,125 @@
                     </div>
                 </article>
             </section>
+            <!-- Person Info -->
+            <section class="person-info" v-if="section">
+                <!-- 공지사항 내용 영역 시작 -->
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-10 text-gray-dark">
+                        <div class="row">
+                            <div class="col-lg-12 my-1">
+                                <div class="notice-design-big"></div>
+                            </div>
+                            <div class="col-lg-12 my-2">
+                                <p class="clause-title w500 mb-4 text-black">
+                                    코인베스터<br>
+                                    개인정보처리방침
+                                </p>
+                                <p>
+                                     코인베스터는 서비스 기획부터 종료까지 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법 등 국내의 개인정보 보호 법령을 철저히 준수합니다.
+                                </p>
+                                <button class="btn border bg-white mr-3">"정보통신망법" 바로가기</button>
+                                <button class="btn border bg-white">"개인정보보호법" 바로가기</button>
+                            </div>
+                            <div class="col-lg-12 my-5 clause-content">
+                                <h4 class="text-black">개인정보 수집 및 처리 안내</h4>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                <br>
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                <br>
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                <br>
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                <br>
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- Use -->
+            <section class="use" v-if="section">
+                <!-- 공지사항 내용 영역 시작 -->
+                <article class="row no-gutters py-5 justify-content-center border-bottom">
+                    <div class="col-lg-10 text-gray-dark">
+                        <div class="row">
+                            <div class="col-lg-12 my-1">
+                                <div class="notice-design-big"></div>
+                            </div>
+                            <div class="col-lg-12 my-2">
+                                <p class="clause-title w500 mb-4 text-black">
+                                    코인베스터<br>
+                                    이용약관
+                                </p>
+                                <p>
+                                     코인베스터의 서비스를 이용해주셔서 감사합니다. 본 약관은 다양한 코인베스터 서비스의 이용과 관련하여 여러 관계를 설명하며 아울러 이용자의 코인베스터 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+                                    코인베스터 서비스를 이용하시거나 혹은 추후에 회원으로 가입하실 경우 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로 잠시 시간을 내시어 주의깊게 살펴봐 주시기 바랍니다.
+                                </p>
+                            </div>
+                            <div class="col-lg-12 my-5 clause-content">
+                                <h4 class="text-black">코인베스터 주요서비스</h4>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                <br>
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                <br>
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                <br>
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                <br>
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
         </main>
 
 
 
         <!-- 관리자 -->
-        <main id="admin" class="admin bg-white" v-if="admin">
+        <main id="admin" class="admin bg-white" v-if="!admin">
             <div class="container-fluid border-top">
                 <div class="row">
                     <!-- admin Navigation -->
-                    <aside class="col-lg-3 border-right" style="min-height: 50vh;">
+                    <aside class="col-lg-3 border-right min-70vh">
                         <!-- <div class="row"> -->
                         <nav class="pt-lg-5 position-fixed" style="width: 245px;">
                             <ul class="admin-nav-wrap text-center pt-lg-5 px-0 m-0">
@@ -3123,6 +3441,10 @@
                                 <li class="admin-nav py-lg-4">프로젝트</li>
                                 <li class="admin-nav py-lg-4">트위터</li>
                                 <li class="admin-nav py-lg-4">메일 보내기</li>
+                                <li class="admin-nav py-lg-4">프로젝트 관리</li>
+                                <li class="admin-nav py-lg-4">개인정보처리방침</li>
+                                <li class="admin-nav py-lg-4">서비스 이용약관</li>
+                                <li class="admin-nav py-lg-4">회원관리</li>
                                 <li class="admin-nav py-lg-4">통계</li>
                             </ul>
                             <ul class="chart-children-nav-wrap d-none animated">
@@ -3152,11 +3474,13 @@
                                         <div class="row justify-content-center align-items-center pb-lg-5">
                                             <div class="col-lg-12">
                                                 <div class="row justify-content-between">
-                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: isBorder, 'text-gray-light': !textGray }"
+                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer"
+                                                        v-bind:class="{ border: isBorder, 'text-gray-light': !textGray }"
                                                         v-on:click="upAndtempo" v-bind:style="trans">
                                                         Upload Complete
                                                     </div>
-                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: !isBorder, 'text-gray-light': textGray }"
+                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer"
+                                                        v-bind:class="{ border: !isBorder, 'text-gray-light': textGray }"
                                                         v-on:click="upAndtempo" v-bind:style="trans">
                                                         Temporary Storage
                                                     </div>
@@ -3419,11 +3743,13 @@
                                         <div class="row justify-content-center align-items-center pb-lg-5">
                                             <div class="col-lg-12">
                                                 <div class="row justify-content-between">
-                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: isBorder, 'text-gray-light': !textGray }"
+                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer"
+                                                        v-bind:class="{ border: isBorder, 'text-gray-light': !textGray }"
                                                         v-on:click="upAndtempo" v-bind:style="trans">
                                                         Upload Complete
                                                     </div>
-                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: !isBorder, 'text-gray-light': textGray }"
+                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer"
+                                                        v-bind:class="{ border: !isBorder, 'text-gray-light': textGray }"
                                                         v-on:click="upAndtempo" v-bind:style="trans">
                                                         Temporary Storage
                                                     </div>
@@ -3701,11 +4027,13 @@
                                         <div class="row justify-content-center align-items-center pb-lg-5">
                                             <div class="col-lg-12">
                                                 <div class="row justify-content-between">
-                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: isBorder, 'text-gray-light': !textGray }"
+                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer"
+                                                        v-bind:class="{ border: isBorder, 'text-gray-light': !textGray }"
                                                         v-on:click="upAndtempo" v-bind:style="trans">
                                                         Upload Complete
                                                     </div>
-                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: !isBorder, 'text-gray-light': textGray }"
+                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer"
+                                                        v-bind:class="{ border: !isBorder, 'text-gray-light': textGray }"
                                                         v-on:click="upAndtempo" v-bind:style="trans">
                                                         Temporary Storage
                                                     </div>
@@ -3931,7 +4259,8 @@
                                             <div class="col-3 pl-0">
                                                 <select name="" id="" class="form-control" v-model="selected">
                                                     <option value="" selected>프로젝트 선택</option>
-                                                    <option :value="project.src" v-for="(project, key) in projects" :key="project.id">{{project.name.ko}}</option>
+                                                    <option :value="project.src" v-for="(project, key) in projects"
+                                                        :key="project.id">{{project.name.ko}}</option>
                                                 </select>
                                             </div>
                                             <!-- 작성자 -->
@@ -3990,6 +4319,7 @@
                                                 <textarea id="" class="form-control" rows="30"></textarea>
                                             </div>
                                         </div>
+                                        <!-- 버튼 -->
                                         <div class="row up-tempo-btn-wrap justify-content-center text-center py-5">
                                             <div class="col-4">
                                                 <input type="submit" value="Upload" class="">
@@ -4014,11 +4344,13 @@
                                         <div class="row justify-content-center align-items-center pb-lg-5">
                                             <div class="col-lg-12">
                                                 <div class="row justify-content-between">
-                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: isBorder, 'text-gray-light': !textGray }"
+                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer"
+                                                        v-bind:class="{ border: isBorder, 'text-gray-light': !textGray }"
                                                         v-on:click="upAndtempo" v-bind:style="trans">
                                                         Upload Complete
                                                     </div>
-                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer" v-bind:class="{ border: !isBorder, 'text-gray-light': textGray }"
+                                                    <div class="col-lg-6 py-3 text-center rounded cursor-pointer"
+                                                        v-bind:class="{ border: !isBorder, 'text-gray-light': textGray }"
                                                         v-on:click="upAndtempo" v-bind:style="trans">
                                                         Temporary Storage
                                                     </div>
@@ -4244,7 +4576,8 @@
                                             <div class="col-3 pl-0">
                                                 <select name="" id="" class="form-control" v-model="selected">
                                                     <option value="" selected>프로젝트 선택</option>
-                                                    <option :value="project.src" v-for="(project, key) in projects" :key="project.id">{{project.name.ko}}</option>
+                                                    <option :value="project.src" v-for="(project, key) in projects"
+                                                        :key="project.id">{{project.name.ko}}</option>
                                                 </select>
                                             </div>
                                             <!-- 날짜 선택 -->
@@ -4305,6 +4638,550 @@
                                             </div>
                                             <div class="col-4">
                                                 <input type="submit" value="Temporary Storage" class="">
+                                            </div>
+                                        </div>
+                                    </article>
+                                </section>
+                                <!-- Project Management -->
+                                <section class="project-management">
+                                    <!-- Project Management list -->
+                                    <article class="container pb-5 d-none">
+                                        <!-- New Write -->
+                                        <div class="row align-items-center py-3 py-lg-5">
+                                            <div class="col py-3 border rounded text-center cursor-pointer">
+                                                <b>NEW</b>
+                                            </div>
+                                        </div>
+                                        <!-- project Select AND Delete -->
+                                        <div class="row align-items-center py-3 pt-lg-0">
+                                            <div class="col"></div>
+                                            <div class="col-auto">
+                                                <span class="border rounded px-3 py-2 cursor-pointer">
+                                                    <input type="checkbox" class="mr-1"> Delete
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Table -->
+                                        <div class="row pb-lg-5">
+                                            <div class="col-lg-12 px-0">
+                                                <table class="table table-hover">
+                                                    <thead class="thead-dark">
+                                                        <tr>
+                                                            <th style="width: 5%;">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <th style="width: 7%">#</th>
+                                                            <th class="text-center" style="width: 20%">Logo</th>
+                                                            <th class="text-center">E Name</th>
+                                                            <th class="text-center">K Name</th>
+                                                            <th class="text-center" style="width: 15%">사용여부</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>1</td>
+                                                            <td class="logo-cel text-center">
+                                                                <img src="./img/logo/telegram.svg">
+                                                            </td>
+                                                            <td class="text-center">Telegram</td>
+                                                            <td class="text-center">텔레그램</td>
+                                                            <td class="text-center">Y</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>2</td>
+                                                            <td class="logo-cel text-center">
+                                                                <img src="./img/logo/windingtree.svg">
+                                                            </td>
+                                                            <td class="text-center">Telegram</td>
+                                                            <td class="text-center">텔레그램</td>
+                                                            <td class="text-center">Y</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>100</td>
+                                                            <td class="logo-cel text-center">
+                                                                <!-- <img src="./img/logo/paypie_m.svg"> -->
+                                                            </td>
+                                                            <td class="text-center">Telegram</td>
+                                                            <td class="text-center">텔레그램</td>
+                                                            <td class="text-center">Y</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>99</td>
+                                                            <td class="logo-cel text-center">
+                                                                <img src="./img/logo/playkey_m.svg">
+                                                            </td>
+                                                            <td class="text-center">Telegram</td>
+                                                            <td class="text-center">텔레그램</td>
+                                                            <td class="text-center">Y</td>
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                </table>
+                                                <nav aria-label="Page navigation">
+                                                    <ul class="pagination justify-content-center">
+                                                        <li class="page-item disabled">
+                                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                        </li>
+                                                        <li class="page-item active">
+                                                            <a class="page-link" href="#">1</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">2</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">3</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <!-- Project Detail Manage -->
+                                    <article class="container py-5 d-none">
+                                        <div class="row justify-content-center">
+                                            <div class="col-9">
+                                                <div class="row pt-5 align-items-center">
+                                                    <div class="col-auto">
+                                                        <img src="./img/logo/telegram.svg" alt="" style="width: 5rem;">
+                                                    </div>
+                                                    <div class="col">
+                                                        <span class="fs-12">TeleGram</span>
+                                                    </div>
+                                                </div>
+                                                <!-- 경계선 -->
+                                                <div class="row no-gutters border my-5"></div>
+                                                <!-- 프로젝트 영문명 -->
+                                                <div class="row py-3 align-items-center">
+                                                    <div class="col-auto">
+                                                        프로젝트 영문명
+                                                    </div>
+                                                    <div class="col border">
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <!-- 프로젝트 한글명 -->
+                                                <div class="row py-3 align-items-center">
+                                                    <div class="col-auto">
+                                                        프로젝트 한글명
+                                                    </div>
+                                                    <div class="col border"></div>
+                                                    <div class="col-7">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <!-- 대표이미지, 출처 -->
+                                                <div class="row py-3">
+                                                    <!-- img -->
+                                                    <div class="col">
+                                                        <div class="filebox" style="width: 100%;">
+                                                            <input class="upload-name" value="프로젝트 이미지" disabled="disabled" style="width: 85%;">
+                                                            <label for="ex_filename" style="width: 14.3%;">업로드</label>
+                                                            <input type="file" id="ex_filename" class="upload-hidden">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- 링크 -->
+                                                <div class="row py-3">
+                                                    <div class="col-12">
+                                                        <input type="text" class="form-control" placeholder="홈페이지 링크">
+                                                    </div>
+                                                </div>
+                                                <!-- 사용여부 -->
+                                                <div class="row pt-3 pb-4">
+                                                    <div class="col-auto">
+                                                        <span>사용여부</span>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="row h-100 align-items-center">
+                                                            <div class="w-100 border"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker> -->
+                                                        <div class="form-check form-check-inline">
+                                                            <label class="form-check-label cursor-pointer">
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                                                                사용
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <label class="form-check-label cursor-pointer">
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                                사용하지 않음
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- 버튼 -->
+                                        <div class="row up-tempo-btn-wrap justify-content-center text-center py-5">
+                                            <div class="col-4">
+                                                <input type="submit" value="수정" class="">
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="submit" value="목록" class="">
+                                            </div>
+                                        </div>
+                                    </article>
+                                </section>
+                                <!-- Person inFo -->
+                                <section class="person-info-clause">
+                                    <!-- write -->
+                                    <article class="container py-5 d-none">
+                                        <!-- 타이틀 -->
+                                        <div class="row">
+                                            <div class="col-auto pl-lg-5">
+                                                <h3>개인정보처리방침</h3>
+                                            </div>
+                                        </div>
+                                        <!-- 본문 -->
+                                        <div class="row pt-lg-4">
+                                            <div class="col-12">
+                                                <textarea id="" class="form-control" rows="35"></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- 버튼 -->
+                                        <div class="row up-tempo-btn-wrap justify-content-center text-center py-5">
+                                            <div class="col-4">
+                                                <input type="submit" value="수정" class="">
+                                            </div>
+                                        </div>
+                                    </article>
+                                </section>
+                                <!-- Service using -->
+                                <section class="service-using-clause">
+                                    <!-- write -->
+                                    <article class="container py-5 ">
+                                        <!-- 타이틀 -->
+                                        <div class="row">
+                                            <div class="col-auto pl-lg-5">
+                                                <h3>서비스 이용약관</h3>
+                                            </div>
+                                        </div>
+                                        <!-- 본문 -->
+                                        <div class="row pt-lg-4">
+                                            <div class="col-12">
+                                                <textarea id="" class="form-control" rows="35"></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- 버튼 -->
+                                        <div class="row up-tempo-btn-wrap justify-content-center text-center py-5">
+                                            <div class="col-4">
+                                                <input type="submit" value="수정" class="">
+                                            </div>
+                                        </div>
+                                    </article>
+                                </section>
+                                <!-- Member Management -->
+                                <section class="member-management">
+                                    <!-- member Management list -->
+                                    <article class="container py-5 d-none">
+                                        <!-- New Write -->
+                                        <!-- <div class="row align-items-center py-3 py-lg-5">
+                                            <div class="col py-3 border rounded text-center cursor-pointer">
+                                                <b>NEW</b>
+                                            </div>
+                                        </div> -->
+                                        <!-- project Select AND Delete -->
+                                        <div class="row align-items-center py-3 pt-lg-4">
+                                            <div class="col"></div>
+                                            <div class="col-auto">
+                                                <span class="border rounded px-3 py-2 cursor-pointer">
+                                                    <input type="checkbox" class="mr-1"> Delete
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Table -->
+                                        <div class="row pb-lg-5">
+                                            <div class="col-lg-12 px-0">
+                                                <table class="table table-hover">
+                                                    <thead class="thead-dark">
+                                                        <tr>
+                                                            <th style="width: 5%;">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <th style="width: 7%">#</th>
+                                                            <th class="text-center" style="width: 20%">이름</th>
+                                                            <th class="text-center">아이디</th>
+                                                            <th class="text-center">등급</th>
+                                                            <th class="text-center" style="width: 20%">가입날짜</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>1</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>2</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>100</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>99</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>1</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>2</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>100</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>99</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>1</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>2</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>100</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                                                        <tr class="cursor-pointer">
+                                                            <th scope="row">
+                                                                <input type="checkbox">
+                                                            </th>
+                                                            <td>99</td>
+                                                            <td class="text-center">
+                                                                홍길동
+                                                            </td>
+                                                            <td class="text-center">userid1234</td>
+                                                            <td class="text-center">사용자</td>
+                                                            <td class="text-center">2018.09.06</td>
+                                                        </tr>
+                            
+                                                    </tbody>
+                                                </table>
+                                                <!-- 검색 -->
+                                                <form class="form-row pb-5">
+                                                    <div class="form-group col-2">
+                                                        <select id="inputState" class="form-control cursor-pointer">
+                                                            <option selected disabled>선택</option>
+                                                            <option>이름</option>
+                                                            <option>아이디</option>
+                                                            <option>등급</option>
+                                                            <option>가입날짜</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-3">
+                                                        <input type="text" class="form-control" id="inputCity">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-dark">Search</button>
+                                                    </div>
+                                                </form>
+                                                <!-- Pagination -->
+                                                <nav aria-label="Page navigation">
+                                                    <ul class="pagination justify-content-center">
+                                                        <li class="page-item disabled">
+                                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                        </li>
+                                                        <li class="page-item active">
+                                                            <a class="page-link" href="#">1</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">2</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">3</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <!-- member Detail Manage -->
+                                    <article class="container py-5 d-none">
+                                        <div class="row justify-content-center py-5">
+                                            <div class="col-9">
+                                                <div class="row">
+                                                    <div class="col-5 d-lg-flex justify-content-center align-items-center">
+                                                        <figure class="profile-img-wrap flex-center float-right">
+                                                            <img src="https://picsum.photos/200/300?image=990" alt="">
+                                                            <figcaption class="position-absolute text-gray-light fs-09">프로필
+                                                                이미지를
+                                                                <br>지정해 주세요.</figcaption>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <!-- 프로젝트 영문명 -->
+                                                        <div class="row py-2 align-items-center">
+                                                            <div class="col">
+                                                                <input type="text" class="form-control border-0" value="userid1234" disabled>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 프로젝트 한글명 -->
+                                                        <div class="row py-2 align-items-center">
+                                                            <div class="col">
+                                                                <input type="text" class="form-control" placeholder="이름">
+                                                            </div>
+                                                        </div>
+                                                        <!-- 대표이미지, 출처 -->
+                                                        <div class="row py-2">
+                                                            <!-- img -->
+                                                            <div class="col">
+                                                                <div class="filebox">
+                                                                    <input class="upload-name" value="프로필 이미지" disabled="disabled" style="width: 65%;">
+                                                                    <label for="ex_filename" style="width: 33.5%;">업로드</label>
+                                                                    <input type="file" id="ex_filename" class="upload-hidden">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 이메일 -->
+                                                        <div class="row py-2">
+                                                            <div class="col-12">
+                                                                <input type="text" class="form-control" placeholder="E-mail">
+                                                            </div>
+                                                        </div>
+                                                        <!-- 등급 -->
+                                                        <div class="row py-2">
+                                                            <div class="col-12">
+                                                                <select class="form-control">
+                                                                    <option selected disabled>등급선택</option>
+                                                                    <option value="">최고관리자</option>
+                                                                    <option value="">관리자</option>
+                                                                    <option value="">프로젝트</option>
+                                                                    <option value="">사용자</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                
+                                        <!-- 버튼 -->
+                                        <div class="row up-tempo-btn-wrap justify-content-center text-center py-5">
+                                            <div class="col-4">
+                                                <input type="submit" value="수정" class="">
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="submit" value="목록" class="">
                                             </div>
                                         </div>
                                     </article>
@@ -4402,7 +5279,7 @@
                                         </div>
                                     </article>
                                     <!-- Chart blockchain -->
-                                    <article class="chart-blockchain">
+                                    <article class="chart-blockchain d-none">
                                         <div class="container py-5">
                                             <div class="row py-5">
                                                 <div class="col-1"></div>
