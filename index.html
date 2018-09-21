@@ -36,12 +36,18 @@
         <!-- 플로팅 메인 버튼 -->
         <div id="floating-btn" class="floating-btn position-fixed flex-center rounded-circle cursor-pointer">
             <div id="line-wrapper">
-                <div id="line-top" class="line line-top line-top-reverse init"></div>
-                <!-- <div id="line-mid" clline ass="line init mid-reverse"></div> -->
-                <div id="line-dot" class="line line-dot line-dot-reverse init"></div>
+                <!-- 비활성화 상태로 시작 -->
+                <!-- <div id="line-top" class="line line-top line-top-reverse init"></div>
+                <div id="line-dot" class="line line-dot line-dot-reverse init"></div> -->
+                <!-- 활성화 상태로 시작 -->
+                <div id="line-top" class="line line-top line-top-ani"></div>
+                <div id="line-dot" class="line line-dot line-dot-ani"></div>
             </div>
         </div>
         <!-- 플로팅 공지사항 -->
+        <!-- 활성화 상태로 시작 -->
+        <!-- <div name="floating-child-wrap" class=""> -->
+        <!-- 비활성화 상태로 시작 -->
         <div name="floating-child-wrap" class="display-toggle">
             <div name="floating-child" class="floating-child flex-center position-fixed animated">
                 <div class="col-12">
@@ -121,10 +127,11 @@
         </div>
     </div>
     <!-- 플로팅 여백 -->
-    <div class="floating-blank"></div>
+    <!-- 비활성화를 위한 d-none 추가 -->
+    <div class="floating-blank d-none"></div>
 
     <!-- 전체 wrap -->
-    <div class="root-wrap d-flex justify-content-center">
+    <div class="root-wrap position-relative d-flex justify-content-center">
         <!-- Search -->
         <div class="search-wrap-desk row align-items-center no-gutters position-fixed pl-3 d-none animated">
             <div class="col-lg-11 s-input-wrap">
@@ -177,8 +184,8 @@
             <div class="row mx-0 logo-wrap align-items-center">
                 <div class="col-lg-3 d-flex justify-content-center logo cursor-pointer">
                     <!-- <div class="logo w250 cursor-pointer"> -->
-                        <img src="./img/koinvestor_logo.svg" alt="">
-                        <!-- KOINVESTOR -->
+                    <img src="./img/koinvestor_logo.svg" alt="">
+                    <!-- KOINVESTOR -->
                     <!-- </div> -->
                 </div>
                 <div class="col-lg-8">
@@ -198,7 +205,7 @@
             <div class="container-fluid h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-auto">
-                        KOINVESTOR
+                        <img src="./img/koinvestor_logo.svg" alt="" style="width: 87px;">
                     </div>
                     <div class="col">
                         <i name="m-search-icon" class="material-icons md-20 float-right">
@@ -294,7 +301,7 @@
         </section>
 
         <!-- 메인 컨텐츠 영역 -->
-        <main id="main" class="main" v-if="main">
+        <main id="main" class="main" v-if="!main">
             <!-- Desk-Top Ver. -->
             <!-- index Page -->
             <section class="index d-none d-lg-block" v-if="section">
@@ -331,7 +338,7 @@
                                 overflow: hidden;
                                 ">
                                 <video autoplay loop>
-                                    <source src="./img/sample.mp4" type="video/mp4">
+                                    <!-- <source src="./img/sample.mp4" type="video/mp4"> -->
                                 </video>
                             </div>
                         </div>
@@ -369,7 +376,7 @@
                     </div>
                     <!-- headline-c c-row -->
                     <div class="row no-gutters">
-                        <div class="col-lg-3 headline-c">
+                        <div class="col-lg-6 headline-c">
                             <img src="https://picsum.photos/1000?image=51" alt="">
                             <div class="w-100 h-100 flex-center c-wrap">
                                 <div class="c-text-wrap flex-c-center">
@@ -378,7 +385,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 headline-c">
+                        <div class="col-lg-6 headline-c">
                             <img src="https://picsum.photos/1000?image=61" alt="">
                             <div class="w-100 h-100 flex-center c-wrap">
                                 <div class="c-text-wrap flex-c-center">
@@ -387,7 +394,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 headline-c">
+                        <!-- <div class="col-lg-3 headline-c">
                             <img src="https://picsum.photos/1000?image=71" alt="">
                             <div class="w-100 h-100 flex-center c-wrap">
                                 <div class="c-text-wrap flex-c-center">
@@ -404,11 +411,11 @@
                                     <small>by YeaEum-KIM smith</small>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </article>
                 <!-- TWITTER -->
-                <article class="twitter-wrap">
+                <article class="twitter-wrap d-none">
                     <div class="container-fluid p-0" data-sticky-container>
                         <!-- Twitter Logo -->
                         <div class="twitter-logo-wrap" data-sticky data-margin-top="140">
@@ -1044,21 +1051,21 @@
 
             </section>
             <!-- BlockChain -->
-            <section class="blockchain" v-if="section">
+            <section class="blockchain" v-if="!section">
                 <article class="blockchain-wrapper px-3 px-lg-0 pb-3">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 d-lg-none text-center py-3 border-bottom">
                                 <span>블록체인 뉴스</span>
                             </div>
                             <!-- BlockChain items -->
                             <!-- first Line News -->
-                            <div class="col-lg-6 blockchain-news-items py-2 px-lg-0">
+                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-lg-0">
                                 <div class="row h-100">
-                                    <div class="col-6 col-lg-12 b-img-cover">
+                                    <div class="col-12 b-img-cover px-0 px-lg-3">
                                         <img src="https://picsum.photos/500/300?image=17" alt="">
                                     </div>
-                                    <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>비트코인 우려하던 일이 벌어졌다. 700만 마지노선 무너졌다</p>
                                         <span>
                                             <small class="text-gray">2018.06.27</small>
@@ -1066,12 +1073,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 blockchain-news-items py-2 px-lg-0">
+                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-lg-0">
                                 <div class="row h-100">
-                                    <div class="col-6 col-lg-12 b-img-cover">
+                                    <div class="col-12 b-img-cover px-0 px-lg-3">
                                         <img src="https://picsum.photos/500/300?image=27" alt="">
                                     </div>
-                                    <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p class="">빗썸 해킹!</p>
                                         <span>
                                             <small class="text-gray">2018.06.27</small>
@@ -1079,7 +1086,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 blockchain-news-items py-2 px-lg-0">
+                            <!-- <div class="col-lg-3 blockchain-news-items py-2 px-lg-0">
                                 <div class="row h-100">
                                     <div class="col-6 col-lg-12 b-img-cover">
                                         <img src="https://picsum.photos/500/300?image=37" alt="">
@@ -1091,14 +1098,14 @@
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- second Line News -->
-                            <div class="col-lg-6 blockchain-news-items py-2 px-lg-0">
+                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-lg-0">
                                 <div class="row h-100">
-                                    <div class="col-6 col-lg-12 b-img-cover">
+                                    <div class="col-12 b-img-cover px-0 px-lg-3">
                                         <img src="https://picsum.photos/500/300?image=47" alt="">
                                     </div>
-                                    <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>블록체인 규제안 오락가락, 준구가 시키드나</p>
                                         <span>
                                             <small class="text-gray">2018.06.27</small>
@@ -1106,12 +1113,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 blockchain-news-items py-2 px-lg-0">
+                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-lg-0">
                                 <div class="row h-100">
-                                    <div class="col-6 col-lg-12 b-img-cover">
+                                    <div class="col-12 b-img-cover px-0 px-lg-3">
                                         <img src="https://picsum.photos/500/300?image=57" alt="">
                                     </div>
-                                    <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>Mother father Gentleman</p>
                                         <span>
                                             <small class="text-gray">2018.06.27</small>
@@ -1120,12 +1127,12 @@
                                 </div>
                             </div>
                             <!-- other Line News -->
-                            <div class="col-12 blockchain-news-items other py-2 px-lg-0">
+                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-lg-0">
                                 <div class="row h-100">
-                                    <div class="col-6 pr-lg-0">
+                                    <div class="col-12 col-lg-6 px-0 pl-lg-3 pr-lg-0">
                                         <img src="https://picsum.photos/500/300?image=67" alt="">
                                     </div>
-                                    <div class="col-6 d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>비트코인 우려하던 일이 벌어졌다. 700만 마지노선 무너졌다</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
                                             동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
@@ -1138,12 +1145,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items other py-2 px-lg-0">
+                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-lg-0">
                                 <div class="row h-100">
-                                    <div class="col-6 pr-lg-0">
+                                    <div class="col-12 col-lg-6 px-0 pl-lg-3 pr-lg-0">
                                         <img src="https://picsum.photos/500/300?image=37" alt="">
                                     </div>
-                                    <div class="col-6 d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>코인베스터, 텔레그램 아시아 단독파트너쉽 체결</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est
@@ -1162,12 +1169,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items other py-2 px-lg-0">
+                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-lg-0">
                                 <div class="row h-100">
-                                    <div class="col-6 pr-lg-0">
+                                    <div class="col-12 col-lg-6 px-0 pl-lg-3 pr-lg-0">
                                         <img src="https://picsum.photos/500/300?image=47" alt="">
                                     </div>
-                                    <div class="col-6 d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>블록체인 규제안 오락가락, 준구가 시키드나</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
                                             동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
@@ -1180,12 +1187,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items other py-2 px-lg-0">
+                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-lg-0">
                                 <div class="row h-100">
-                                    <div class="col-6 pr-lg-0">
+                                    <div class="col-12 col-lg-6 px-0 pl-lg-3 pr-lg-0">
                                         <img src="https://picsum.photos/500/300?image=57" alt="">
                                     </div>
-                                    <div class="col-6 d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-lg-5">
                                         <p>Mother father Gentleman</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est
@@ -1204,13 +1211,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items other py-2 px-lg-0">
+                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-lg-0">
                                 <div class="row h-100">
-                                    <div class="col-6 pr-lg-0">
+                                    <div class="col-12 col-lg-6 px-0 pl-lg-3 pr-lg-0">
                                         <img src="https://picsum.photos/500/300?image=67" alt="">
                                     </div>
-                                    <div class="col-6 d-flex flex-column justify-content-center work-break px-lg-5">
-                                        <p>비트코인 우려하던 일이 벌어졌다. 700만 마지노선 무너졌다</p>
+                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-lg-5">
+                                        <p>비트코인 우려하던 일이 벌어졌다. 700만 마지노선 무너졌다. 이제 어떻하나 큰일이다.</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est
                                             reiciendis animi in, quasi modi explicabo beatae esse
@@ -1248,7 +1255,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <!-- Title AND project list select Mobile ver. -->
-                            <div class="col-12 py-3 border-bottom d-lg-none">
+                            <div class="col-12 project-list-wrap py-3 border-bottom d-lg-none">
                                 <div class="row align-items-center">
                                     <div class="col-auto">
                                         프로젝트 소식
@@ -1265,6 +1272,12 @@
                             <!-- Project List -->
                             <div class="col-12 project-list d-none">
                                 <div class="row py-2">
+                                    <!-- Project list item -->
+                                    <div class="col-12 project-menu py-2">
+                                        <div class="row">
+                                            <div class="col">전체보기</div>
+                                        </div>
+                                    </div>
                                     <!-- Project list item -->
                                     <div class="col-6 project-menu py-2">
                                         <div class="row">
@@ -1333,64 +1346,68 @@
                             <!-- Project News items -->
                             <div class="col-lg-9 px-0">
                                 <div class="row no-gutters">
-                                    <div class="col-12 col-lg-4 project-news-items py-2">
+                                    <div class="col-12 col-lg-6 project-news-items py-4 py-lg-2">
                                         <div class="row h-100">
-                                            <div class="col-6 col-lg-12 b-img-cover">
-                                                <img src="https://picsum.photos/500/300?image=77" alt="">
+                                            <div class="col-12 col-lg-12 b-img-cover">
+                                                <img src="https://picsum.photos/1500/300?image=77" alt="">
                                             </div>
-                                            <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                            <div class="col-12 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
                                                 <p>앰브로서스, 이마트와 MOU 체결</p>
                                                 <span>
+                                                    <img src="./img/logo/ambrosus_m.svg" alt="">
                                                     <small class="text-gray pr-2">앰브로서스</small>
                                                     <small class="text-gray">2018.06.28</small>
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-4 project-news-items py-2">
+                                    <div class="col-12 col-lg-6 project-news-items py-4 py-lg-2">
                                         <div class="row h-100">
-                                            <div class="col-6 col-lg-12 b-img-cover">
-                                                <img src="https://picsum.photos/500/300?image=87" alt="">
+                                            <div class="col-12 col-lg-12 b-img-cover">
+                                                <img src="https://picsum.photos/500/200?image=87" alt="">
                                             </div>
-                                            <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                            <div class="col-12 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
                                                 <p>Use these shorthand uilities for quickly configuring the position of
                                                     an element.</p>
                                                 <span>
+                                                    <img src="./img/logo/playkey_m.svg" alt="">
                                                     <small class="text-gray pr-2">플레이키</small>
                                                     <small class="text-gray">2018.06.28</small>
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-4 project-news-items py-2">
+                                    <div class="col-12 col-lg-6 project-news-items py-4 py-lg-2">
                                         <div class="row h-100">
-                                            <div class="col-6 col-lg-12 b-img-cover">
-                                                <img src="https://picsum.photos/500/300?image=218" alt="">
+                                            <div class="col-12 col-lg-12 b-img-cover">
+                                                <img src="https://picsum.photos/500/1000?image=218" alt="">
                                             </div>
-                                            <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                            <div class="col-12 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
                                                 <p>충격! 김동범 아들래미 이름 김윤으로 밝혀져</p>
                                                 <span>
-                                                    <small class="text-gray pr-2">플레이키</small>
+                                                    <img src="./img/logo/qash_m.svg" alt="">
+                                                    <small class="text-gray pr-2">캐시</small>
                                                     <small class="text-gray">2018.06.28</small>
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-4 project-news-items py-2">
+                                    <div class="col-12 col-lg-6 project-news-items py-4 py-lg-2">
                                         <div class="row h-100">
-                                            <div class="col-6 col-lg-12 b-img-cover">
-                                                <img src="https://picsum.photos/500/300?image=407" alt="">
+                                            <div class="col-12 col-lg-12 b-img-cover">
+                                                <img src="https://picsum.photos/2200/1000?image=407" alt="">
                                             </div>
-                                            <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                            <div class="col-12 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
                                                 <p>タイトルのテストをするための翻訳です。</p>
                                                 <span>
-                                                    <small class="text-gray pr-2">플레이키</small>
+                                                    <img src="./img/logo/telegram.svg" alt="">
+                                                    <small class="text-gray pr-2">텔레그램</small>
                                                     <small class="text-gray">2018.06.28</small>
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-4 project-news-items py-2">
+                                    <div class="col-12 col-lg-6 project-news-items py-2">
                                         <div class="row h-100">
                                             <div class="col-6 col-lg-12 b-img-cover">
                                                 <img src="https://picsum.photos/500/300?image=307" alt="">
@@ -1404,7 +1421,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-4 project-news-items py-2">
+                                    <div class="col-12 col-lg-6 project-news-items py-2">
                                         <div class="row h-100">
                                             <div class="col-6 col-lg-12 b-img-cover">
                                                 <img src="https://picsum.photos/500/300?image=77" alt="">
@@ -1418,7 +1435,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-4 project-news-items py-2">
+                                    <div class="col-12 col-lg-6 project-news-items py-2">
                                         <div class="row h-100">
                                             <div class="col-6 col-lg-12 b-img-cover">
                                                 <img src="https://picsum.photos/500/300?image=87" alt="">
@@ -1433,7 +1450,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-4 project-news-items py-2">
+                                    <div class="col-12 col-lg-6 project-news-items py-2">
                                         <div class="row h-100">
                                             <div class="col-6 col-lg-12 b-img-cover">
                                                 <img src="https://picsum.photos/500/300?image=218" alt="">
@@ -1447,7 +1464,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-4 project-news-items py-2">
+                                    <div class="col-12 col-lg-6 project-news-items py-2">
                                         <div class="row h-100">
                                             <div class="col-6 col-lg-12 b-img-cover">
                                                 <img src="https://picsum.photos/500/300?image=407" alt="">
@@ -1461,7 +1478,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-4 project-news-items py-2">
+                                    <div class="col-12 col-lg-6 project-news-items py-2">
                                         <div class="row h-100">
                                             <div class="col-6 col-lg-12 b-img-cover">
                                                 <img src="https://picsum.photos/500/300?image=307" alt="">
@@ -1478,20 +1495,21 @@
                                 </div>
                             </div>
                             <!-- DeskTop ver. project List Menu -->
-                            <div class="col-lg-3 d-none d-lg-block py-2">
+                            <div class="col-lg-3 d-none d-lg-block py-2 px-0 pc-project-filter-wrap"
+                                data-sticky-container>
                                 <!-- all -->
-                                <div class="row pc-project-all">
+                                <div class="row pc-project-all" data-sticky data-margin-top="140">
                                     <div class="col-12 py-3 border-top border-bottom text-center">전체보기</div>
                                 </div>
                                 <!-- List -->
-                                <div class="row pc-project-list">
+                                <div class="row pc-project-list" data-sticky data-margin-top="190">
                                     <!-- item -->
                                     <div class="col-12 border-bottom pc-project-list-menu-wrap">
                                         <div class="row align-items-center py-2_5 pc-project-list-menu-item">
                                             <div class="col-3 project-list-img-cover text-center">
                                                 <img src="./img/logo/paypie_m.svg">
                                             </div>
-                                            <div class="col-auto pl-0">
+                                            <div class="col-auto pr-3">
                                                 <span class="font-weight-bold">페이파이</span>
                                             </div>
                                             <div class="col-auto pl-0">
@@ -1505,7 +1523,7 @@
                                             <div class="col-3 project-list-img-cover text-center">
                                                 <img src="./img/logo/telegram.svg">
                                             </div>
-                                            <div class="col-auto pl-0">
+                                            <div class="col-auto pr-3">
                                                 <span class="font-weight-bold">텔레그램</span>
                                             </div>
                                             <div class="col-auto pl-0">
@@ -1519,7 +1537,7 @@
                                             <div class="col-3 project-list-img-cover text-center">
                                                 <img src="./img/logo/windingtree.svg">
                                             </div>
-                                            <div class="col-auto pl-0">
+                                            <div class="col-auto pr-3">
                                                 <span class="font-weight-bold">와인딩트리</span>
                                             </div>
                                             <div class="col-auto pl-0">
@@ -1533,7 +1551,7 @@
                                             <div class="col-3 project-list-img-cover text-center">
                                                 <img src="./img/logo/rsk.svg">
                                             </div>
-                                            <div class="col-auto pl-0">
+                                            <div class="col-auto pr-3">
                                                 <span class="font-weight-bold">루트스톡</span>
                                             </div>
                                             <div class="col-auto pl-0">
@@ -1547,7 +1565,7 @@
                                             <div class="col-3 project-list-img-cover text-center">
                                                 <img src="./img/logo/qash_m.svg">
                                             </div>
-                                            <div class="col-auto pl-0">
+                                            <div class="col-auto pr-3">
                                                 <span class="font-weight-bold">쿼시</span>
                                             </div>
                                             <div class="col-auto pl-0">
@@ -1561,7 +1579,7 @@
                                             <div class="col-3 project-list-img-cover text-center">
                                                 <img src="./img/logo/ambrosus_m.svg">
                                             </div>
-                                            <div class="col-auto pl-0">
+                                            <div class="col-auto pr-3">
                                                 <span class="font-weight-bold">앰브로서스</span>
                                             </div>
                                             <div class="col-auto pl-0">
@@ -1978,6 +1996,7 @@
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-8 detail-content-wrap">
                             <img src="https://picsum.photos/1000/400?image=178" alt="">
+
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
                                 sed voluptate
                                 dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non
@@ -1998,26 +2017,8 @@
                                 corrupti
                                 non eos ullam adipisci debitis. Ipsa.
                             </p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
-                                sed voluptate
-                                dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non
-                                eos
-                                ullam adipisci debitis. Ipsa. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Vitae
-                                unde quo consectetur, sed voluptate dolorum praesentium dolor cumque voluptatum amet
-                                necessitatibus
-                                sint, vero corrupti non eos ullam adipisci debitis. Ipsa. Lorem ipsum dolor sit, amet
-                                consectetur
-                                adipisicing elit. Vitae unde quo consectetur, sed voluptate dolorum praesentium dolor
-                                cumque
-                                voluptatum amet necessitatibus sint, vero corrupti non eos ullam adipisci debitis.
-                                Ipsa.
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
-                                sed
-                                voluptate dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero
-                                corrupti
-                                non eos ullam adipisci debitis. Ipsa.
-                            </p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/wn3uVJ3sU1k"
+                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde quo consectetur,
                                 sed voluptate
                                 dolorum praesentium dolor cumque voluptatum amet necessitatibus sint, vero corrupti non
@@ -2053,7 +2054,7 @@
                                     <span class="address-copy-alert">주소가 복사되었습니다.</span>
                                 </div>
                                 <div class="col p-0">
-                                    <div class="flex-center h-100">
+                                    <div class="flex-center">
                                         <span class="like-wrap">
                                             <i class="fas fa-heart like-icon"></i>
                                         </span>
@@ -3325,41 +3326,62 @@
                                     개인정보처리방침
                                 </p>
                                 <p>
-                                     코인베스터는 서비스 기획부터 종료까지 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법 등 국내의 개인정보 보호 법령을 철저히 준수합니다.
+                                    코인베스터는 서비스 기획부터 종료까지 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법 등 국내의 개인정보 보호 법령을 철저히
+                                    준수합니다.
                                 </p>
                                 <button class="btn border bg-white mr-3">"정보통신망법" 바로가기</button>
                                 <button class="btn border bg-white">"개인정보보호법" 바로가기</button>
                             </div>
                             <div class="col-lg-12 my-5 clause-content">
                                 <h4 class="text-black">개인정보 수집 및 처리 안내</h4>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
-                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                                deleniti deserunt? Ea nisi, at ut quo
                                 veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
                                 <br>
-                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
-                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
-                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                                deleniti deserunt? Ea nisi, at ut quo
                                 veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
                                 <br>
-                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
-                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
-                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                                deleniti deserunt? Ea nisi, at ut quo
                                 veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
                                 <br>
-                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
-                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
-                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                                deleniti deserunt? Ea nisi, at ut quo
                                 veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
                                 <br>
-                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
-                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum!
                             </div>
                         </div>
                     </div>
@@ -3380,40 +3402,62 @@
                                     이용약관
                                 </p>
                                 <p>
-                                     코인베스터의 서비스를 이용해주셔서 감사합니다. 본 약관은 다양한 코인베스터 서비스의 이용과 관련하여 여러 관계를 설명하며 아울러 이용자의 코인베스터 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
-                                    코인베스터 서비스를 이용하시거나 혹은 추후에 회원으로 가입하실 경우 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로 잠시 시간을 내시어 주의깊게 살펴봐 주시기 바랍니다.
+                                    코인베스터의 서비스를 이용해주셔서 감사합니다. 본 약관은 다양한 코인베스터 서비스의 이용과 관련하여 여러 관계를 설명하며 아울러 이용자의 코인베스터
+                                    서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+                                    코인베스터 서비스를 이용하시거나 혹은 추후에 회원으로 가입하실 경우 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로 잠시 시간을 내시어
+                                    주의깊게 살펴봐 주시기 바랍니다.
                                 </p>
                             </div>
                             <div class="col-lg-12 my-5 clause-content">
                                 <h4 class="text-black">코인베스터 주요서비스</h4>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
-                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                                deleniti deserunt? Ea nisi, at ut quo
                                 veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
                                 <br>
-                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
-                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
-                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                                deleniti deserunt? Ea nisi, at ut quo
                                 veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
                                 <br>
-                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
-                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
-                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                                deleniti deserunt? Ea nisi, at ut quo
                                 veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
                                 <br>
-                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
-                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea
-                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum! Lorem ipsum dolor
-                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt? Ea nisi, at ut quo
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt? Ea
+                                nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum! Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam
+                                deleniti deserunt? Ea nisi, at ut quo
                                 veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
                                 <br>
-                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas, ducimus quisquam deleniti deserunt?
-                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem voluptatibus, totam ipsum!
+                                <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorum quas,
+                                ducimus quisquam deleniti deserunt?
+                                Ea nisi, at ut quo veniam minima doloremque vitae officiis, expedita voluptatem
+                                voluptatibus, totam ipsum!
                             </div>
                         </div>
                     </div>
@@ -3424,28 +3468,28 @@
 
 
         <!-- 관리자 -->
-        <main id="admin" class="admin bg-white" v-if="!admin">
+        <main id="admin" class="admin bg-white" v-if="admin">
             <div class="container-fluid border-top">
                 <div class="row">
                     <!-- admin Navigation -->
-                    <aside class="col-lg-3 border-right min-70vh">
+                    <aside class="col-lg-3 border-right">
                         <!-- <div class="row"> -->
                         <nav class="pt-lg-5 position-fixed" style="width: 245px;">
-                            <ul class="admin-nav-wrap text-center pt-lg-5 px-0 m-0">
+                            <ul class="admin-nav-wrap text-center  px-0 m-0">
                                 <!-- <li v-for="(nav, index) in navs" class="admin-nav py-lg-4" v-bind:class="{'active' : nav.active}" v-bind:key="nav.id" v-bind:style="trans"
                                         v-on:click="navActive(index)">
                                         {{nav.name.ko}}
                                     </li> -->
-                                <li class="admin-nav active py-lg-4">공지사항</li>
-                                <li class="admin-nav py-lg-4">블록체인</li>
-                                <li class="admin-nav py-lg-4">프로젝트</li>
-                                <li class="admin-nav py-lg-4">트위터</li>
-                                <li class="admin-nav py-lg-4">메일 보내기</li>
-                                <li class="admin-nav py-lg-4">프로젝트 관리</li>
-                                <li class="admin-nav py-lg-4">개인정보처리방침</li>
-                                <li class="admin-nav py-lg-4">서비스 이용약관</li>
-                                <li class="admin-nav py-lg-4">회원관리</li>
-                                <li class="admin-nav py-lg-4">통계</li>
+                                <li class="admin-nav active pb-lg-3">공지사항</li>
+                                <li class="admin-nav py-lg-3">블록체인</li>
+                                <li class="admin-nav py-lg-3">프로젝트</li>
+                                <li class="admin-nav py-lg-3">트위터</li>
+                                <li class="admin-nav py-lg-3">메일 보내기</li>
+                                <li class="admin-nav py-lg-3">프로젝트 관리</li>
+                                <li class="admin-nav py-lg-3">개인정보처리방침</li>
+                                <li class="admin-nav py-lg-3">서비스 이용약관</li>
+                                <li class="admin-nav py-lg-3">회원관리</li>
+                                <li class="admin-nav py-lg-3">통계</li>
                             </ul>
                             <ul class="chart-children-nav-wrap d-none animated">
                                 <li class="active">공지사항</li>
@@ -4726,7 +4770,7 @@
                                                             <td class="text-center">텔레그램</td>
                                                             <td class="text-center">Y</td>
                                                         </tr>
-                                                        
+
                                                     </tbody>
                                                 </table>
                                                 <nav aria-label="Page navigation">
@@ -4791,7 +4835,8 @@
                                                     <!-- img -->
                                                     <div class="col">
                                                         <div class="filebox" style="width: 100%;">
-                                                            <input class="upload-name" value="프로젝트 이미지" disabled="disabled" style="width: 85%;">
+                                                            <input class="upload-name" value="프로젝트 이미지" disabled="disabled"
+                                                                style="width: 85%;">
                                                             <label for="ex_filename" style="width: 14.3%;">업로드</label>
                                                             <input type="file" id="ex_filename" class="upload-hidden">
                                                         </div>
@@ -4817,13 +4862,15 @@
                                                         <!-- <vuejs-datepicker v-model="state.date" format="yyyy.MM.d" class="notice-date"></vuejs-datepicker> -->
                                                         <div class="form-check form-check-inline">
                                                             <label class="form-check-label cursor-pointer">
-                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                                    id="inlineRadio1" value="option1" checked>
                                                                 사용
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <label class="form-check-label cursor-pointer">
-                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                                    id="inlineRadio2" value="option2">
                                                                 사용하지 않음
                                                             </label>
                                                         </div>
@@ -4831,7 +4878,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <!-- 버튼 -->
                                         <div class="row up-tempo-btn-wrap justify-content-center text-center py-5">
                                             <div class="col-4">
@@ -4870,7 +4917,7 @@
                                 <!-- Service using -->
                                 <section class="service-using-clause">
                                     <!-- write -->
-                                    <article class="container py-5 ">
+                                    <article class="container py-5 d-none">
                                         <!-- 타이틀 -->
                                         <div class="row">
                                             <div class="col-auto pl-lg-5">
@@ -5071,7 +5118,7 @@
                                                             <td class="text-center">사용자</td>
                                                             <td class="text-center">2018.09.06</td>
                                                         </tr>
-                            
+
                                                     </tbody>
                                                 </table>
                                                 <!-- 검색 -->
@@ -5132,7 +5179,8 @@
                                                         <!-- 프로젝트 영문명 -->
                                                         <div class="row py-2 align-items-center">
                                                             <div class="col">
-                                                                <input type="text" class="form-control border-0" value="userid1234" disabled>
+                                                                <input type="text" class="form-control border-0" value="userid1234"
+                                                                    disabled>
                                                             </div>
                                                         </div>
                                                         <!-- 프로젝트 한글명 -->
@@ -5146,7 +5194,8 @@
                                                             <!-- img -->
                                                             <div class="col">
                                                                 <div class="filebox">
-                                                                    <input class="upload-name" value="프로필 이미지" disabled="disabled" style="width: 65%;">
+                                                                    <input class="upload-name" value="프로필 이미지" disabled="disabled"
+                                                                        style="width: 65%;">
                                                                     <label for="ex_filename" style="width: 33.5%;">업로드</label>
                                                                     <input type="file" id="ex_filename" class="upload-hidden">
                                                                 </div>
@@ -5174,7 +5223,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                
+
                                         <!-- 버튼 -->
                                         <div class="row up-tempo-btn-wrap justify-content-center text-center py-5">
                                             <div class="col-4">
@@ -5571,46 +5620,69 @@
         </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="d-none d-lg-block">
+    <!-- User Footer -->
+    <footer class="d-none">
         <div class="main-footer d-flex justify-content-center w-100 bg-dark">
-            <div class="w-1100px">
-                <div class="row m-0 text-gray pt-4">
-                    <div class="col-lg-9">
+            <div class="w-1100px d-flex align-items-center">
+                <div class="row px-3">
+                    <div class="col-12">
                         <div class="row">
-                            <div class="col-lg-4 d-flex justify-content-center">
-                                <span class="fs-18 w250">KOINVESTOR</span>
+                            <div class="col-auto">
+                                <span class="text-white fs-lg-17 w250"">KOINVESTOR</span>
                             </div>
-                            <div class="col-lg-8 pl-0">
-                                <p class="">
-                                    코인베스터는 각국의 프로젝트팀과의 긴밀한 co-work을 통하여
-                                    <br> 신뢰할 만한 뉴스와 정보를 가장 빠르고 정확하게 전달하고 있습니다.
-                                </p>
-                                <p class="fs-08 text-gray-deep-dark">
-                                    KOIINVESTOR deliver reliable news and information quickly and accurately
-                                    <br> through close co-work with all over the world’s project teams.
-                                </p>
+                            <div class="
+                                    col">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="text-white w250">
+                                                <div class="my-1">
+                                                    코인베스터는 전세계 블록체인 프로젝트팀과 협업을 통하여
+                                                </div>
+                                                <div>
+                                                    한국 투자자들에게 유용한 정보를 신속하고 정확하게 제공합니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="my-1">
+                                                <span class="fs-lg-07">
+                                                    Koinvestor promptly and accurately delivers the official
+                                                    information
+                                                    <br> of the global blockchain projects, through mutual cooperation,
+                                                    to the Korean investors.
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <span class="fs-lg-07 text-white">
+                                                copyrightⓒ2018 KOINVESTOR. All rights reserved.
+                                            </span>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <ul class="d-inline-block pl-0">
-                            <li>개인정보처리방침</li>
-                            <li>서비스이용약관</li>
-                            <li>제휴제안</li>
-                            <li>고객센터</li>
-                        </ul>
+                    <div class="col-12">
+                        <div class="border opacity-1 my-4"></div>
                     </div>
-                    <div class="col-lg-12 pt-4 pl-5">
-                        <span class="pl-3">
-                            copyⓒright 2018 0316COMPANY. All rights reserved.
-                        </span>
+                    <div class="col-6">
+                        <div class="row justify-content-between text-white w250 fs-lg-08">
+                            <div class="col-auto cursor-pointer">개인정보처리방침</div>
+                            <div class="col-auto cursor-pointer">서비스 이용약관</div>
+                            <div class="col-auto cursor-pointer">제휴제안</div>
+                            <div class="col-auto cursor-pointer">고객센터</div>
+                            <div class="col-auto cursor-pointer">ADMIN</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
+
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Vue.js -->
     <script src="https://unpkg.com/vue"></script>
     <!-- Vue DatePicker -->
@@ -5635,7 +5707,7 @@
     <!-- Waypoints -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
     <!-- ScrollReveal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script> -->
     <!-- CountUp -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.3/countUp.min.js"></script>
     <!-- Chart JS -->
