@@ -95,6 +95,7 @@
     content: '블록체인 뉴스';
     /* transition: 1s; */
 }
+
 .pc-nav-list li:nth-child(3):before {
     cursor: default;
     content: '트위터';
@@ -116,16 +117,11 @@
     margin: 0;
 }
 
-.pc-nav-list li:nth-child(1):hover:after, 
+.pc-nav-list li:nth-child(1):hover:after,
 .pc-nav-list li:nth-child(3):hover:after {
     content: '서비스 준비중';
-    text-decoration-line: line-through;
+    /* text-decoration-line: line-through; */
     opacity: .5;
-}
-
-ul li {
-    list-style: none;
-    cursor: pointer;
 }
 
 /* 언어 선택 */
@@ -188,7 +184,7 @@ ul li {
         width: 1100px;
         height: 4rem;
         border-bottom: 1px solid #dee2e6;
-        animation-duration: .5s;
+        animation-duration: .3s;
     }
 
     .search-wrap-desk>.s-input-wrap {
@@ -199,7 +195,7 @@ ul li {
         /* border: none; */
         height: 4rem;
         font-size: 1.5rem;
-        padding-left: 3rem;
+        padding-left: .3rem;
         padding-top: .3rem;
         border-bottom: 1px solid #dee2e6;
     }
@@ -572,14 +568,16 @@ Mobile Index Section
 
 .headline-b .title-wrap-b {
     height: 35%;
+    background-color: #ffffff;
     transition: .5s;
 }
 
-.headline-b:hover .img-cover-b {
+/* .headline-b:hover .img-cover-b {
     height: 55%;
-}
+} */
 
 .headline-b:hover .title-wrap-b {
+    transform: translateY(-13%);
     height: 40%;
 }
 
@@ -604,7 +602,17 @@ Mobile Index Section
     padding-right: .54rem;
 }
 
+
 .headline-c:nth-child(2),
+.headline-c:nth-child(2) img {
+    padding-top: .54rem;
+    padding-bottom: .54rem;
+    padding-left: .54rem;
+}
+
+
+/* 아이템을 2개로 수정하면서 기존 2, 3, 4번쨰 자식 스타일 주석처리 */
+/* .headline-c:nth-child(2),
 .headline-c:nth-child(2) img {
     padding: .54rem;
 }
@@ -619,7 +627,7 @@ Mobile Index Section
     padding-top: .54rem;
     padding-bottom: .54rem;
     padding-left: .54rem;
-}
+} */
 
 .headline-c img {
     width: 100%;
@@ -862,11 +870,28 @@ Mobile Index Section
     border-bottom: 1px solid #dee2e6;
 }
 
+.blockchain-news-items .b-img-cover,
+.project-news-items .b-img-cover {
+    max-height: 20rem;
+    overflow: hidden;
+}
+
+.blockchain-news-items p,
+.project-news-items p {
+    padding-top: 1rem;
+}
+
 .blockchain-news-items img,
 .project-news-items img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+}
+
+.blockchain-news-items span img,
+.project-news-items span img {
+    width: 1.3rem;
+    margin-right: 0.2rem;
 }
 
 .blockchain-news-items .blockchain-context {
@@ -884,6 +909,10 @@ Mobile Index Section
     transform: translateY(-.1rem);
 }
 
+.project-news-items .title-cover {
+    padding: 0 2.2rem;
+}
+
 @media (max-width: 360px) {
 
     .blockchain-news-items p,
@@ -894,10 +923,10 @@ Mobile Index Section
 
 @media (min-width: 360px) {
 
-    .blockchain-news-items,
+    /* .blockchain-news-items,
     .project-news-items {
         height: 8rem;
-    }
+    } */
 
     .blockchain-news-items p,
     .project-news-items p {
@@ -907,10 +936,10 @@ Mobile Index Section
 
 @media (min-width: 400px) {
 
-    .blockchain-news-items,
+    /* .blockchain-news-items,
     .project-news-items {
         height: 9.5rem;
-    }
+    } */
 
     .blockchain-news-items p,
     .project-news-items p {
@@ -925,15 +954,21 @@ Mobile Index Section
     .project-news-items {
         height: 22rem;
         border: 0;
-        opacity: .85;
+        opacity: .8;
         transition: .7s;
+    }
+
+    .blockchain-news-items img,
+    .project-news-items img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .blockchain-news-items:hover,
     .project-news-items:hover {
         opacity: 1;
         cursor: pointer;
-        transform: translateY(-.1rem);
     }
 
     .blockchain-news-items.other {
@@ -955,6 +990,7 @@ Mobile Index Section
 
     .blockchain-news-items p,
     .project-news-items p {
+        padding-top: 0;
         font-size: 1.1rem;
     }
 
@@ -976,6 +1012,15 @@ Mobile Index Section
     }
 
     /* project list And Menu */
+    .pc-project-filter-wrap * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .pc-project-list {
+        top: 190px;
+    }
+
     .pc-project-all,
     .pc-project-list-menu-wrap,
     .pc-project-list-menu-item {
@@ -1005,13 +1050,14 @@ Mobile Index Section
     }
 
     .project-list-img-cover img {
-        width: 80%;
+        width: 2rem;
     }
 }
 
 /*
-Project Section
+Project Section mobile menu
 */
+
 .project-list {
     border-bottom: 1px solid #dee2e6;
     overflow: hidden;
@@ -1117,8 +1163,24 @@ Project Section
 
 .detail-content-wrap img {
     max-width: 100% !important;
-    /* height: 100% !important; */
+    height: auto !important;
     object-fit: contain;
+}
+
+.youtubeWrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+.youtubeWrap iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.detail-content-wrap ul li {
+    list-style: initial !important;
 }
 
 .share-list-btn {
@@ -1301,7 +1363,7 @@ footer {
 }
 
 .main-footer {
-    height: 200px;
+    height: 280px;
     /* margin-top: -200px;
     padding-top: 200px; */
 }
@@ -1311,6 +1373,11 @@ footer {
 Admin CSS 
 
 */
+
+.admin {
+    min-height: 100vh;
+}
+
 .admin-nav {
     transition: .5s;
 }
@@ -1330,17 +1397,19 @@ Admin CSS
     color: #ced4da !important;
     font-weight: 200 !important;
     text-align: center;
-    background-color: white;
+    /* background-color: white; */
     animation-duration: .5s;
 }
 
 .chart-children-nav-wrap li {
-    padding: .75rem 0;
+    font-size: .85rem;
+    font-weight: 250;
+    padding: .3rem 0;
     transition: .7s;
 }
 
 .chart-children-nav-wrap li.active {
-    background-color: #4A3D4C;
+    color: rgb(85, 176, 192);
 }
 
 .notice-date input {
