@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 초기화 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .soon-wrap {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .soon-wrap .mobile {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: black;
+            background-image: url('./img/ezgif.com-video-to-gif.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .soon-wrap .mobile .korean,
+        .soon-wrap .mobile .english,
+        .soon-wrap .mobile .logo {
+            color: white;
+            text-align: center;
+            font-weight: 200;
+        }
+
+        .soon-wrap .mobile .korean {
+            font-size: 1rem;
+        }
+
+        .soon-wrap .mobile .english {
+            font-size: 0.8rem;
+            padding: 25px 0;
+        }
+
+        .soon-wrap .mobile .logo img {
+            width: 150px;
+        }
+
+        .soon-wrap .mobile .korean div,
+        .soon-wrap .mobile .english div {
+            padding: 3px 0;
+        }
+
+        .soon-wrap .desk {
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            .soon-wrap .mobile {
+                display: none;
+            }
+
+            .soon-wrap .desk {
+                display: block;
+            }
+
+            .soon-wrap .desk {
+                width: 100%;
+                height: 100%;
+            }
+
+            .soon-wrap .desk video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="soon-wrap">
+        <div class="desk">
+            <video src="./img/koinvestor_main_video.mp4" autoplay loop muted></video>
+        </div>
+        <div class="mobile">
+            <div class="korean">
+                <div>코인베스터는</div>
+                <div>전세계 블록체인 프로젝트팀과 협업을 통하여</div>
+                <div>한국 투자자들에게 유용한 정보를</div>
+                <div>신속하고 정확하게 제공합니다.</div>
+            </div>
+            <div class="english">
+                <div>Koinvestor promptly and accurately delivers</div>
+                <div>the official information of the global blockchain projects,</div>
+                <div>through mutual cooperation, to the Korean investors.</div>
+            </div>
+            <div class="logo">
+                <img src="./img/koinvestor-logo-white.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
