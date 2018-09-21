@@ -692,8 +692,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		lineDot.classList.toggle('line-dot-reverse');
 		lineDot.classList.toggle('line-dot-ani');
 
-		floatBtn.classList.toggle('shadow-box');
-		floatBtn.classList.toggle('shadow-box-inset');
+		// floatBtn.classList.toggle('shadow-box');
+		// floatBtn.classList.toggle('shadow-box-inset');
 
 		if (lineTop.classList.contains('line-top-reverse')) {
 			floatChildArr.forEach(function(item) {
@@ -730,14 +730,14 @@ document.addEventListener('DOMContentLoaded', function() {
       */
 	searchIcon.addEventListener('click', function() {
 		searchWrapDesk.classList.toggle('d-none');
-		searchWrapDesk.classList.remove('fadeOutRight');
-		searchWrapDesk.classList.add('fadeInRight');
+		searchWrapDesk.classList.remove('fadeOut');
+		searchWrapDesk.classList.add('fadeIn');
 	});
 
 	// Close Icon 클릭 이벤트
 	closeIcon.addEventListener('click', function() {
-		searchWrapDesk.classList.add('fadeOutRight');
-		searchWrapDesk.classList.remove('fadeInRight');
+		searchWrapDesk.classList.add('fadeOut');
+		searchWrapDesk.classList.remove('fadeIn');
 		setTimeout(function() {
 			searchWrapDesk.classList.toggle('d-none');
 		}, 600);
@@ -1004,7 +1004,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	/*
       Admin Section
-      */
+    */
 
 	var admin = document.querySelector('#admin');
 	if (admin != null) {
@@ -1350,4 +1350,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		}
 	}
+
+
+
+
+	$('iframe[src^="https://www.youtube.com/"]').wrap('<div class="youtubeWrap"></div>');
+	$('iframe[src^="http://www.youtube.com/"]').wrap('<div class="youtubeWrap"></div>');
+	$('iframe[src^="//www.youtube.com/"]').wrap('<div class="youtubeWrap"></div>');
+
 });
