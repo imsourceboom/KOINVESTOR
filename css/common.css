@@ -268,6 +268,10 @@ ul li {
 	font-style: normal;
 }
 
+.w200 {
+	font-weight: 200;
+}
+
 .w250 {
 	font-weight: 250;
 }
@@ -483,12 +487,13 @@ ul li {
 	display: none;
 }
 
+
 .floating-btn {
-	width: 4rem;
-	height: 4rem;
+	width: 3.5rem;
+	height: 3.5rem;
 	bottom: 2rem;
 	right: 2rem;
-	background-color: #3c3b3b;
+	background-color: #b8b2a8;
 }
 
 #floating-btn {
@@ -560,7 +565,7 @@ ul li {
 	/* margin-top: 6px; */
 	margin-bottom: 4px;
 	width: 7px;
-	height: 22px;
+	height: 18px;
 	border-radius: 2px;
 	position: relative;
 }
