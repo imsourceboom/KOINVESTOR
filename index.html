@@ -25,6 +25,9 @@
     <!-- Flatpickr Theme -->
     <!-- <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css"> -->
 
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
     <!-- custom CSS -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
@@ -46,9 +49,9 @@
         </div>
         <!-- 플로팅 공지사항 -->
         <!-- 활성화 상태로 시작 -->
-        <!-- <div name="floating-child-wrap" class=""> -->
-        <!-- 비활성화 상태로 시작 -->
-        <div name="floating-child-wrap" class="display-toggle">
+        <div name="floating-child-wrap" class="">
+            <!-- 비활성화 상태로 시작 -->
+            <!-- <div name="floating-child-wrap" class="display-toggle"> -->
             <div name="floating-child" class="floating-child flex-center position-fixed animated">
                 <div class="col-12">
                     <div class="row">
@@ -699,7 +702,7 @@
             </section>
             <!-- Mobile Ver. -->
             <!-- index Page -->
-            <section class="m-index d-lg-none" v-if="section">
+            <section class="m-index d-lg-none" v-if="!section">
                 <!-- m-headline -->
                 <article class="m-headline-wrap">
                     <div class="swiper-container">
@@ -1051,7 +1054,7 @@
 
             </section>
             <!-- BlockChain -->
-            <section class="blockchain" v-if="!section">
+            <section class="blockchain" v-if="section">
                 <article class="blockchain-wrapper px-3 px-lg-0 pb-3">
                     <div class="container-fluid">
                         <div class="row">
@@ -1060,12 +1063,12 @@
                             </div>
                             <!-- BlockChain items -->
                             <!-- first Line News -->
-                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-lg-0">
-                                <div class="row h-100">
-                                    <div class="col-12 b-img-cover px-0 px-lg-3">
-                                        <img src="https://picsum.photos/500/300?image=17" alt="">
+                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-0">
+                                <div class="row h-100 no-gutters">
+                                    <div class="col-12 b-img-cover px-0">
+                                        <img src="https://picsum.photos/1000/300?image=17" alt="">
                                     </div>
-                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-3 px-lg-5">
                                         <p>비트코인 우려하던 일이 벌어졌다. 700만 마지노선 무너졌다</p>
                                         <span>
                                             <small class="text-gray">2018.06.27</small>
@@ -1073,12 +1076,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-lg-0">
-                                <div class="row h-100">
-                                    <div class="col-12 b-img-cover px-0 px-lg-3">
-                                        <img src="https://picsum.photos/500/300?image=27" alt="">
+                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-0">
+                                <div class="row h-100 no-gutters">
+                                    <div class="col-12 b-img-cover px-0">
+                                        <img src="https://picsum.photos/500/500?image=27" alt="">
                                     </div>
-                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-3 px-lg-5">
                                         <p class="">빗썸 해킹!</p>
                                         <span>
                                             <small class="text-gray">2018.06.27</small>
@@ -1099,13 +1102,14 @@
                                     </div>
                                 </div>
                             </div> -->
+
                             <!-- second Line News -->
-                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-lg-0">
-                                <div class="row h-100">
-                                    <div class="col-12 b-img-cover px-0 px-lg-3">
-                                        <img src="https://picsum.photos/500/300?image=47" alt="">
+                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-0">
+                                <div class="row h-100 no-gutters">
+                                    <div class="col-12 b-img-cover px-0">
+                                        <img src="https://picsum.photos/2000/1000?image=47" alt="">
                                     </div>
-                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-3 px-lg-5">
                                         <p>블록체인 규제안 오락가락, 준구가 시키드나</p>
                                         <span>
                                             <small class="text-gray">2018.06.27</small>
@@ -1113,12 +1117,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-lg-0">
-                                <div class="row h-100">
-                                    <div class="col-12 b-img-cover px-0 px-lg-3">
-                                        <img src="https://picsum.photos/500/300?image=57" alt="">
+                            <div class="col-lg-6 blockchain-news-items py-4 py-lg-2 px-0">
+                                <div class="row h-100 no-gutters">
+                                    <div class="col-12 b-img-cover px-0">
+                                        <img src="https://picsum.photos/500/1300?image=57" alt="">
                                     </div>
-                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 title-cover d-flex flex-column justify-content-center work-break px-3 px-lg-5">
                                         <p>Mother father Gentleman</p>
                                         <span>
                                             <small class="text-gray">2018.06.27</small>
@@ -1126,13 +1130,14 @@
                                     </div>
                                 </div>
                             </div>
+
                             <!-- other Line News -->
-                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-lg-0">
-                                <div class="row h-100">
-                                    <div class="col-12 col-lg-6 px-0 pl-lg-3 pr-lg-0">
-                                        <img src="https://picsum.photos/500/300?image=67" alt="">
+                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-0">
+                                <div class="row h-100 no-gutters">
+                                    <div class="col-12 col-lg-6 other-img-cover">
+                                        <img src="https://picsum.photos/1500/900?image=67" alt="">
                                     </div>
-                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-3 px-lg-5">
                                         <p>비트코인 우려하던 일이 벌어졌다. 700만 마지노선 무너졌다</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
                                             동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
@@ -1145,12 +1150,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-lg-0">
-                                <div class="row h-100">
-                                    <div class="col-12 col-lg-6 px-0 pl-lg-3 pr-lg-0">
-                                        <img src="https://picsum.photos/500/300?image=37" alt="">
+                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-0">
+                                <div class="row h-100 no-gutters">
+                                    <div class="col-12 col-lg-6 other-img-cover">
+                                        <img src="https://picsum.photos/1000/300?image=37" alt="">
                                     </div>
-                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-3 px-lg-5">
                                         <p>코인베스터, 텔레그램 아시아 단독파트너쉽 체결</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est
@@ -1169,12 +1174,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-lg-0">
-                                <div class="row h-100">
-                                    <div class="col-12 col-lg-6 px-0 pl-lg-3 pr-lg-0">
-                                        <img src="https://picsum.photos/500/300?image=47" alt="">
+                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-0">
+                                <div class="row h-100 no-gutters">
+                                    <div class="col-12 col-lg-6 other-img-cover">
+                                        <img src="https://picsum.photos/900/1300?image=47" alt="">
                                     </div>
-                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-3 px-lg-5">
                                         <p>블록체인 규제안 오락가락, 준구가 시키드나</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
                                             동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람 대한으로 길이보존하세. 나는 자랑스런
@@ -1187,12 +1192,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-lg-0">
-                                <div class="row h-100">
-                                    <div class="col-12 col-lg-6 px-0 pl-lg-3 pr-lg-0">
-                                        <img src="https://picsum.photos/500/300?image=57" alt="">
+                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-0">
+                                <div class="row h-100 no-gutters">
+                                    <div class="col-12 col-lg-6 other-img-cover">
+                                        <img src="https://picsum.photos/500/1000?image=57" alt="">
                                     </div>
-                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-3 px-lg-5">
                                         <p>Mother father Gentleman</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est
@@ -1211,12 +1216,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-lg-0">
-                                <div class="row h-100">
-                                    <div class="col-12 col-lg-6 px-0 pl-lg-3 pr-lg-0">
+                            <div class="col-12 blockchain-news-items other py-4 py-lg-2 px-0">
+                                <div class="row h-100 no-gutters">
+                                    <div class="col-12 col-lg-6 other-img-cover">
                                         <img src="https://picsum.photos/500/300?image=67" alt="">
                                     </div>
-                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-lg-5">
+                                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center work-break px-3 px-lg-5">
                                         <p>비트코인 우려하던 일이 벌어졌다. 700만 마지노선 무너졌다. 이제 어떻하나 큰일이다.</p>
                                         <span class="blockchain-context fs-09 opacity-8 mb-lg-3">
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est
@@ -1282,7 +1287,7 @@
                                     <div class="col-6 project-menu py-2">
                                         <div class="row">
                                             <div class="col-auto">
-                                                <img src="./img/logo/ambrosus_m.svg" alt="">
+                                                <img src="./img/logo/png/ambrosus.png" alt="">
                                             </div>
                                             <div class="col">앰브로서스</div>
                                         </div>
@@ -1291,7 +1296,7 @@
                                     <div class="col-6 project-menu py-2">
                                         <div class="row">
                                             <div class="col-auto">
-                                                <img src="./img/logo/telegram.svg" alt="">
+                                                <img src="./img/logo/png/telegram.png" alt="">
                                             </div>
                                             <div class="col">텔레그램</div>
                                         </div>
@@ -5621,44 +5626,41 @@
     </div>
 
     <!-- User Footer -->
-    <footer class="d-none">
-        <div class="main-footer d-flex justify-content-center w-100 bg-dark">
+    <footer class="d-none d-lg-block">
+        <div class="main-footer d-flex justify-content-center w-100 ">
             <div class="w-1100px d-flex align-items-center">
                 <div class="row px-3">
                     <div class="col-12">
                         <div class="row">
                             <div class="col-auto">
-                                <span class="text-white fs-lg-17 w250"">KOINVESTOR</span>
+                                <span class="footer-logo">KOINVESTOR</span>
                             </div>
-                            <div class="
-                                    col">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="text-white w250">
-                                                <div class="my-1">
-                                                    코인베스터는 전세계 블록체인 프로젝트팀과 협업을 통하여
-                                                </div>
-                                                <div>
-                                                    한국 투자자들에게 유용한 정보를 신속하고 정확하게 제공합니다.
-                                                </div>
-                                            </div>
+                            <div class="col">
+                                <div class="row description">
+                                    <div class="col-12 korean">
+                                        <div class="my-1">
+                                            코인베스터는 전세계 블록체인 프로젝트팀과 협업을 통하여
                                         </div>
-                                        <div class="col-12">
-                                            <div class="my-1">
-                                                <span class="fs-lg-07">
-                                                    Koinvestor promptly and accurately delivers the official
-                                                    information
-                                                    <br> of the global blockchain projects, through mutual cooperation,
-                                                    to the Korean investors.
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <span class="fs-lg-07 text-white">
-                                                copyrightⓒ2018 KOINVESTOR. All rights reserved.
-                                            </span>
+                                        <div>
+                                            한국 투자자들에게 유용한 정보를 신속하고 정확하게 제공합니다.
                                         </div>
                                     </div>
+                                    <div class="col-12 english">
+                                        <div class="mb-1">
+                                            Koinvestor promptly and accurately delivers the official
+                                            information
+                                        </div>
+                                        <div>
+                                            of the global blockchain projects, through mutual cooperation,
+                                            to the Korean investors.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="fs-lg-07">
+                                            copyrightⓒ2018 KOINVESTOR. All rights reserved.
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
