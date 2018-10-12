@@ -45,8 +45,15 @@
             padding: 25px 0;
         }
 
+        .soon-wrap .mobile .logo {
+            position: absolute;
+            top: 22.5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* 모바일 로고 크기 */
         .soon-wrap .mobile .logo img {
-            width: 150px;
+            width: 220px;
         }
 
         .soon-wrap .mobile .korean div,
@@ -57,8 +64,21 @@
         .soon-wrap .desk {
             display: none;
         }
-
+        
+        /* PC 로고 크기 */
         @media (min-width: 992px) {
+            .soon-wrap .mobile .logo {
+                position: relative;
+                top: initial;
+                left: initial;
+                transform: none;
+            }
+            .soon-wrap .mobile .logo img {
+                width: 450px;
+            }   
+        }
+
+        /* @media (min-width: 992px) {
             .soon-wrap .mobile {
                 display: none;
             }
@@ -77,17 +97,17 @@
                 height: 100%;
                 object-fit: cover;
             }
-        }
+        } */
     </style>
 </head>
 
 <body>
     <div class="soon-wrap">
-        <div class="desk">
+        <!-- <div class="desk">
             <video src="./img/koinvestor_main_video.mp4" autoplay loop muted></video>
-        </div>
+        </div> -->
         <div class="mobile">
-            <div class="korean">
+            <!-- <div class="korean">
                 <div>코인베스터는</div>
                 <div>전세계 블록체인 프로젝트팀과 협업을 통하여</div>
                 <div>한국 투자자들에게 유용한 정보를</div>
@@ -97,7 +117,7 @@
                 <div>Koinvestor promptly and accurately delivers</div>
                 <div>the official information of the global blockchain projects,</div>
                 <div>through mutual cooperation, to the Korean investors.</div>
-            </div>
+            </div> -->
             <div class="logo">
                 <img src="./img/koinvestor-logo-white.png" alt="">
             </div>
