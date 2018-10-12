@@ -871,6 +871,7 @@ Mobile Index Section
 }
 
 .blockchain-news-items .b-img-cover,
+.blockchain-news-items .other-img-cover,
 .project-news-items .b-img-cover {
     max-height: 20rem;
     overflow: hidden;
@@ -1072,7 +1073,7 @@ Project Section mobile menu
 }
 
 .project-list img {
-    height: 100%;
+    height: 1.5rem;
     object-fit: cover;
 }
 
@@ -1181,6 +1182,7 @@ Project Section mobile menu
 
 .detail-content-wrap ul li {
     list-style: initial !important;
+    cursor: initial !important;
 }
 
 .share-list-btn {
@@ -1362,10 +1364,28 @@ footer {
     z-index: 1;
 }
 
-.main-footer {
+footer .main-footer {
     height: 280px;
+    background-color: #343a40;
     /* margin-top: -200px;
     padding-top: 200px; */
+}
+
+footer .main-footer .footer-logo {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: lighter !important;
+}
+
+footer .main-footer .description {
+    color: white;
+    font-weight: lighter !important;
+}
+
+footer .main-footer .description .english {
+    opacity: 0.6;
+    margin: 1rem 0;
+    font-size: 0.85rem;
 }
 
 /* 
