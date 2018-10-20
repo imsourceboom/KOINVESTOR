@@ -136,13 +136,13 @@
     <!-- 전체 wrap -->
     <div class="root-wrap position-relative d-flex justify-content-center">
         <!-- Search -->
-        <div class="search-wrap-desk row align-items-center no-gutters position-fixed pl-3 d-none animated">
-            <div class="col-lg-11 s-input-wrap">
+        <div class="search row align-items-center">
+            <div class="col-11 s-input-wrap">
                 <input type="text" class="w-100" placeholder="검색어">
             </div>
-            <div class="col-lg-1">
+            <div class="col-1">
                 <span class="d-flex justify-content-center">
-                    <i name="close-icon" class="material-icons md-35 cursor-pointer d-none d-lg-block">
+                    <i name="search-icon" class="material-icons cursor-pointer">
                         close
                     </i>
                 </span>
@@ -211,7 +211,7 @@
                         <img src="./img/koinvestor_logo.svg" alt="" style="width: 87px;">
                     </div>
                     <div class="col">
-                        <i name="m-search-icon" class="material-icons md-20 float-right">
+                        <i name="search-icon" class="material-icons md-20 float-right">
                             search
                         </i>
                     </div>
@@ -227,46 +227,32 @@
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- Mobile Navigation -->
-        <nav class="nav d-none animated">
-            <div class="container-fluid">
-                <div class="navi-close-wrap">
-                    <div class="row h-100 align-items-center">
-                        <div class="col"></div>
-                        <div class="col-auto float-right pl-0 pr-4">
-                            <div class="flex-center">
-                                <!-- Hamburger -->
-                                <div name="nav-hbg" class="hbg-box">
-                                    <div class="hbg-line-top"></div>
-                                    <div class="hbg-line-mid"></div>
-                                    <div class="hbg-line-bot"></div>
-                                </div>
-                            </div>
+            <!-- Mobile Navigation -->
+            <nav class="nav">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 py-3 pl-5 border-bottom">HOME</div>
+                        <div class="col-12 py-3 pl-5 border-bottom">ABOUT</div>
+                        <div class="col-12 py-3 pl-5 border-bottom">블록체인 뉴스</div>
+                        <div class="col-12 py-3 pl-5 border-bottom">프로젝트 소식</div>
+                        <div class="col-12 py-3 pl-5 border-bottom">실시간 트위터</div>
+                        <div class="col-12 py-3 pl-5 border-bottom">공지사항</div>
+                        <div class="col-12 py-3 pl-5 border-bottom">문의사항</div>
+                    </div>
+                    <div class="row m-nav-footer pt-5">
+                        <div class="col-12 pl-5">
+                            <!-- <small>KOREA</small>
+                            <small class="px-3">|</small>
+                            <small>ENGLISH</small> -->
+                        </div>
+                        <div class="col-12 pl-5">
+                            <small>copyright ⓒ 2018 0316COMPANY. All rights reserved.</small>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 py-3 pl-5 border-bottom">HOME</div>
-                    <div class="col-12 py-3 pl-5 border-bottom">ABOUT</div>
-                    <div class="col-12 py-3 pl-5 border-bottom">블록체인 뉴스</div>
-                    <div class="col-12 py-3 pl-5 border-bottom">프로젝트 소식</div>
-                    <div class="col-12 py-3 pl-5 border-bottom">실시간 트위터</div>
-                    <div class="col-12 py-3 pl-5 border-bottom">공지사항</div>
-                    <div class="col-12 py-3 pl-5 border-bottom">문의사항</div>
-                </div>
-                <div class="row m-nav-footer pt-5">
-                    <div class="col-12 pl-5">
-                        <small>KOREA</small>
-                        <small class="px-3">|</small>
-                        <small>ENGLISH</small>
-                    </div>
-                    <div class="col-12 pl-5">
-                        <small>copyright ⓒ 2018 0316COMPANY. All rights reserved.</small>
-                    </div>
-                </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
+
 
         <!-- Modal -->
         <section class="tele-modal flex-center animated fadeIn d-none">
@@ -702,7 +688,10 @@
             </section>
             <!-- Mobile Ver. -->
             <!-- index Page -->
-            <section class="m-index d-lg-none" v-if="!section">
+            <section class="m-index d-lg-none" v-if="section">
+                <!-- mobile-intro -->
+                <!-- <article class="m-intro">
+                </article> -->
                 <!-- m-headline -->
                 <article class="m-headline-wrap">
                     <div class="swiper-container">
@@ -710,13 +699,13 @@
                             <div class="swiper-slide">
                                 <div class="row no-gutters text-center">
                                     <div class="col-12 m-headline-img-cover">
-                                        <div class="m-cover-in-scroll">
+                                        <!-- <div class="m-cover-in-scroll">
                                             <div class="icon-scroll"></div>
-                                        </div>
+                                        </div> -->
                                         <img class="m-headline-img" src="https://picsum.photos/1000/500?image=22" alt="">
                                     </div>
                                     <div class="col-12 m-headline-text-cover">
-                                        <div class="title px-5 w900 fs-12 mb-3">
+                                        <div class="title px-5 w900 fs-15">
                                             페이파이 '알파 서비스 출시 예정' 페이파이 '알파 서비스 출시 예정'
                                         </div>
                                         <div class="m-headline-context text-gray px-5">
@@ -742,7 +731,7 @@
                                         <img class="m-headline-img" src="https://picsum.photos/1000/500?image=42" alt="">
                                     </div>
                                     <div class="col-12 m-headline-text-cover">
-                                        <div class="title px-5 w900 fs-12 mb-3">
+                                        <div class="title px-5 w900 fs-15">
                                             텔레그램 사용자 2억명 돌파 텔레그램 사용자 2억명 돌파
                                         </div>
                                         <div class="m-headline-context text-gray px-5">
@@ -764,7 +753,7 @@
                                         <img class="m-headline-img" src="https://picsum.photos/1000/500?image=32" alt="">
                                     </div>
                                     <div class="col-12 m-headline-text-cover">
-                                        <div class="title px-5 w900 fs-12 mb-3">
+                                        <div class="title px-5 w900 fs-15">
                                             RSK 말 바꾸기 달인인가
                                         </div>
                                         <div class="m-headline-context text-gray px-5">
@@ -849,19 +838,19 @@
                         </div>
                         <!-- 프로젝트 소식 wrapper -->
                         <div class="row pb-5">
-                            <div class="col-12 border-bottom">
+                            <div class="col-12 border-bottom mb-3">
                                 <div class="row">
                                     <div class="col w700">
                                         프로젝트 소식
                                     </div>
                                     <div class="col-auto">
-                                        <i class="material-icons md-22 text-gray-light">
+                                        <i class="material-icons md-22 text-gray-deep-dark">
                                             add
                                         </i>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 py-3">
+                            <!-- <div class="col-12 py-2">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="row">
@@ -886,8 +875,83 @@
                                         incidunt? Labore.
                                     </div>
                                 </div>
+                            </div> -->
+                            <!-- 수정 -->
+                            <div class="col-12 py-3">
+                                <div class="row">
+                                    <div class="col-2 m-project-img-wrap">
+                                        <img src="./img/logo/rsk.svg" alt="">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="row pb-1">
+                                            <div class="col-auto m-index-project-name">
+                                                광고없는 텔레그램 사용자 2억명 돌파
+                                                광고없는 텔레그램 사용자 2억명 돌파
+                                            </div>
+                                            <div class="col-auto px-0 m-index-date">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="text-gray m-project-description">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum explicabo,
+                                            numquam ut aspernatur consequatur totam hic facilis, quo provident est
+                                            magnam maiores inventore nemo eius ex voluptatum ab cumque incidunt?
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 py-3">
+                                <div class="row">
+                                    <div class="col-2 m-project-img-wrap">
+                                        <img src="./img/logo/telegram.svg" alt="">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="row pb-1">
+                                            <div class="col-auto m-index-project-name">
+                                                텔레그램 코리아
+                                            </div>
+                                            <div class="col-auto px-0 m-index-date">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="text-gray m-project-description">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum explicabo,
+                                            numquam ut aspernatur consequatur totam hic facilis, quo provident est
+                                            magnam maiores inventore nemo eius ex voluptatum ab cumque incidunt?
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 py-3">
+                                <div class="row">
+                                    <div class="col-2 m-project-img-wrap">
+                                        <img src="./img/logo/playkey_m.svg" alt="">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="row pb-1">
+                                            <div class="col-auto m-index-project-name">
+                                                광고없는 텔레그램 사용자 2억명 돌파
+                                                광고없는 텔레그램 사용자 2억명 돌파
+                                            </div>
+                                            <div class="col-auto px-0 m-index-date">
+                                                <small class="text-gray-light">
+                                                    2018.06.26
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="text-gray m-project-description">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum explicabo,
+                                            numquam ut aspernatur consequatur totam hic facilis, quo provident est
+                                            magnam maiores inventore nemo eius ex voluptatum ab cumque incidunt?
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-12 py-2">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="row">
@@ -912,7 +976,7 @@
                                         incidunt? Labore.
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <!-- Twitter and Telegram Icon -->
                         <div class="container pt-3 pb-5">
@@ -1255,12 +1319,12 @@
                 </article>
             </section>
             <!-- Project -->
-            <section class="project" v-if="section">
+            <section class="project" v-if="!section">
                 <article class="project-wrapper px-3 px-lg-0 pb-3">
                     <div class="container-fluid">
                         <div class="row">
                             <!-- Title AND project list select Mobile ver. -->
-                            <div class="col-12 project-list-wrap py-3 border-bottom d-lg-none">
+                            <div class="col-12 project-list-wrap pt-3 d-lg-none">
                                 <div class="row align-items-center">
                                     <div class="col-auto">
                                         프로젝트 소식
@@ -1275,7 +1339,7 @@
                                 </div>
                             </div>
                             <!-- Project List -->
-                            <div class="col-12 project-list d-none">
+                            <div class="col-12 project-list">
                                 <div class="row py-2">
                                     <!-- Project list item -->
                                     <div class="col-12 project-menu py-2">
@@ -1357,7 +1421,7 @@
                                                 <img src="https://picsum.photos/1500/300?image=77" alt="">
                                             </div>
                                             <div class="col-12 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>앰브로서스, 이마트와 MOU 체결</p>
+                                                <p class="mb-1">앰브로서스, 이마트와 MOU 체결</p>
                                                 <span>
                                                     <img src="./img/logo/ambrosus_m.svg" alt="">
                                                     <small class="text-gray pr-2">앰브로서스</small>
@@ -1372,7 +1436,7 @@
                                                 <img src="https://picsum.photos/500/200?image=87" alt="">
                                             </div>
                                             <div class="col-12 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>Use these shorthand uilities for quickly configuring the position of
+                                                <p class="mb-1">Use these shorthand uilities for quickly configuring the position of
                                                     an element.</p>
                                                 <span>
                                                     <img src="./img/logo/playkey_m.svg" alt="">
@@ -1388,7 +1452,7 @@
                                                 <img src="https://picsum.photos/500/1000?image=218" alt="">
                                             </div>
                                             <div class="col-12 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>충격! 김동범 아들래미 이름 김윤으로 밝혀져</p>
+                                                <p class="mb-1">충격! 김동범 아들래미 이름 김윤으로 밝혀져</p>
                                                 <span>
                                                     <img src="./img/logo/qash_m.svg" alt="">
                                                     <small class="text-gray pr-2">캐시</small>
@@ -1403,7 +1467,7 @@
                                                 <img src="https://picsum.photos/2200/1000?image=407" alt="">
                                             </div>
                                             <div class="col-12 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>タイトルのテストをするための翻訳です。</p>
+                                                <p class="mb-1">タイトルのテストをするための翻訳です。</p>
                                                 <span>
                                                     <img src="./img/logo/telegram.svg" alt="">
                                                     <small class="text-gray pr-2">텔레그램</small>
@@ -1412,13 +1476,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-lg-6 project-news-items py-2">
+                                    <!-- <div class="col-12 col-lg-6 project-news-items py-2">
                                         <div class="row h-100">
                                             <div class="col-6 col-lg-12 b-img-cover">
                                                 <img src="https://picsum.photos/500/300?image=307" alt="">
                                             </div>
                                             <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>标题翻译进行测试。我会尽量让标题再长一点。</p>
+                                                <p class="mb-1">标题翻译进行测试。我会尽量让标题再长一点。</p>
                                                 <span>
                                                     <small class="text-gray pr-2">플레이키</small>
                                                     <small class="text-gray">2018.06.28</small>
@@ -1432,7 +1496,7 @@
                                                 <img src="https://picsum.photos/500/300?image=77" alt="">
                                             </div>
                                             <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>앰브로서스, 이마트와 MOU 체결</p>
+                                                <p class="mb-1">앰브로서스, 이마트와 MOU 체결</p>
                                                 <span>
                                                     <small class="text-gray pr-2">플레이키</small>
                                                     <small class="text-gray">2018.06.28</small>
@@ -1446,7 +1510,7 @@
                                                 <img src="https://picsum.photos/500/300?image=87" alt="">
                                             </div>
                                             <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>Use these shorthand uilities for quickly configuring the position of
+                                                <p class="mb-1">Use these shorthand uilities for quickly configuring the position of
                                                     an element.</p>
                                                 <span>
                                                     <small class="text-gray pr-2">플레이키</small>
@@ -1461,7 +1525,7 @@
                                                 <img src="https://picsum.photos/500/300?image=218" alt="">
                                             </div>
                                             <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>충격! 김동범 아들래미 이름 김윤으로 밝혀져..</p>
+                                                <p class="mb-1">충격! 김동범 아들래미 이름 김윤으로 밝혀져..</p>
                                                 <span>
                                                     <small class="text-gray pr-2">플레이키</small>
                                                     <small class="text-gray">2018.06.28</small>
@@ -1475,7 +1539,7 @@
                                                 <img src="https://picsum.photos/500/300?image=407" alt="">
                                             </div>
                                             <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>タイトルのテストをするための翻訳です。</p>
+                                                <p class="mb-1">タイトルのテストをするための翻訳です。</p>
                                                 <span>
                                                     <small class="text-gray pr-2">플레이키</small>
                                                     <small class="text-gray">2018.06.28</small>
@@ -1489,14 +1553,14 @@
                                                 <img src="https://picsum.photos/500/300?image=307" alt="">
                                             </div>
                                             <div class="col-6 col-lg-12 title-cover d-flex flex-column justify-content-center work-break px-lg-5">
-                                                <p>标题翻译进行测试。我会尽量让标题再长一点。</p>
+                                                <p class="mb-1">标题翻译进行测试。我会尽量让标题再长一点。</p>
                                                 <span>
                                                     <small class="text-gray pr-2">플레이키</small>
                                                     <small class="text-gray">2018.06.28</small>
                                                 </span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <!-- DeskTop ver. project List Menu -->
@@ -1985,16 +2049,17 @@
                         <div class="col-12 col-lg-8">
                             <b class="fs-12 fs-lg-15">광고없는 텔레그램 사용자 2억명 돌파</b>
                         </div>
-                        <div class="col-12 col-lg-8 text-gray py-4 py-lg-5">
-                            <small class="d-block">2018년 7월 17일</small>
+                        <div class="col-12 col-lg-8 text-gray py-3 py-lg-5">
+                            <small class="mr-2">Play key</small>
+                            <small>2018년 7월 17일</small>
                             <small class="d-block">
                                 원문보기
-                                <a href="" class="text-gray">
+                                <!-- <a href="" class="text-gray">
                                     https://koinvestor.com/andlkfjealskdjfoiehkajsdjfhlka
-                                </a>
+                                </a> -->
                             </small>
-                            <input type="submit" class="modi-del mr-2" value="수정">
-                            <input type="submit" class="modi-del" value="삭제">
+                            <!-- <input type="submit" class="modi-del mr-2" value="수정">
+                            <input type="submit" class="modi-del" value="삭제"> -->
                         </div>
                     </div>
                     <!-- content -->
@@ -3473,7 +3538,7 @@
 
 
         <!-- 관리자 -->
-        <main id="admin" class="admin bg-white" v-if="admin">
+        <main id="admin" class="admin bg-white d-none" v-if="admin">
             <div class="container-fluid border-top">
                 <div class="row">
                     <!-- admin Navigation -->
