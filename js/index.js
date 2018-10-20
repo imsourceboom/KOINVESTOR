@@ -302,34 +302,15 @@ document.addEventListener('DOMContentLoaded', function() {
 						mobile: {
 							selectAccordion: function() {
 								var el = projectEl.mobile.listWrap;
-								if (el.classList.contains('d-none')) {
-									if (el.classList.contains('accordionOut')) {
-										el.classList.toggle('accordionOut');
-									}
-									el.classList.toggle('d-none');
-									el.classList.toggle('accordionIn');
-									setTimeout(function() {
-										el.classList.remove('accordionIn');
-									}, 700);
-								} else {
-									projectMethod.mobile.projectListOut();
-								}
+								el.classList.toggle('accordion');
 							},
 							itemAccordionOut: function() {
 								projectEl.mobile.listItem.map(function(el) {
 									el.addEventListener(
 										'click',
-										projectMethod.mobile.projectListOut
+										projectMethod.mobile.selectAccordion
 									);
 								});
-							},
-							projectListOut: function() {
-								var el = projectEl.mobile.listWrap;
-								el.classList.toggle('accordionOut');
-								setTimeout(function() {
-									el.classList.remove('accordionOut');
-									el.classList.toggle('d-none');
-								}, 700);
 							}
 						}
 					};
@@ -348,72 +329,6 @@ document.addEventListener('DOMContentLoaded', function() {
 					projectMethod.mobile.itemAccordionOut();
 				}
 			}
-
-			var projectNativeCode = {
-				// Mobile ver. Project select and Project Menu click Event
-				// 프로젝트 선택
-				// var projectSelect_M = document.querySelector('.project-select');
-				// 프로젝트 메뉴들 감싸고 있는 Wrapper
-				// var projectList_M = document.querySelector('.project-list');
-				// 프로젝트 메뉴들
-				// var projectMenu_M = Array.from(document.querySelectorAll('.project-menu'));
-				// accordion animation class toggle
-				// projectSelect_M.addEventListener('click', function () {
-				//     if (projectList_M.classList.contains('d-none')) {
-				//         if (projectList_M.classList.contains('accordionOut')) {
-				//             projectList_M.classList.toggle('accordionOut');
-				//         }
-				//         projectList_M.classList.toggle('d-none');
-				//         projectList_M.classList.toggle('accordionIn');
-				//         setTimeout(function () {
-				//             projectList_M.classList.remove('accordionIn');
-				//         }, 700);
-				//     } else {
-				//         projectListOut();
-				//     }
-				// })
-				// projectMenu_M.forEach(function (menu) {
-				//     menu.addEventListener('click', projectListOut);
-				// })
-				// function projectListOut(event) {
-				//     projectList_M.classList.toggle('accordionOut');
-				//     setTimeout(function () {
-				//         projectList_M.classList.remove('accordionOut');
-				//         projectList_M.classList.toggle('d-none');
-				//     }, 700);
-				// }
-				// DeskTop ver. Project Menu Click Event
-				// 전체보기
-				// var projectAll_Pc = document.querySelector('.pc-project-all');
-				// Menu들을 감싸고 있는 부모 Element
-				// var projectList_Pc = document.querySelector('.pc-project-list');
-				// Menu iTems
-				// var projectListChildren_Pc = Array.from(projectList_Pc.children);
-				// menu item을 click 했을 때 target의 단독 Event
-				// projectListChildren_Pc.forEach(function (item) {
-				//     item.addEventListener('click', function () {
-				//         console.log(this)
-				//         var thisChild = Array.from(this.children);
-				//         if (this.style.backgroundColor == 'rgb(214, 240, 228)') {
-				//             thisChild[0].style.transform = 'none';
-				//             this.style.backgroundColor = '#ffffff';
-				//         } else {
-				//             thisChild[0].style.transform = 'translate( 20%, 0)';
-				//             thisChild[0].style.backgroundColor = '#ffffff';
-				//             this.style.backgroundColor = 'rgb(214, 240, 228)';
-				//         }
-				//     })
-				// })
-				// project menu 전체보기 click Event
-				// projectAll_Pc.addEventListener('click', function () {
-				//     projectListChildren_Pc.forEach(function (item) {
-				//         var itemChild = Array.from(item.children);
-				//         item.style.backgroundColor = '#ffffff';
-				//         itemChild[0].style.transform = 'none';
-				//         itemChild[0].style.backgroundColor = '#ffffff';
-				//     })
-				// })
-			};
 
 			/*
                   Detail Page Section
@@ -487,7 +402,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 					var myPageMethod = {
 						cancelEvent: function() {
-							console.log('hi');
 							myPageEl.modal.classList.toggle('d-none');
 						}
 					};
@@ -528,22 +442,19 @@ document.addEventListener('DOMContentLoaded', function() {
       Header 영역
       */
 	// 검색 아이콘
-	var searchIcon = document.querySelector('[name=search-icon]');
-	// 검색 아이콘 Mobile
-	var searchIconMobile = document.querySelector('[name=m-search-icon]');
-	// 검색 닫기 아이콘
-	var closeIcon = document.querySelector('[name=close-icon]');
+	var searchIcon = Array.from(
+		document.querySelectorAll('[name=search-icon]')
+	);
 	/* 
       Search 영역
       */
 	// 검색 영역
-	var searchWrapDesk = document.querySelector('.search-wrap-desk');
+	var Search = document.querySelector('.search');
 
 	// DeskTop Navigation
 	var navList_Pc = document.querySelector('.pc-nav-list');
 	var navChildren_Pc = Array.from(navList_Pc.children);
 
-	// var logo = document.querySelector(".logo")
 
 	// PC ver. Nav의 Menu Click시 선택된 menu에 .active class 추가
 	navList_Pc.addEventListener('click', pcNavActive);
@@ -556,129 +467,6 @@ document.addEventListener('DOMContentLoaded', function() {
 				li.classList.remove('active');
 			}
 		});
-	}
-
-	// 클릭시 화면전환 코드 (Router)
-	{
-		// function fadeInSetTime(sec) {
-		//     sec.classList.toggle("animated")
-		//     sec.classList.toggle("fadeIn")
-		//     setTimeout(function () {
-		//         sec.classList.toggle("animated")
-		//         sec.classList.toggle("fadeIn")
-		//     }, 1000)
-		// }
-		// function menuLogo_Pc() {
-		//     mainChildren.forEach(function (sec) {
-		//         if (
-		//             sec.classList.contains("index") &&
-		//             sec.classList.contains("d-none") &&
-		//             !sec.classList.contains("d-lg-block")
-		//         ) {
-		//             sec.classList.toggle("d-lg-block")
-		//             fadeInSetTime(sec)
-		//         } else {
-		//             if (sec.classList.contains("blockchain") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("project") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("twitter") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("notice") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             }
-		//         }
-		//     })
-		// }
-		// function menuBlockChain_Pc() {
-		//     mainChildren.forEach(function (sec) {
-		//         if (sec.classList.contains("blockchain") && sec.classList.contains("d-none")) {
-		//             sec.classList.toggle("d-none")
-		//             fadeInSetTime(sec)
-		//             console.log("blockchain")
-		//         } else {
-		//             if (sec.classList.contains("index") && sec.classList.contains("d-lg-block")) {
-		//                 sec.classList.toggle("d-lg-block")
-		//             } else if (sec.classList.contains("project") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("twitter") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("notice") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             }
-		//         }
-		//     })
-		// }
-		// function menuProject_Pc() {
-		//     mainChildren.forEach(function (sec) {
-		//         if (sec.classList.contains("project") && sec.classList.contains("d-none")) {
-		//             sec.classList.toggle("d-none")
-		//             fadeInSetTime(sec)
-		//         } else {
-		//             if (sec.classList.contains("index") && sec.classList.contains("d-lg-block")) {
-		//                 sec.classList.toggle("d-lg-block")
-		//             } else if (sec.classList.contains("blockchain") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("twitter") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("notice") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             }
-		//         }
-		//     })
-		// }
-		// function menuTwitter_Pc() {
-		//     mainChildren.forEach(function (sec) {
-		//         if (sec.classList.contains("twitter") && sec.classList.contains("d-none")) {
-		//             sec.classList.toggle("d-none")
-		//             fadeInSetTime(sec)
-		//         } else {
-		//             if (sec.classList.contains("index") && sec.classList.contains("d-lg-block")) {
-		//                 sec.classList.toggle("d-lg-block")
-		//             } else if (sec.classList.contains("blockchain") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("project") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("notice") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             }
-		//         }
-		//     })
-		// }
-		// function menuNotice_Pc() {
-		//     mainChildren.forEach(function (sec) {
-		//         if (sec.classList.contains("notice") && sec.classList.contains("d-none")) {
-		//             sec.classList.toggle("d-none")
-		//             fadeInSetTime(sec)
-		//         } else {
-		//             if (sec.classList.contains("index") && sec.classList.contains("d-lg-block")) {
-		//                 sec.classList.toggle("d-lg-block")
-		//             } else if (sec.classList.contains("blockchain") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("project") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             } else if (sec.classList.contains("twitter") && !sec.classList.contains("d-none")) {
-		//                 sec.classList.toggle("d-none")
-		//             }
-		//         }
-		//     })
-		// }
-		// // index 화면으로 이동하는 Logo click Event
-		// logo.addEventListener("click", menuLogo_Pc)
-		// // Nav의 menu를 click시 각 해당 section display none, block 조작하는 Click event
-		// navChildren_Pc.forEach(function (nav) {
-		//     nav.addEventListener("click", function () {
-		//         if (nav.innerText == "블록체인 뉴스") {
-		//             menuBlockChain_Pc()
-		//         } else if (nav.innerText == "프로젝트 소식") {
-		//             menuProject_Pc()
-		//         } else if (nav.innerText == "실시간 트위터") {
-		//             menuTwitter_Pc()
-		//         } else if (nav.innerText == "공지사항") {
-		//             menuNotice_Pc()
-		//         }
-		//     })
-		// })
 	}
 
 	// 플로팅버튼 클릭 이벤트
@@ -728,49 +516,18 @@ document.addEventListener('DOMContentLoaded', function() {
 	/*
       Search 영역이 화면에 나타난다.
       */
-	searchIcon.addEventListener('click', function() {
-		searchWrapDesk.classList.toggle('d-none');
-		searchWrapDesk.classList.remove('fadeOut');
-		searchWrapDesk.classList.add('fadeIn');
-	});
-
-	// Close Icon 클릭 이벤트
-	closeIcon.addEventListener('click', function() {
-		searchWrapDesk.classList.add('fadeOut');
-		searchWrapDesk.classList.remove('fadeIn');
-		setTimeout(function() {
-			searchWrapDesk.classList.toggle('d-none');
-		}, 600);
-	});
-
-	// ( Mobile Ver. ) Search Icon Click Event
-	/*
-      - Search 영역이 위 아래 애니메이션으로 화면에 추가 및 삭제 됨
-      - Header 영역이 Search 영역과 같이 위 아래로 움직임
-      - Icon이 Search 와 Close 로 Toggl
-      */
-	searchIconMobile.addEventListener('click', function() {
-		if (searchWrapDesk.classList.contains('d-none')) {
-			if (searchWrapDesk.classList.contains('fadeOutUp')) {
-				searchWrapDesk.classList.toggle('fadeOutUp');
+	searchIcon.map(function(el) {
+		el.addEventListener('click', function() {
+			if (Search.classList.contains('z-in')) {
+				Search.classList.toggle('opa');
+				setTimeout(function() {
+					Search.classList.toggle('z-in');
+				}, 500);
+			} else {
+				Search.classList.toggle('opa');
+				Search.classList.toggle('z-in');
 			}
-			searchWrapDesk.classList.toggle('d-none');
-			searchWrapDesk.classList.toggle('fadeInDown');
-		} else {
-			searchWrapDesk.classList.toggle('fadeInDown');
-			searchWrapDesk.classList.toggle('fadeOutUp');
-			setTimeout(function() {
-				searchWrapDesk.classList.toggle('d-none');
-			}, 600);
-		}
-
-		headerMobile.classList.toggle('m-header-movedown');
-
-		if (this.innerText == 'search') {
-			this.innerText = 'close';
-		} else {
-			this.innerText = 'search';
-		}
+		});
 	});
 
 	/*
@@ -797,57 +554,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	// ( Mobile ver. ) Hamburger Menu
 	// m-header에 있는 햄버거
 	var hamburger = document.querySelector('.hbg-box');
-	// nav에 있는 햄버거
-	var navHamburger = document.querySelector('[name=nav-hbg]');
 	// nav Tag 페이지
 	var navPage = document.querySelector('.nav');
-
 	// Mobile Header Hamburger Click Event
-	// Header의 Hamburger와 Nav의 Hamburger class 동기화
 	hamburger.addEventListener('click', function() {
 		hamburger.children[0].classList.toggle('top-deg');
 		hamburger.children[1].classList.toggle('opacity-0');
 		hamburger.children[2].classList.toggle('bot-deg');
-		// navigation page 화면 In
-		if (navPage.classList.contains('d-none')) {
-			if (navPage.classList.contains('fadeOutRight')) {
-				navPage.classList.toggle('fadeOutRight');
-			}
-			navPage.classList.toggle('d-none');
-			navPage.classList.toggle('fadeInRight');
-		}
-
-		setTimeout(function() {
-			navHamburger.children[0].classList.toggle('top-deg');
-			navHamburger.children[1].classList.toggle('opacity-0');
-			navHamburger.children[2].classList.toggle('bot-deg');
-		}, 150);
-
-		setTimeout(function() {
-			headerMobile.classList.toggle('d-none');
-			main.classList.toggle('d-none');
-		}, 500);
-	});
-	// Nav Page의 Hamburger Click Event
-	navHamburger.addEventListener('click', function() {
-		navHamburger.children[0].classList.toggle('top-deg');
-		navHamburger.children[1].classList.toggle('opacity-0');
-		navHamburger.children[2].classList.toggle('bot-deg');
-		// navigation page 화면 Out
-		navPage.classList.toggle('fadeInRight');
-		navPage.classList.toggle('fadeOutRight');
-		setTimeout(function() {
-			navPage.classList.toggle('d-none');
-		}, 500);
-
-		setTimeout(function() {
-			hamburger.children[0].classList.toggle('top-deg');
-			hamburger.children[1].classList.toggle('opacity-0');
-			hamburger.children[2].classList.toggle('bot-deg');
-		}, 100);
-
-		main.classList.toggle('d-none');
-		headerMobile.classList.toggle('d-none');
+		navPage.classList.toggle('pageon');
 	});
 
 	/*
@@ -1351,11 +1065,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 
-
-
-
-	$('iframe[src^="https://www.youtube.com/"]').wrap('<div class="youtubeWrap"></div>');
-	$('iframe[src^="http://www.youtube.com/"]').wrap('<div class="youtubeWrap"></div>');
-	$('iframe[src^="//www.youtube.com/"]').wrap('<div class="youtubeWrap"></div>');
-
+	$('iframe[src^="https://www.youtube.com/"]').wrap(
+		'<div class="youtubeWrap"></div>'
+	);
+	$('iframe[src^="http://www.youtube.com/"]').wrap(
+		'<div class="youtubeWrap"></div>'
+	);
+	$('iframe[src^="//www.youtube.com/"]').wrap(
+		'<div class="youtubeWrap"></div>'
+	);
 });
